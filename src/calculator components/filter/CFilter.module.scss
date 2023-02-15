@@ -79,18 +79,22 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        width: 195px;
+        width: 173px;
         height: 34px;
         background-color: white;
-        padding: 6px 16px 6px 16px;
+        padding: 7px 16px 7px 16px;
         border-radius: 4px;
         cursor: pointer;
         .add-icon {
+          width: 22px;
+          height: 22px;
         }
       }
 
       .button {
         padding: 8px 40px 8px 40px;
+        height: 34px;
+        width: 137px;
       }
     }
   }
@@ -197,11 +201,25 @@ $breakpoint-tablet: 481px;
 
       .continue-custom-div {
         .add-custom-div {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          width: 173px;
+          height: 34px;
+          background-color: white;
+          padding: 7px 16px 7px 16px;
+          border-radius: 4px;
+          cursor: pointer;
           .add-icon {
+            width: 22px;
+            height: 22px;
           }
         }
 
         .button {
+          padding: 8px 40px 8px 40px;
+          height: 34px;
+          width: 137px;
         }
       }
     }
@@ -243,11 +261,25 @@ $breakpoint-laptops-desktops: 768px;
 
       .continue-custom-div {
         .add-custom-div {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          width: 173px;
+          height: 34px;
+          background-color: white;
+          padding: 7px 16px 7px 16px;
+          border-radius: 4px;
+          cursor: pointer;
           .add-icon {
+            width: 22px;
+            height: 22px;
           }
         }
 
         .button {
+          padding: 8px 40px 8px 40px;
+          height: 34px;
+          width: 137px;
         }
       }
     }
@@ -328,18 +360,23 @@ $breakpoint-large-screens: 1205px;
           display: flex;
           align-items: center;
           gap: 10px;
-          width: 195px;
+          width: 173px;
           height: 34px;
           background-color: white;
-          padding: 6px 16px 6px 16px;
+          padding: 7px 16px 7px 16px;
           border-radius: 4px;
           cursor: pointer;
           .add-icon {
+            width: 22px;
+            height: 22px;
           }
         }
 
         .button {
+          border: none;
           padding: 8px 40px 8px 40px;
+          height: 34px;
+          width: 137px;
         }
       }
     }

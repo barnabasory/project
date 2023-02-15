@@ -50,9 +50,9 @@ const CalculatorCards = () => {
 
   return (
     <div className={styles.calculator}>
-      <CNavbar />
-      <CFilter handleClick={showModal} />
-      <CCards handleClick={showModal} message={message} />
+      <CNavbar style={{ flex: 1 }} />
+      <CFilter handleClick={showModal} style={{ flex: 1 }} />
+      <CCards handleClick={showModal} message={message} style={{ flex: 5 }} />
       {show && (
         <div className={styles["custom-overlay-wrapper"]}>
           <div className={styles["custom-overlay"]}>
