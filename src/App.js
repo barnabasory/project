@@ -1,6 +1,6 @@
 import Home from "./PAGES/home/Home";
 import { CalculatorCards, CalculateUnits, CalculatorStart } from "./PAGES";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
