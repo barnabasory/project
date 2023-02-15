@@ -57,7 +57,7 @@ const CFilter = ({ handleClick }) => {
           <div className={styles["continue-custom-div"]}>
             <div className={styles["add-custom-div"]} onClick={handleClick}>
               <img src={add} alt="add-icon" className={styles["add-icon"]} />
-              <span className={styles["root-small"]}>Add Custom Item</span>
+              <span className={styles[""]}>Add Custom Item</span>
             </div>
             <Link to="/calculate-units">
               <button className={`root-text-bold ${styles["button"]}`}>

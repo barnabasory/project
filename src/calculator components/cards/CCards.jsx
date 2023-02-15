@@ -1,9 +1,39 @@
 import React, { useState } from "react";
 import styles from "./CCards.module.scss";
-import { add } from "../../PAGES";
+import { add, plus, minus } from "../../PAGES";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const CCards = ({ handleClick, message }) => {
+  const [count, setCount] = useState(1);
+  const [showSum, setShowSum] = useState(true);
+  const [result, setResult] = useState(count);
+
+  const { id } = useParams();
+
+  let sum = document.getElementById("sum");
+  const increaseCount = (id) => {
+    setCount(count + 1);
+    setResult(result + 1);
+  };
+
+  const decreaseCount = (id) => {
+    if (count === 1) {
+      return count === 1;
+    }
+    setCount(count - 1);
+    setResult(result - 1);
+  };
+
+  const hideSum = () => {
+    let checkbox = document.getElementById("calc-checkbox");
+    if (checkbox) {
+      setShowSum(showSum);
+    } else {
+      setShowSum(!showSum);
+    }
+  };
+
   return (
     <div className={`sw ${styles["cards-page"]}`}>
       <div className={styles["cards-section"]}>
@@ -17,11 +47,37 @@ const CCards = ({ handleClick, message }) => {
                     <div className={styles.description}>
                       <span>{name}</span>
                       <span className="root-small">Average kW:{wattage}</span>
-                      <span>{hours}</span>
                     </div>
-                    <input type="checkbox" className={styles.checkbox} />
+                    <input
+                      type="checkbox"
+                      id="calc-checkbox"
+                      className={styles.checkbox}
+                    />
                   </div>
-                  <div className={styles.total}></div>
+                  <div className={styles.total}>
+                    {showSum && (
+                      <div className={`dd ${styles.sum}`} id="sum">
+                        {count}
+                      </div>
+                    )}
+                    <div className={styles.calculate}>
+                      <img
+                        src={minus}
+                        alt="minus"
+                        className={styles.minus}
+                        onClick={decreaseCount}
+                      />
+                      <div className={styles["border-left"]}></div>
+                      <div className={styles.count}>{count}</div>
+                      <img
+                        src={plus}
+                        alt="plus"
+                        className={styles.plus}
+                        onClick={increaseCount}
+                      />
+                      <div className={styles["border-right"]}></div>
+                    </div>
+                  </div>
                 </div>
               );
             })}
