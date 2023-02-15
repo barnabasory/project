@@ -1,17 +1,17 @@
-.calc-start-page {
+.start-page {
   height: 100%;
   position: relative;
-  .calculator-details-wrapper {
+  .wrapper {
     position: absolute;
     background: linear-gradient(to bottom, black, black, black);
     height: 65vh;
     width: 100vw;
-    filter: blur(50px);
+    filter: blur(30px);
     top: 0px;
     z-index: 1;
   }
 
-  .calculator-details {
+  .content {
     position: absolute;
     justify-content: center;
     gap: 23px;
@@ -22,7 +22,7 @@
     top: 0;
     z-index: 1;
 
-    .calc-title-desc {
+    .title-details {
       gap: 19px;
       color: white;
 
@@ -30,29 +30,30 @@
         font-weight: 600;
       }
 
-      .calc-desc1 {
+      .details1 {
         color: var(--kangaroo);
       }
     }
-    .calc-button-desc {
+    .button-details {
       gap: 19px;
-      .calculator-button {
+      .button {
         padding: 10px 61px 10px 61px;
         font-weight: 500;
         font-size: 16px;
         line-height: 24px;
       }
 
-      .calc-desc2 {
+      .details2 {
         color: white;
       }
     }
   }
 
-  .calc-bg-image {
+  .image {
     width: 100vw;
     object-fit: cover;
     position: absolute;
     top: 40%;
+    height: 100vh;
   }
 }
