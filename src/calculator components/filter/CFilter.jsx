@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./CFilter.module.scss";
-import { search, add } from "../../PAGES";
+import { search, add, arrowDown } from "../../PAGES";
 import { Link } from "react-router-dom";
 
 const CFilter = ({ handleClick }) => {
@@ -19,13 +19,26 @@ const CFilter = ({ handleClick }) => {
                   name=""
                   id=""
                   className={`root-small ${styles["select"]}`}
+                  style={{
+                    height: "44px",
+                    width: "196px",
+                    position: "relative",
+                  }}
                 >
+                  <option value="KW: High to Low" className="root-small">
+                    KW: High to Low
+                  </option>
                   <option value="">Kilowatts</option>
                   <option value="">Kilowatts</option>
                   <option value="">Kilowatts</option>
                   <option value="">Kilowatts</option>
                   <option value="">Kilowatts</option>
                 </select>
+                <img
+                  src={arrowDown}
+                  alt="arrowDown"
+                  className={styles["arrow-down"]}
+                />
               </form>
               <div className={`dd ${styles["search-box"]}`}>
                 <input
