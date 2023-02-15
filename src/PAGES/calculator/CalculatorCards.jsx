@@ -14,7 +14,7 @@ const CalculatorCards = () => {
   const [show, setShow] = useState(false);
   const [value, setValue] = useState({ ...initialState });
   const [message, setMessage] = useState(cards);
-  const [loader, setLoader] = useState(false);
+  var [count, setCount] = useState(1);
 
   const showModal = () => {
     setShow(!show);
@@ -28,6 +28,18 @@ const CalculatorCards = () => {
     setMessage([...message, value]);
     localStorage.setItem("cards", JSON.stringify([...message, value]));
     setValue({ ...initialState });
+  };
+
+  const increaseCount = () => {
+    setCount(count + 1);
+    if (count === 1) {
+      setCount(count === 1);
+      return count;
+    }
+  };
+
+  const decreaseCount = () => {
+    setCount(count - 1);
   };
 
   useEffect(() => {
@@ -88,11 +100,21 @@ const CalculatorCards = () => {
               <div className={styles.quantity}>
                 <label htmlFor="">Quantity</label>
                 <div className={styles.count}>
-                  <img src={minus} alt="minus" className={styles.minus} />
+                  <img
+                    src={minus}
+                    alt="minus"
+                    className={styles.minus}
+                    onClick={decreaseCount}
+                  />
                   <div className={styles["border-right"]}></div>
-                  <div className={styles.number}>1</div>
+                  <div className={styles.number}>{count}</div>
                   <div className={styles["border-right"]}></div>
-                  <img src={plus} alt="add" className={styles.plus} />
+                  <img
+                    src={plus}
+                    alt="add"
+                    className={styles.plus}
+                    onClick={increaseCount}
+                  />
                 </div>
                 <button
                   className={`root-small-bold ${styles.button}`}

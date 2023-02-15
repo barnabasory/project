@@ -1,10 +1,21 @@
 import Home from "./PAGES/home/Home";
 import { CalculatorCards, CalculateUnits, CalculatorStart } from "./PAGES";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const spinner = document.getElementById("spinner");
+
+  if (loading) {
+    setTimeout(() => {
+      spinner.style.display = "none";
+      setLoading(false);
+    }, 2000);
+  }
   return (
     <>
+      !loading && ({" "}
       <Router>
         <Routes>
           <Route
@@ -17,6 +28,7 @@ function App() {
           <Route exact path="/calculate-units" element={<CalculateUnits />} />
         </Routes>
       </Router>
+      )
     </>
   );
 }
