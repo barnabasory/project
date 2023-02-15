@@ -15,20 +15,24 @@ function App() {
   }
   return (
     <>
-      !loading && ({" "}
-      <Router>
-        <Routes>
-          <Route
-            exact
-            path="/start-calculating"
-            element={<CalculatorStart />}
-          />
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/calculate-cards" element={<CalculatorCards />} />
-          <Route exact path="/calculate-units" element={<CalculateUnits />} />
-        </Routes>
-      </Router>
-      )
+      {!loading && (
+        <Router>
+          <Routes>
+            <Route
+              exact
+              path="/start-calculating"
+              element={<CalculatorStart />}
+            />
+            <Route exact path="/" element={<Home />} />
+            <Route
+              exact
+              path="/calculate-cards"
+              element={<CalculatorCards />}
+            />
+            <Route exact path="/calculate-units" element={<CalculateUnits />} />
+          </Routes>
+        </Router>
+      )}
     </>
   );
 }
