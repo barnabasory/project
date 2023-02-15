@@ -1,0 +1,21 @@
+.calculate-wrapper {
+  background-color: var(--chateau-green);
+  height: 292px;
+  justify-content: center;
+  text-align: center;
+  .calculate-div {
+    gap: 4px;
+    width: 100%;
+    color: var(--white);
+
+    .calculate-button {
+      padding: 10px 24px 10px 24px;
+      background-color: var(--cod-gray);
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0em;
+      margin-top: 19px;
+    }
+  }
+}

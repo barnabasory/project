@@ -1,0 +1,162 @@
+.email-contact {
+  display: flex;
+  justify-content: space-between;
+  height: 400px;
+  color: var(--white);
+  width: 100vw;
+
+  .email-contact-image {
+    width: 50vw;
+    object-fit: cover;
+    height: 100%;
+    margin-bottom: -6px;
+  }
+
+  .email-contact-text {
+    width: 50%;
+    background-color: var(--cod-gray);
+    padding-left: 93px;
+    padding-right: 93px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 13px;
+    height: 409px;
+    text-align-last: left;
+  }
+
+  .email-contact-button {
+    padding: 10px 44.5px 10px 44.5px;
+    margin-top: 29px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+  }
+}
+
+$breakpoint-mobile: 480px;
+@media (max-width: $breakpoint-mobile) {
+  .email-contact {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 750px;
+    color: var(--white);
+
+    .email-contact-image {
+      width: 100vw;
+      object-fit: cover;
+      height: 300px;
+    }
+
+    .email-contact-text {
+      width: 100%;
+      background-color: var(--cod-gray);
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 13px;
+      height: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-align: left;
+    }
+
+    .email-contact-button {
+      padding: 10px 44.5px 10px 44.5px;
+      margin-top: 29px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0em;
+    }
+  }
+}
+
+$breakpoint-tablet: 481px;
+@media (min-width: $breakpoint-tablet) {
+  .email-contact {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 700px;
+    color: var(--white);
+
+    .email-contact-image {
+      width: 100vw;
+      object-fit: cover;
+      height: 300px;
+      margin-bottom: -6px;
+    }
+
+    .email-contact-text {
+      width: 100%;
+      background-color: var(--cod-gray);
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      height: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-align: left;
+    }
+
+    .email-contact-button {
+    }
+  }
+}
+$breakpoint-laptops-desktops: 768px;
+@media (min-width: $breakpoint-laptops-desktops) {
+  .email-contact {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 450px;
+    color: var(--white);
+
+    .email-contact-image {
+      width: 50vw;
+      object-fit: cover;
+      height: 450px;
+    }
+
+    .email-contact-text {
+      width: 50vw;
+      padding-left: 33px;
+      padding-right: 33px;
+      text-align: left;
+    }
+
+    .email-contact-button {
+    }
+  }
+}
+
+$breakpoint-large-screens: 1205px;
+@media (min-width: $breakpoint-large-screens) {
+  .email-contact {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 400px;
+    color: var(--white);
+
+    .email-contact-image {
+      width: 50vw;
+      object-fit: cover;
+      height: 400px;
+    }
+
+    .email-contact-text {
+      width: 50vw;
+      padding-left: 93px;
+      padding-right: 93px;
+      text-align: left;
+    }
+
+    .email-contact-button {
+    }
+  }
+}

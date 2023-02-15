@@ -1,0 +1,105 @@
+.calculator {
+  position: relative;
+
+  .custom-overlay-wrapper {
+    width: 100vw;
+    top: 0;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    position: absolute;
+    z-index: 10;
+
+    .custom-overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 345px;
+      height: 472px;
+      border-radius: 4px;
+      background-color: #fff;
+      padding: 13px 24px 24px 24px;
+
+      .add-custom-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 46px;
+        margin-top: -13px;
+      }
+
+      .hr {
+        margin-left: -24px;
+        margin-right: -24px;
+        height: 1px;
+        background-color: var(--kangaroo);
+      }
+
+      .form {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 16px;
+
+        .label {
+        }
+
+        .input {
+          margin-top: 4px;
+          margin-bottom: 16px;
+          padding-left: 20px;
+          padding-top: 12px;
+          padding-bottom: 12px;
+          border: 1px solid var(--cod10);
+          outline: none;
+          background-color: var(--desert-storm);
+          width: 100%;
+          border-radius: 4px;
+          color: var(--cod60);
+        }
+
+        .quantity {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          .count {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--kangaroo);
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 2px;
+
+            .minus,
+            .plus {
+              padding: 12px 10px 12px 10px;
+            }
+
+            .border-right {
+              margin-top: -10px;
+              margin-bottom: -10px;
+              height: 35px;
+              width: 1px;
+              background-color: var(--kangaroo);
+            }
+
+            .number {
+              padding: 6px 28px 6px 28px;
+            }
+          }
+
+          .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 58px 8px 58px;
+            margin-top: 24px;
+          }
+        }
+      }
+    }
+  }
+}

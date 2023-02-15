@@ -1,0 +1,156 @@
+.calc-edit {
+  padding-top: 70px;
+  .calc-edit-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 16px;
+    gap: 21px;
+    .calc-edit-top-result {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-width: 100%;
+
+      .calc-edit-top-button {
+        padding: 8px 34px 8px 34px;
+      }
+    }
+  }
+  .calc-edit-main {
+    padding-top: 15px;
+    .calc-edit-main-border-top {
+      width: 100%;
+      height: 1px;
+      background-color: var(--cod10);
+    }
+
+    .calc-edit-main-cards {
+      padding-top: 24px;
+      .calc-edit-main-card {
+        width: 300px;
+        height: 158px;
+        background-color: #fff;
+        border-radius: 4px;
+        padding: 9px 22px 9px 22px;
+
+        .calc-edit-wattage-hr {
+          height: 1px;
+          margin: 7px -22px 12px -22px;
+          background-color: var(--cod20);
+        }
+
+        .calc-edit-wattage-div {
+          display: flex;
+
+          justify-content: space-between;
+          width: 100%;
+          .calc-edit-wattage-unit {
+            color: var(--cod60);
+          }
+
+          .calc-edit-wattage-acronymn {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            .calc-edit-wattage-meter {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 76px;
+              height: 32px;
+              border: 1px solid var(--kangaroo);
+              border-radius: 4px;
+              background-color: var(--desert-storm);
+
+              .card-wattage-number {
+                width: 74%;
+                padding: 4px 14px 4px 14px;
+                border-right: 1px solid var(--kangaroo);
+              }
+              .card-wattage-arrows {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                width: 26%;
+                background-color: #fff;
+                height: 100%;
+
+                .card-wattage-arrow {
+                  padding: 6.4px 6.71px 6.4px 6.71px;
+                  cursor: pointer;
+                }
+                .card-wattage-arrow-up {
+                  border-bottom: 1px solid var(--kangaroo);
+                }
+              }
+            }
+            .calc-wattage-acronym {
+              color: var(--chateau-green);
+            }
+          }
+        }
+        .calc-edit-hours-hr {
+          height: 1px;
+          margin: 7px -22px 12px -22px;
+          background-color: var(--cod20);
+          margin-top: 11px;
+          margin-bottom: 11px;
+        }
+
+        .calc-edit-hours-div {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          .calc-edit-hours-unit {
+            color: var(--cod60);
+          }
+          .calc-edit-hours-acronymn {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+
+            .calc-edit-hours-meter {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 76px;
+              height: 32px;
+              border: 1px solid var(--kangaroo);
+              border-radius: 4px;
+              background-color: var(--desert-storm);
+
+              .card-hours-number {
+                width: 55px;
+                padding: 4px 14px 4px 14px;
+                border-right: 1px solid var(--kangaroo);
+              }
+              .card-hours-arrows {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                width: 21px;
+                background-color: #fff;
+                height: 100%;
+
+                .card-hours-arrow {
+                  padding: 6.4px 6.71px 6.4px 6.71px;
+                  cursor: pointer;
+                }
+                .card-hours-arrow-up {
+                  border-bottom: 1px solid var(--kangaroo);
+                }
+              }
+            }
+            .calc-hours-acronym {
+              color: var(--chateau-green);
+            }
+          }
+        }
+      }
+    }
+  }
+}

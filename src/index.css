@@ -1,13 +1,192 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+:root {
+  --white: #ffffff;
+  --kangaroo: #cbcbbe;
+  --chateau-green: #43a45e;
+  --cod-gray: #1a1a1a;
+  --cod60: rgba(26, 26, 26, 0.6);
+  --imgbg: #f7f7f5;
+  --desert-storm: #f7f7f7;
+  --cararra: #f3f2ef;
+  --mercury: #e1e1e1;
+  --everglade: #377b36;
+  --hint-of-green: #defee0;
+  --gold-drop: #d78e00;
+  --cod40: rgba(26, 26, 26, 0.4);
+  --cod20: rgba(26, 26, 26, 0.2);
+  --cod10: rgba(26, 26, 26, 0.1);
+  --shadow-one: box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  --input-field : box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.25);
+  --box-shadow: box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+
 }
+body {
+  font-family: "Roboto";
+  background-color: var(--cararra);
+  color: var(--cod-gray);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+h1 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 68px;
+  line-height: 76px;
+}
+h2 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 52px;
+  line-height: 60px;
+}
+h3 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 46px;
+}
+h4 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 38px;
+}
+h5 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+}
+h6 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 27px;
+}
+.large-paragraph {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+.root-text-bold {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+.root-small {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+.root-small-bold {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+}
+.tiny-text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+.tiny-text-bold {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+}
+.very-tiny {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 12px;
+}
+.root-text{
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+button {
+  background-color: var(--chateau-green);
+  border-radius: 4px;
+  padding: 8px, 24px, 8px, 24px;
+  border: none;
+  outline: none;
+  color: var(--white);
+  cursor: pointer;
+}
+button:hover{
+
+}
+
+.fw{
+  width: 100%;
+}
+
+.sw{
+  max-width: 1280px;
+  margin: auto auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  color: var(--cod-gray);
+  cursor: pointer;
+}
+
+a:hover{
+
+}
+
+
+
+.cc{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.dd{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
