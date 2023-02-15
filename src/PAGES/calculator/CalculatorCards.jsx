@@ -32,13 +32,12 @@ const CalculatorCards = () => {
 
   const increaseCount = () => {
     setCount(count + 1);
-    if (count === 1) {
-      setCount(count === 1);
-      return count;
-    }
   };
 
   const decreaseCount = () => {
+    if (count === 1) {
+      return count === 1;
+    }
     setCount(count - 1);
   };
 
