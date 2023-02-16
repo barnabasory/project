@@ -6,12 +6,11 @@ import { useParams } from "react-router-dom";
 
 const CCards = ({ handleClick, message }) => {
   const [count, setCount] = useState(1);
-  const [showSum, setShowSum] = useState(true);
+  const [showSum, setShowSum] = useState(false);
   const [result, setResult] = useState(count);
 
   const { id } = useParams();
 
-  let sum = document.getElementById("sum");
   const increaseCount = (id) => {
     setCount(count + 1);
     setResult(result + 1);
@@ -25,13 +24,8 @@ const CCards = ({ handleClick, message }) => {
     setResult(result - 1);
   };
 
-  const hideSum = () => {
-    let checkbox = document.getElementById("calc-checkbox");
-    if (checkbox) {
-      setShowSum(showSum);
-    } else {
-      setShowSum(!showSum);
-    }
+  const hideResult = () => {
+    setShowSum(!showSum);
   };
 
   return (
@@ -52,6 +46,7 @@ const CCards = ({ handleClick, message }) => {
                       type="checkbox"
                       id="calc-checkbox"
                       className={styles.checkbox}
+                      onChange={hideResult}
                     />
                   </div>
                   <div className={styles.total}>

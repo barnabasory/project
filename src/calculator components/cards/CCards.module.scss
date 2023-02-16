@@ -90,7 +90,7 @@
             color: var(--gold-drop);
           }
           .calculate {
-            display: flex;
+            display: none;
             align-items: center;
             align-self: center;
             width: fit-content;
@@ -127,6 +127,10 @@
               padding: 3px 17px 3px 17px;
             }
           }
+        }
+
+        &:hover .calculate {
+          display: flex;
         }
       }
     }
