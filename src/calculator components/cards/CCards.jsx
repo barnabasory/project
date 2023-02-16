@@ -1,42 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./CCards.module.scss";
 import { add, plus, minus } from "../../PAGES";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 const CCards = ({ handleClick, message }) => {
-  const [count, setCount] = useState(1);
-  const [showSum, setShowSum] = useState(false);
-  const [result, setResult] = useState(count);
+  const [counts, setCounts] = useState(Array(message.length).fill(1));
+  const [showSums, setShowSums] = useState(Array(message.length).fill(false));
+  const [results, setResults] = useState(Array(message.length).fill(1));
 
-  const { id } = useParams();
-
-  const increaseCount = (id) => {
-    setCount(count + 1);
-    setResult(result + 1);
+  const increaseCount = (index) => {
+    setCounts(counts.map((count, i) => (i === index ? count + 1 : count)));
+    setResults(
+      results.map((result, i) => (i === index ? counts[i] + 1 : result))
+    );
   };
 
-  const decreaseCount = (id) => {
-    if (count === 1) {
-      return count === 1;
-    }
-    setCount(count - 1);
-    setResult(result - 1);
+  const decreaseCount = (index) => {
+    setCounts(
+      counts.map((count, i) => (i === index && count > 1 ? count - 1 : count))
+    );
+    setResults(
+      results.map((result, i) =>
+        i === index && result > 1 ? counts[i] - 1 : result
+      )
+    );
   };
 
-  const hideResult = () => {
-    setShowSum(!showSum);
+  const toggleShowSum = (index) => {
+    setShowSums(
+      showSums.map((showSum, i) => (i === index ? !showSum : showSum))
+    );
   };
+
+  // re-renders the complete array when message arrays changes
+  useEffect(() => {
+    setCounts(Array(message.length).fill(1));
+    setResults(Array(message.length).fill(1));
+  }, [message]);
 
   return (
     <div className={`sw ${styles["cards-page"]}`}>
       <div className={styles["cards-section"]}>
         <div className={`cc ${styles["cards"]}`}>
           {message.length > 0 &&
-            message.map((card) => {
+            message.map((card, index) => {
               const { id, name, wattage, hours } = card;
               return (
-                <div className={styles.card} key={id}>
+                <div className={styles.card} key={index}>
                   <div className={styles["card-content"]}>
                     <div className={styles.description}>
                       <span>{name}</span>
@@ -46,13 +57,14 @@ const CCards = ({ handleClick, message }) => {
                       type="checkbox"
                       id="calc-checkbox"
                       className={styles.checkbox}
-                      onChange={hideResult}
+                      onChange={() => toggleShowSum(index)}
+                      checked={showSums[index]}
                     />
                   </div>
                   <div className={styles.total}>
-                    {showSum && (
+                    {showSums[index] && (
                       <div className={`dd ${styles.sum}`} id="sum">
-                        {count}
+                        {results[index]}
                       </div>
                     )}
                     <div className={styles.calculate}>
@@ -60,15 +72,15 @@ const CCards = ({ handleClick, message }) => {
                         src={minus}
                         alt="minus"
                         className={styles.minus}
-                        onClick={decreaseCount}
+                        onClick={() => decreaseCount(index)}
                       />
                       <div className={styles["border-left"]}></div>
-                      <div className={styles.count}>{count}</div>
+                      <div className={styles.count}>{counts[index]}</div>
                       <img
                         src={plus}
                         alt="plus"
                         className={styles.plus}
-                        onClick={increaseCount}
+                        onClick={() => increaseCount(index)}
                       />
                       <div className={styles["border-right"]}></div>
                     </div>
