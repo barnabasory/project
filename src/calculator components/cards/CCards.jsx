@@ -37,6 +37,7 @@ const CCards = ({ handleClick, message }) => {
   useEffect(() => {
     setCounts(Array(message.length).fill(1));
     setResults(Array(message.length).fill(1));
+    setShowSums(Array(message.length).fill(false));
   }, [message]);
 
   return (

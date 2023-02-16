@@ -1,71 +1,101 @@
-import React from "react";
-import "./EditUnits.scss";
+import React, { useState } from "react";
+import styles from "./EditUnits.module.scss";
 import { arrowUp, arrowDown } from "../../PAGES";
 
 const EditUnits = () => {
+  const [wattage, setWattage] = useState(20);
+  const [hours, setHours] = useState(1);
+
+  const increaseWattage = () => {
+    setWattage(wattage + 20);
+  };
+
+  const decreaseWattage = () => {
+    if (wattage === 20) {
+      return wattage === 20;
+    }
+    setWattage(wattage - 20);
+  };
+
+  const increaseHours = () => {
+    if (hours === 12) {
+      return hours === 12;
+    }
+    setHours(hours + 1);
+  };
+
+  const decreaseHours = () => {
+    if (hours === 1) {
+      return hours === 1;
+    }
+    setHours(hours - 1);
+  };
   return (
-    <div className="sw calc-edit">
-      <div className=" calc-edit-top">
+    <div className={`sw ${styles["edit-page"]}`}>
+      <div className={`${styles["top-bar"]}`}>
         <span>Edit the wattage and hourly usage for each item</span>
-        <div className="calc-edit-top-result">
+        <div className={styles.back}>
           <span>Back</span>
-          <button className="calc-edit-top-button root-small-bold">
+          <button className={`root-small-bold ${styles.button}`}>
             See Results
           </button>
         </div>
       </div>
-      <div className="calc-edit-main">
-        <div className="calc-edit-main-border-top"></div>
-        <div className="calc-edit-main-cards">
-          <div className="calc-edit-main-card">
+      <div className={styles.main}>
+        <div className={styles["border-top"]}></div>
+        <div className={styles.cards}>
+          <div className={styles.card}>
             <span>Refrigerator</span>
             {/* wattage */}
-            <div className="calc-edit-wattage-hr"></div>
-            <div className="calc-edit-wattage-div">
-              <span className="root-small calc-edit-wattage-unit">Wattage</span>
-              <div className="dd calc-edit-wattage-acronymn">
-                <div className="calc-edit-wattage-meter">
-                  <div className="card-wattage-number">300</div>
-                  <div className="card-wattage-arrows">
+            <div className={styles.hr}></div>
+            <div className={styles["wattage-div"]}>
+              <span className={`root-small ${styles.wattage}`}>Wattage </span>
+              <div className={`dd ${styles.calculate}`}>
+                <div className={styles.meter}>
+                  <div className={styles["meter-number"]}>{wattage}</div>
+                  <div className={styles.arrows}>
                     <img
                       src={arrowUp}
                       alt="arrow-up"
-                      className="card-wattage-arrow card-wattage-arrow-up"
+                      className={styles["arrow-up"]}
+                      onClick={increaseWattage}
                     />
                     <img
                       src={arrowDown}
                       alt="arrow-down"
-                      className="card-wattage-arrow"
+                      className={styles["arrow-down"]}
+                      onClick={decreaseWattage}
                     />
                   </div>
                 </div>
-                <span className="calc-wattage-acronym root-small">W</span>
+                <span className={`root-small ${styles.acronym}`}>W</span>
               </div>
             </div>
-            <div className="calc-edit-hours-hr"></div>
+            <div className={styles.hr2}></div>
             {/* hours */}
-            <div className="calc-edit-hours-div">
-              <span className="root-small calc-edit-hours-unit">
+            <div className={styles["hours-div"]}>
+              <span className={`root-small ${styles.hours}`}>
                 Hours used per day
               </span>
-              <div className="dd calc-edit-hours-acronymn">
-                {" "}
-                <div className="calc-edit-hours-meter">
-                  <div className="card-hours-number">12</div>
-                  <div className="card-hours-arrows">
+              <div className={`dd ${styles.calculate}`}>
+                <div className={styles["h-meter"]}>
+                  <div className={styles["h-number"]}>{hours}</div>
+                  <div className={styles["h-arrows"]}>
                     <img
                       src={arrowUp}
                       alt="arrow-up"
-                      className="card-hours-arrow card-hours-arrow-up"
+                      className={styles["h-arrow-up"]}
+                      onClick={increaseHours}
                     />
                     <img
                       src={arrowDown}
                       alt="arrow-down"
-                      className="card-hours-arrow"
+                      className={styles["h-arrow-down"]}
+                      onClick={decreaseHours}
                     />
                   </div>
                 </div>
-                <span className="calc-hours-acronym root-small">Hrs</span>
+                <span className={`root-small ${styles["h-acronym"]}`}>Hrs</span>
               </div>
             </div>
           </div>
