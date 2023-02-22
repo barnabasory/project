@@ -29,7 +29,7 @@ function App() {
               path="/calculate-cards"
               element={<CalculatorCards />}
             />
-            <Route exact path="/calculate-units" element={<CalculateUnits />} />
+            <Route path="/calculate-units" element={<CalculateUnits />} />
           </Routes>
         </Router>
       )}

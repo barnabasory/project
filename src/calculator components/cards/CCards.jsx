@@ -2,14 +2,17 @@ import React, { useState, useEffect } from "react";
 import styles from "./CCards.module.scss";
 import { add, plus, minus } from "../../PAGES";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addCheckedItems } from "../../redux/checkedSlice";
 
 const CCards = ({ handleClick, message }) => {
   const [counts, setCounts] = useState(Array(message.length).fill(1));
   const [showSums, setShowSums] = useState(Array(message.length).fill(false));
   const [results, setResults] = useState(Array(message.length).fill(1));
+  const dispatch = useDispatch();
 
   const increaseCount = (index) => {
+    // increase Count
     setCounts(counts.map((count, i) => (i === index ? count + 1 : count)));
     setResults(
       results.map((result, i) => (i === index ? counts[i] + 1 : result))
@@ -17,10 +20,12 @@ const CCards = ({ handleClick, message }) => {
   };
 
   const decreaseCount = (index) => {
+    // decrease count
     setCounts(
       counts.map((count, i) => (i === index && count > 1 ? count - 1 : count))
     );
     setResults(
+      // set count result
       results.map((result, i) =>
         i === index && result > 1 ? counts[i] - 1 : result
       )
@@ -28,9 +33,16 @@ const CCards = ({ handleClick, message }) => {
   };
 
   const toggleShowSum = (index) => {
+    // checks for the checked state
     setShowSums(
       showSums.map((showSum, i) => (i === index ? !showSum : showSum))
     );
+  };
+
+  const dispatchItems = () => {
+    const checkedItems = "TESTING ACTIONS";
+    dispatch(addCheckedItems(checkedItems)); //nothing in the console
+    console.log(checkedItems);
   };
 
   // re-renders the complete array when message arrays changes
@@ -56,8 +68,7 @@ const CCards = ({ handleClick, message }) => {
                     </div>
                     <input
                       type="checkbox"
-                      id="calc-checkbox"
-                      className={styles.checkbox}
+                      id={`calc-checkbox-${index}`}
                       onChange={() => toggleShowSum(index)}
                       checked={showSums[index]}
                     />
@@ -101,7 +112,10 @@ const CCards = ({ handleClick, message }) => {
             </div>
           </div>
           <Link to="/calculate-units">
-            <button className={`root-text-bold ${styles["continue-button"]}`}>
+            <button
+              onClick={dispatchItems}
+              className={styles["continue-button"]}
+            >
               Continue
             </button>
           </Link>
