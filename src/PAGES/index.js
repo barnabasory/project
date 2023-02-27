@@ -22,6 +22,7 @@ export { default as CMain } from "../calculator components/main/CMain";
 export { default as CFilter } from "../calculator components/filter/CFilter";
 export { default as CCards } from "../calculator components/cards/CCards";
 export { default as EditUnits } from "../calculator components/editUnits/EditUnits";
+// export { default as CustomItem } from "../calculator components/cards/CustomItem";
 
 //stacks
 export { default as Complete } from "../home components/stacks/complete/Complete";

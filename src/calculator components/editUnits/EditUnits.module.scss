@@ -27,6 +27,9 @@
     }
 
     .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
       padding-top: 24px;
       .card {
         width: 300px;

@@ -13,7 +13,7 @@ const initialState = {
 const CalculatorCards = () => {
   const [show, setShow] = useState(false);
   const [value, setValue] = useState({ ...initialState });
-  const [message, setMessage] = useState(cards);
+  const [data, setData] = useState(cards);
   var [count, setCount] = useState(1);
 
   const showModal = () => {
@@ -24,9 +24,10 @@ const CalculatorCards = () => {
     e.preventDefault();
     setValue({ ...value, [e.target.name]: e.target.value });
   };
+
   const appendArray = () => {
-    setMessage([...message, value]);
-    localStorage.setItem("cards", JSON.stringify([...message, value]));
+    setData([...data, value]);
+    localStorage.setItem("cards", JSON.stringify([...data, value]));
     setValue({ ...initialState });
   };
 
@@ -42,9 +43,9 @@ const CalculatorCards = () => {
   };
 
   useEffect(() => {
-    const savedCards = JSON.parse(localStorage.getItem("cards"));
+    const savedCards = JSON.parse(sessionStorage.getItem("cards"));
     if (savedCards) {
-      setMessage(savedCards);
+      setData(savedCards);
     }
   }, []);
 
@@ -52,7 +53,7 @@ const CalculatorCards = () => {
     <div className={styles.calculator}>
       <CNavbar style={{ flex: 1 }} />
       <CFilter handleClick={showModal} style={{ flex: 1 }} />
-      <CCards handleClick={showModal} message={message} style={{ flex: 5 }} />
+      <CCards handleClick={showModal} message={data} style={{ flex: 5 }} />
       {show && (
         <div className={styles["custom-overlay-wrapper"]}>
           <div className={styles["custom-overlay"]}>

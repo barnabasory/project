@@ -2,20 +2,23 @@ import React, { useState, useEffect } from "react";
 import styles from "./CCards.module.scss";
 import { add, plus, minus } from "../../PAGES";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addCheckedItems } from "../../redux/checkedSlice";
+import { useContext } from "react";
+import { CheckedCards } from "../../Context";
 
 const CCards = ({ handleClick, message }) => {
   const [counts, setCounts] = useState(Array(message.length).fill(1));
-  const [showSums, setShowSums] = useState(Array(message.length).fill(false));
+  const [toggleCheckBox, setToggleCheckBox] = useState(
+    Array(message.length).fill(false)
+  );
   const [results, setResults] = useState(Array(message.length).fill(1));
-  const dispatch = useDispatch();
+
+  const { checkedArray, setCheckedArray } = useContext(CheckedCards);
 
   const increaseCount = (index) => {
     // increase Count
     setCounts(counts.map((count, i) => (i === index ? count + 1 : count)));
     setResults(
-      results.map((result, i) => (i === index ? counts[i] + 1 : result))
+      results.map((result, i) => (i === index ? counts[index] + 1 : result))
     );
   };
 
@@ -27,40 +30,37 @@ const CCards = ({ handleClick, message }) => {
     setResults(
       // set count result
       results.map((result, i) =>
-        i === index && result > 1 ? counts[i] - 1 : result
+        i === index && result > 1 ? counts[index] - 1 : result
       )
     );
   };
 
-  const toggleShowSum = (index) => {
-    // checks for the checked state
-    setShowSums(
-      showSums.map((showSum, i) => (i === index ? !showSum : showSum))
+  const handleCheckBox = (id) => {
+    setToggleCheckBox(
+      toggleCheckBox.map((checked, index) =>
+        index === id ? !checked : checked
+      )
     );
   };
 
-  const dispatchItems = () => {
-    const checkedItems = "TESTING ACTIONS";
-    dispatch(addCheckedItems(checkedItems)); //nothing in the console
-    console.log(checkedItems);
-  };
+  const CheckedItems = message.map((card) => card);
 
   // re-renders the complete array when message arrays changes
   useEffect(() => {
     setCounts(Array(message.length).fill(1));
     setResults(Array(message.length).fill(1));
-    setShowSums(Array(message.length).fill(false));
+    setToggleCheckBox(Array(message.length).fill(false));
   }, [message]);
 
   return (
     <div className={`sw ${styles["cards-page"]}`}>
       <div className={styles["cards-section"]}>
-        <div className={`cc ${styles["cards"]}`}>
+        <ul className={`cc ${styles["cards"]}`}>
           {message.length > 0 &&
             message.map((card, index) => {
               const { id, name, wattage, hours } = card;
               return (
-                <div className={styles.card} key={index}>
+                <li className={styles.card} key={index}>
                   <div className={styles["card-content"]}>
                     <div className={styles.description}>
                       <span>{name}</span>
@@ -68,13 +68,12 @@ const CCards = ({ handleClick, message }) => {
                     </div>
                     <input
                       type="checkbox"
-                      id={`calc-checkbox-${index}`}
-                      onChange={() => toggleShowSum(index)}
-                      checked={showSums[index]}
+                      onChange={() => handleCheckBox(index)}
+                      checked={toggleCheckBox[index]}
                     />
                   </div>
                   <div className={styles.total}>
-                    {showSums[index] && (
+                    {toggleCheckBox[index] && (
                       <div className={`dd ${styles.sum}`} id="sum">
                         {results[index]}
                       </div>
@@ -84,23 +83,23 @@ const CCards = ({ handleClick, message }) => {
                         src={minus}
                         alt="minus"
                         className={styles.minus}
-                        onClick={() => decreaseCount(index)}
+                        onClick={() => decreaseCount(id)}
                       />
                       <div className={styles["border-left"]}></div>
-                      <div className={styles.count}>{counts[index]}</div>
+                      <div className={styles.count}>{counts[id]}</div>
                       <img
                         src={plus}
                         alt="plus"
                         className={styles.plus}
-                        onClick={() => increaseCount(index)}
+                        onClick={() => increaseCount(id)}
                       />
                       <div className={styles["border-right"]}></div>
                     </div>
                   </div>
-                </div>
+                </li>
               );
             })}
-        </div>
+        </ul>
         <div className={styles.footer}>
           <div className={`cc ${styles["footer-content"]}`}>
             <span className={`tiny-text ${styles["footer-instruction"]}`}>
@@ -111,13 +110,17 @@ const CCards = ({ handleClick, message }) => {
               <span className="root-small">Add Custom Item</span>
             </div>
           </div>
-          <Link to="/calculate-units">
-            <button
-              onClick={dispatchItems}
-              className={styles["continue-button"]}
-            >
-              Continue
-            </button>
+          <Link
+            to="/calculate-units"
+            onClick={() => {
+              const checkedItems = message.filter(
+                (card, index) => toggleCheckBox[index]
+              );
+
+              setCheckedArray([...checkedArray, ...checkedItems]);
+            }}
+          >
+            <button className={styles["continue-button"]}>Continue</button>
           </Link>
         </div>
       </div>

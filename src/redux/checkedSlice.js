@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import data from "../calculator components/cards/data";
 
 const initialState = {
   checkedIds: [],
@@ -9,7 +10,10 @@ const checkedSlice = createSlice({
   initialState,
   reducers: {
     addCheckedItems: (state, action) => {
-      state.checkedIds.push(action.payload);
+      const checkedBoxes = data.map(
+        (datum, index) => datum.index === action.payload.id
+      );
+      state.checkedIds.push(checkedBoxes);
 
       console.log(action.payload); // nothing in the console
     },
