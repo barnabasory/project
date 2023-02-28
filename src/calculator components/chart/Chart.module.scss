@@ -1,0 +1,58 @@
+.wrapper {
+  background-color: var(--carrara);
+  padding-top: 90px;
+  padding-bottom: 161px;
+
+  .content {
+    .chart {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 624px;
+      height: 529px;
+      background-color: white;
+
+      .title {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: center;
+      }
+
+      h3 {
+        font-weight: 600;
+        padding-top: 6px;
+      }
+
+      .toggle {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        span {
+        }
+        .toggle-button {
+          display: flex;
+          align-items: center;
+          width: 65px;
+          height: 32px;
+          border: 1.5px solid var(--cod60);
+          border-radius: 21px;
+          background-color: var(--desert-storm);
+          position: relative;
+
+          .toggle-ball {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--cod60);
+            left: 4px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -154,10 +154,13 @@ button:hover{
 
 .fw{
   width: 100%;
+  margin: auto auto;
+ 
 }
 
 .sw{
   max-width: 1280px;
+  display: flex;
   margin: auto auto;
   padding-left: 20px;
   padding-right: 20px;

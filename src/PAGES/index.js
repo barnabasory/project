@@ -4,6 +4,8 @@
 export { default as CalculateUnits } from "./calculator/CalculateUnits";
 export { default as CalculatorCards } from "./calculator/CalculatorCards";
 export { default as CalculatorStart } from "./calculator/CalculatorStart";
+export { default as Processing } from "./calculator/Processing";
+export { default as ResultPage } from "./calculator/ResultPage";
 
 //home components
 export { default as TopSnippet } from "../home components/topSnippet/TopSnippet";
@@ -22,7 +24,11 @@ export { default as CMain } from "../calculator components/main/CMain";
 export { default as CFilter } from "../calculator components/filter/CFilter";
 export { default as CCards } from "../calculator components/cards/CCards";
 export { default as EditUnits } from "../calculator components/editUnits/EditUnits";
-// export { default as CustomItem } from "../calculator components/cards/CustomItem";
+export { default as ProcessingResults } from "../calculator components/processing/ProcessingResults";
+export { default as ResultNavbar } from "../calculator components/resultNavbar/ResultNavbar";
+export { default as ResultFigure } from "../calculator components/resultFigure/ResultFigure";
+export { default as Browse } from "../calculator components/browseProducts/Browse";
+export { default as Chart } from "../calculator components/chart/Chart";
 
 //stacks
 export { default as Complete } from "../home components/stacks/complete/Complete";

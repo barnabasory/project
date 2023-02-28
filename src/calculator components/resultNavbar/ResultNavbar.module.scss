@@ -5,18 +5,25 @@
   z-index: 1000;
 
   .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     width: 100%;
+    align-items: center;
 
+    .logo {
+      grid-column: span 1;
+      justify-self: start;
+    }
     .navbar-title {
       font-weight: 600;
-      margin-left: -80px;
+      grid-column: span 1;
+      justify-self: center;
     }
   }
   .close {
     gap: 4px;
+    grid-column: span 1;
+    justify-self: flex-end;
   }
 }
 

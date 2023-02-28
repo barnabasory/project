@@ -4,6 +4,7 @@ import { arrowUp, arrowDown } from "../../PAGES";
 import data from "../cards/data";
 import { useContext } from "react";
 import { CheckedCards } from "../../Context";
+import { Link } from "react-router-dom";
 
 const EditUnits = () => {
   const [wattage, setWattage] = useState(20);
@@ -45,9 +46,11 @@ const EditUnits = () => {
           <span>Edit the wattage and hourly usage for each item</span>
           <div className={styles.back}>
             <span>Back</span>
-            <button className={`root-small-bold ${styles.button}`}>
-              See Results
-            </button>
+            <Link to="/processing">
+              <button className={`root-small-bold ${styles.button}`}>
+                See Results
+              </button>
+            </Link>
           </div>
         </div>
         <div className={styles.main}>

@@ -88,7 +88,14 @@
             }
 
             .number {
-              padding: 6px 28px 6px 28px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: none;
+              outline: none;
+              width: 65px;
+              font-size: 16px;
+              color: rgba(26, 26, 26, 0.8);
             }
           }
 

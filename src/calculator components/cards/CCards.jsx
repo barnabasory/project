@@ -6,7 +6,8 @@ import { useContext } from "react";
 import { CheckedCards } from "../../Context";
 
 const CCards = ({ handleClick, message }) => {
-  const [counts, setCounts] = useState(Array(message.length).fill(1));
+  const { counts, setCounts } = useContext(CheckedCards);
+
   const [toggleCheckBox, setToggleCheckBox] = useState(
     Array(message.length).fill(false)
   );
@@ -18,7 +19,7 @@ const CCards = ({ handleClick, message }) => {
     // increase Count
     setCounts(counts.map((count, i) => (i === index ? count + 1 : count)));
     setResults(
-      results.map((result, i) => (i === index ? counts[index] + 1 : result))
+      results.map((result, i) => (i === index ? counts[i] + 1 : result))
     );
   };
 
@@ -30,20 +31,16 @@ const CCards = ({ handleClick, message }) => {
     setResults(
       // set count result
       results.map((result, i) =>
-        i === index && result > 1 ? counts[index] - 1 : result
+        i === index && result > 1 ? counts[i] - 1 : result
       )
     );
   };
 
-  const handleCheckBox = (id) => {
+  const handleCheckBox = (index) => {
     setToggleCheckBox(
-      toggleCheckBox.map((checked, index) =>
-        index === id ? !checked : checked
-      )
+      toggleCheckBox.map((checked, i) => (i === index ? !checked : checked))
     );
   };
-
-  const CheckedItems = message.map((card) => card);
 
   // re-renders the complete array when message arrays changes
   useEffect(() => {
@@ -58,7 +55,7 @@ const CCards = ({ handleClick, message }) => {
         <ul className={`cc ${styles["cards"]}`}>
           {message.length > 0 &&
             message.map((card, index) => {
-              const { id, name, wattage, hours } = card;
+              const { id, name, wattage, count } = card;
               return (
                 <li className={styles.card} key={index}>
                   <div className={styles["card-content"]}>
@@ -75,7 +72,7 @@ const CCards = ({ handleClick, message }) => {
                   <div className={styles.total}>
                     {toggleCheckBox[index] && (
                       <div className={`dd ${styles.sum}`} id="sum">
-                        {results[index]}
+                        {counts[id]}
                       </div>
                     )}
                     <div className={styles.calculate}>
@@ -114,7 +111,7 @@ const CCards = ({ handleClick, message }) => {
             to="/calculate-units"
             onClick={() => {
               const checkedItems = message.filter(
-                (card, index) => toggleCheckBox[index]
+                (card, id) => toggleCheckBox[id]
               );
 
               setCheckedArray([...checkedArray, ...checkedItems]);

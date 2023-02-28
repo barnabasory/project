@@ -1,5 +1,11 @@
 import Home from "./PAGES/home/Home";
-import { CalculatorCards, CalculateUnits, CalculatorStart } from "./PAGES";
+import {
+  CalculatorCards,
+  CalculateUnits,
+  CalculatorStart,
+  Processing,
+  ResultPage,
+} from "./PAGES";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
@@ -30,6 +36,8 @@ function App() {
               element={<CalculatorCards />}
             />
             <Route path="/calculate-units" element={<CalculateUnits />} />
+            <Route path="/processing" element={<Processing />} />
+            <Route path="/result" element={<ResultPage />} />
           </Routes>
         </Router>
       )}

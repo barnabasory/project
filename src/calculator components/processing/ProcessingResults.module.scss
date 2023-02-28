@@ -1,0 +1,59 @@
+.wrapper {
+  background-color: var(--chateau-green);
+  height: 100em;
+  padding-top: 136px;
+
+  .content {
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+    gap: 25px;
+
+    .content-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      color: white;
+      margin-left: -218px;
+
+      h4 {
+        font-weight: 600;
+      }
+
+      span {
+        color: rgba($color: white, $alpha: 0.6);
+      }
+    }
+  }
+
+  .processor {
+    width: 571px;
+    height: 93px;
+    border: 1.5px solid var(--everglade);
+    padding: 10.5px 15px 10.5px 15px;
+    position: relative;
+
+    .bars {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      width: 100%;
+      .bar {
+        width: 35px;
+        height: 72px;
+        background-color: white;
+      }
+    }
+
+    .outer-bar {
+      width: 20px;
+      height: 25.5px;
+      background-color: var(--everglade);
+      position: absolute;
+      right: -20px;
+      top: 33.1px;
+    }
+  }
+}
