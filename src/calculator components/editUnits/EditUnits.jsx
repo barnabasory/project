@@ -53,8 +53,8 @@ const EditUnits = () => {
             </Link>
           </div>
         </div>
+        <div className={styles["border-top"]}></div>
         <div className={styles.main}>
-          <div className={styles["border-top"]}></div>
           <div className={styles.cards}>
             {checkedArray &&
               checkedArray.map((checkedItem, index) => {

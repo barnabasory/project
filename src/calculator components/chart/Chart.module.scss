@@ -4,14 +4,21 @@
   padding-bottom: 161px;
 
   .content {
+    display: flex;
+    align-items: center;
+    gap: 59px;
     .chart {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       width: 624px;
-      height: 529px;
       background-color: white;
+      padding-top: 36px;
+      padding-bottom: 42px;
+      padding-left: 147px;
+      padding-right: 147px;
+      border-radius: 4px;
 
       .title {
         font-size: 14px;
@@ -19,6 +26,7 @@
         line-height: 18px;
         letter-spacing: 0em;
         text-align: center;
+        white-space: nowrap;
       }
 
       h3 {
@@ -31,8 +39,6 @@
         align-items: center;
         gap: 16px;
 
-        span {
-        }
         .toggle-button {
           display: flex;
           align-items: center;
@@ -42,6 +48,8 @@
           border-radius: 21px;
           background-color: var(--desert-storm);
           position: relative;
+          margin-top: 22px;
+          margin-bottom: 29px;
 
           .toggle-ball {
             position: absolute;
@@ -51,6 +59,109 @@
             background-color: var(--cod60);
             left: 4px;
           }
+        }
+      }
+
+      .ball {
+        width: 328px;
+        height: 328px;
+        background-color: red;
+        border-radius: 50%;
+      }
+    }
+
+    .form {
+      width: 460px;
+      padding-top: 19px;
+      .request {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .request-title {
+          font-weight: 600;
+        }
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 19px;
+        gap: 12px;
+        .input {
+          width: 460px;
+          height: 44px;
+          background-color: white;
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-top: 12px;
+          padding-bottom: 12px;
+          border: none;
+          outline: none;
+          border-radius: 4px;
+        }
+
+        .tel {
+          padding-left: 85px;
+        }
+
+        .button {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          width: 460px;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+          margin-top: 16px;
+        }
+      }
+
+      .snippet {
+        padding-top: 16px;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+        .snippet-a {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          input[type="checkbox"] {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-radius: 2px;
+            cursor: pointer;
+            pointer-events: auto;
+            appearance: none;
+            border: 1px solid var(--cod60);
+            width: 18px;
+            height: 18px;
+            position: relative;
+            border-radius: 2px;
+          }
+          input[type="checkbox"]:checked::before {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            content: "\2713";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--chateau-green);
+            font-size: 12px;
+            border-radius: 2px;
+            line-height: 18px;
+            color: #fff;
+          }
+          input[type="checkbox"]:checked {
+            border: none;
+          }
+        }
+
+        .snippet-b {
+          color: rgba(36, 36, 36, 0.56);
         }
       }
     }

@@ -1,4 +1,8 @@
 .edit-page {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
   padding-top: 70px;
   .top-bar {
     display: flex;
@@ -6,6 +10,7 @@
     align-items: flex-start;
     padding-top: 16px;
     gap: 21px;
+    width: 100%;
     .back {
       display: flex;
       align-items: center;
@@ -18,14 +23,14 @@
       }
     }
   }
+  .border-top {
+    width: 100%;
+    height: 1px;
+    background-color: var(--cod10);
+    margin-top: 15px;
+    margin-bottom: 24px;
+  }
   .main {
-    padding-top: 15px;
-    .border-top {
-      width: 100%;
-      height: 1px;
-      background-color: var(--cod10);
-    }
-
     .cards {
       display: flex;
       gap: 20px;

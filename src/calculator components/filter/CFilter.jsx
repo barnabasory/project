@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./CFilter.module.scss";
 import { search, add, arrowDown } from "../../PAGES";
 import { Link } from "react-router-dom";
 
 const CFilter = ({ handleClick }) => {
+  const [select, setSelect] = useState(false);
+
+  const handleSelect = () => {
+    setSelect((prev) => !prev);
+  };
   return (
     <>
       <div className={`sw ${styles["filter-section"]}`}>
@@ -15,31 +20,59 @@ const CFilter = ({ handleClick }) => {
             </span>
             <div className={`dd ${styles["filter-bars"]}`}>
               <form className={styles.form}>
-                <select
-                  name=""
-                  id=""
-                  className={`root-small ${styles["select"]}`}
-                  style={{
-                    height: "44px",
-                    width: "196px",
-                    position: "relative",
-                  }}
-                >
-                  <option value="KW: High to Low" className="root-small">
+                <div className={styles.select}>
+                  {/* <select
+                    name=""
+                    id=""
+                    className={`root-small ${styles["select"]}`}
+                    style={{
+                      height: "44px",
+                      width: "196px",
+                    }}
+                  >
+                    <option
+                      value="KW: High to Low"
+                      className={`root-small ${styles.option1}`}
+                      disabled
+                    >
+                      KW: High to Low
+                    </option>
+                    <option value="">Kilowatts</option>
+                    <option value="">Kilowatts</option>
+                    <option value="">Kilowatts</option>
+                    <option value="">Kilowatts</option>
+                    <option value="">Kilowatts</option>
+                    <img
+                      src={arrowDown}
+                      alt="arrowDown"
+                      className={styles.arrow}
+                    />
+                  </select> */}
+
+                  <div
+                    className={`root-small ${styles.select_input}`}
+                    onClick={handleSelect}
+                  >
                     KW: High to Low
-                  </option>
-                  <option value="">Kilowatts</option>
-                  <option value="">Kilowatts</option>
-                  <option value="">Kilowatts</option>
-                  <option value="">Kilowatts</option>
-                  <option value="">Kilowatts</option>
-                </select>
-                <img
-                  src={arrowDown}
-                  alt="arrowDown"
-                  className={styles["arrow-down"]}
-                />
+                    <img
+                      src={arrowDown}
+                      alt="arrowDown"
+                      className={styles.arrow}
+                    />
+                  </div>
+
+                  {select && (
+                    <div className={select ? styles.options : styles.dn}>
+                      <span className={styles.option}>A-Z</span>
+                      <span className={styles.option}>Z-A</span>
+                      <span className={styles.option}>Kilowatt</span>
+                      <span className={styles.option}>Ascending</span>
+                      <span className={styles.option}>Descending</span>
+                    </div>
+                  )}
+                </div>
               </form>
+
               <div className={`dd ${styles["search-box"]}`}>
                 <input
                   type="search"
@@ -66,8 +99,7 @@ const CFilter = ({ handleClick }) => {
             </Link>
           </div>
         </div>
-
-        <div className={styles["filter-border-bottom"]}></div>
+        <div className={styles.hr}></div>
       </div>
     </>
   );
