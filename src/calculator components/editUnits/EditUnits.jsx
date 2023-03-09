@@ -5,15 +5,19 @@ import data from "../cards/data";
 import { useContext } from "react";
 import { CheckedCards } from "../../Context";
 import { Link } from "react-router-dom";
+import Result from "./Result";
+import { useLocation } from "react-router-dom";
 
 const EditUnits = () => {
   const [wattage, setWattage] = useState(20);
   const [hours, setHours] = useState(1);
 
   const { checkedArray, setCheckedArray } = useContext(CheckedCards);
+  const { results, setResults } = useContext(CheckedCards);
+
+  console.log(results);
 
   //the empty array in the console
-
   const increaseWattage = () => {
     setWattage(wattage + 20);
   };
@@ -58,10 +62,13 @@ const EditUnits = () => {
           <div className={styles.cards}>
             {checkedArray &&
               checkedArray.map((checkedItem, index) => {
-                const { name, wattage, hours } = checkedItem;
+                const { id, name, wattage, hours, counts } = checkedItem;
                 return (
                   <div className={styles.card} key={index}>
-                    <span>{name}</span>
+                    <div className={styles.custom_name_div}>
+                      <span>{name}</span>
+                      <Result editSum={results[id]} />
+                    </div>
                     {/* wattage */}
                     <div className={styles.hr}></div>
                     <div className={styles["wattage-div"]}>

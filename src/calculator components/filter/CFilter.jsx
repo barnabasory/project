@@ -1,14 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./CFilter.module.scss";
 import { search, add, arrowDown } from "../../PAGES";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CheckedCards } from "../../Context";
+import data from "../cards/data";
 
-const CFilter = ({ handleClick }) => {
+const CFilter = ({ handleClick, setSortOrder, message }) => {
   const [select, setSelect] = useState(false);
+  const { checkedArray, setCheckedArray } = useContext(CheckedCards);
+  const [toggleCheckBox, setToggleCheckBox] = useState(
+    Array(data.length).fill(false)
+  );
 
   const handleSelect = () => {
     setSelect((prev) => !prev);
   };
+
+  const handleCheckBox = (index) => {
+    setToggleCheckBox(
+      toggleCheckBox.map((checked, i) => (i === index ? !checked : checked))
+    );
+  };
+
+  useEffect(() => {
+    console.log("checkedArray:", checkedArray);
+  }, [checkedArray]);
+
   return (
     <>
       <div className={`sw ${styles["filter-section"]}`}>
@@ -21,34 +39,6 @@ const CFilter = ({ handleClick }) => {
             <div className={`dd ${styles["filter-bars"]}`}>
               <form className={styles.form}>
                 <div className={styles.select}>
-                  {/* <select
-                    name=""
-                    id=""
-                    className={`root-small ${styles["select"]}`}
-                    style={{
-                      height: "44px",
-                      width: "196px",
-                    }}
-                  >
-                    <option
-                      value="KW: High to Low"
-                      className={`root-small ${styles.option1}`}
-                      disabled
-                    >
-                      KW: High to Low
-                    </option>
-                    <option value="">Kilowatts</option>
-                    <option value="">Kilowatts</option>
-                    <option value="">Kilowatts</option>
-                    <option value="">Kilowatts</option>
-                    <option value="">Kilowatts</option>
-                    <img
-                      src={arrowDown}
-                      alt="arrowDown"
-                      className={styles.arrow}
-                    />
-                  </select> */}
-
                   <div
                     className={`root-small ${styles.select_input}`}
                     onClick={handleSelect}
@@ -60,14 +50,29 @@ const CFilter = ({ handleClick }) => {
                       className={styles.arrow}
                     />
                   </div>
+                  {select && (
+                    <div
+                      className={styles.select_overlay}
+                      onClick={() => setSelect(false)}
+                    ></div>
+                  )}
 
                   {select && (
                     <div className={select ? styles.options : styles.dn}>
-                      <span className={styles.option}>A-Z</span>
-                      <span className={styles.option}>Z-A</span>
+                      <div
+                        className={styles.option}
+                        onClick={() => setSortOrder("ascending")}
+                      >
+                        Ascending
+                      </div>
+                      <div
+                        className={styles.option}
+                        onClick={() => setSortOrder("descending")}
+                      >
+                        Descending
+                      </div>
                       <span className={styles.option}>Kilowatt</span>
                       <span className={styles.option}>Ascending</span>
-                      <span className={styles.option}>Descending</span>
                     </div>
                   )}
                 </div>
@@ -92,7 +97,16 @@ const CFilter = ({ handleClick }) => {
               <img src={add} alt="add-icon" className={styles["add-icon"]} />
               <span className={styles[""]}>Add Custom Item</span>
             </div>
-            <Link to="/calculate-units">
+            <Link
+              to={"/calculate-units"}
+              onClick={() => {
+                const checkedItems = message.filter(
+                  (card, id) => toggleCheckBox[id]
+                );
+                setCheckedArray([...checkedArray, ...checkedItems]);
+                console.log("checkedArray:", checkedArray);
+              }}
+            >
               <button className={`root-text-bold ${styles["button"]}`}>
                 Continue
               </button>

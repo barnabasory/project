@@ -3,21 +3,24 @@ import { CNavbar, CFilter, CCards } from "../index";
 import styles from "./calculator.module.scss";
 import { times, minus, plus } from "../../PAGES";
 import cards from "../../calculator components/cards/data";
-
 import { useContext } from "react";
 import { CheckedCards } from "../../Context";
 
 const initialState = {
-  name: " ",
-  wattage: " ",
-  hours: " ",
+  name: "",
+  wattage: "",
+  hours: "",
 };
 
 const CalculatorCards = () => {
   const [show, setShow] = useState(false);
-  const [value, setValue] = useState({ ...initialState });
+  const [value, setValue] = useState({
+    name: "",
+    wattage: "",
+    hours: "",
+  });
   const [data, setData] = useState(cards);
-
+  const [sortOrder, setSortOrder] = useState("ascending");
   const { counts, setCounts } = useContext(CheckedCards);
 
   const showModal = () => {
@@ -29,20 +32,43 @@ const CalculatorCards = () => {
     setValue({ ...value, [e.target.name]: e.target.value });
   };
 
-  const appendArray = () => {
-    setData([...data, value]);
-    localStorage.setItem("cards", JSON.stringify([...data, value]));
-    setValue({ ...initialState });
-  };
-
   const increaseCount = (index) => {
+    // increase Count
     setCounts(counts.map((count, i) => (i === index ? count + 1 : count)));
   };
 
   const decreaseCount = (index) => {
+    // decrease count
     setCounts(
       counts.map((count, i) => (i === index && count > 1 ? count - 1 : count))
     );
+  };
+
+  const sortFunction = (a, b) => {
+    if (sortOrder === "ascending") {
+      return a.name.localeCompare(b.name);
+    } else {
+      return b.name.localeCompare(a.name);
+    }
+  };
+
+  const sortedCards = data.sort(sortFunction);
+
+  // const appendArray = (id) => {
+  //   const newData = [...data, { ...value }];
+  //   console.log(newData);
+  //   setData(newData);
+  //   localStorage.setItem("cards", JSON.stringify(newData));
+  //   setValue({ ...initialState });
+  //   onAddCustomItem(id);
+  // };
+
+  const addCustom = (id) => {
+    const customItem = { ...value, id };
+    setData([...data, customItem]);
+    localStorage.setItem("cards", JSON.stringify([...data, customItem]));
+    setValue(initialState);
+    setCounts([...counts, 1]);
   };
 
   useEffect(() => {
@@ -55,12 +81,28 @@ const CalculatorCards = () => {
   return (
     <div className={styles.calculator}>
       <CNavbar />
-      <CFilter handleClick={showModal} />
-      <CCards handleClick={showModal} message={data} />
+      <CFilter
+        handleClick={showModal}
+        sortFunction={sortFunction}
+        sortedCards={sortedCards}
+        sortOrder={sortOrder}
+        setSortOrder={setSortOrder}
+        message={data}
+      />
+      <CCards
+        handleClick={showModal}
+        message={data}
+        sortFunction={sortFunction}
+        sortedCards={sortedCards}
+        sortOrder={sortOrder}
+        setSortOrder={setSortOrder}
+        onAddCustomItem={(id) => increaseCount(id)}
+      />
+
       {show && (
         <div className={styles["custom-overlay-wrapper"]}>
-          {data.map((card, index) => {
-            const { id, name, wattage } = card;
+          {sortedCards.map((card, index) => {
+            const { id } = card;
             return (
               <div className={styles["custom-overlay"]} key={id}>
                 <div className={styles["add-custom-item"]}>
@@ -68,7 +110,7 @@ const CalculatorCards = () => {
                   <img src={times} alt="close-modal" onClick={showModal} />
                 </div>
                 <div className={styles.hr}></div>
-                <form className={styles.form}>
+                <form className={styles.form} key={id}>
                   <label
                     htmlFor="name"
                     className={`root-small ${styles.label}`}
@@ -122,23 +164,34 @@ const CalculatorCards = () => {
                         src={minus}
                         alt="minus"
                         className={styles.minus}
-                        onClick={() => decreaseCount(index)}
+                        onClick={() => decreaseCount(id)}
                       />
                       <div className={styles["border-right"]}></div>
-                      <div className={styles.number}>{counts[index]}</div>
+
+                      {/* <input
+                    type="number"
+                    placeholder="12"
+                    name="counts"
+                    value={value.counts}
+                    className={`root-small ${styles.input}`}
+                    onChange={handleChange}
+                    required
+                  /> */}
+
+                      <div className={styles.number}>{counts[id]}</div>
 
                       <div className={styles["border-right"]}></div>
                       <img
                         src={plus}
                         alt="add"
                         className={styles.plus}
-                        onClick={() => increaseCount(index)}
+                        onClick={() => increaseCount(id)}
                       />
                     </div>
                     <button
                       className={`root-small-bold ${styles.button}`}
                       onClick={() => {
-                        appendArray();
+                        addCustom(id);
                         setShow(false);
                       }}
                     >

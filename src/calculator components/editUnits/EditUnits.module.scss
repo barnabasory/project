@@ -43,6 +43,23 @@
         border-radius: 4px;
         padding: 9px 22px 9px 22px;
 
+        .custom_name_div {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          .sum {
+            width: 28px;
+            height: 28px;
+            background: rgba(215, 142, 0, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-drop);
+          }
+        }
+
         .hr {
           height: 1px;
           margin: 7px -22px 12px -22px;
