@@ -3,7 +3,7 @@ import styles from "./ProcessingResults.module.scss";
 import { Link, useNavigate } from "react-router-dom";
 
 const ProcessingResults = () => {
-  const [loadingTime, setLoadingTime] = useState(null);
+  const [loadingTime, setLoadingTime] = useState(2);
   const [animationFinished, setAnimationFinished] = useState(false);
   const navigate = useNavigate();
 
