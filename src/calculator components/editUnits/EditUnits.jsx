@@ -1,21 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./EditUnits.module.scss";
-import { arrowUp, arrowDown } from "../../PAGES";
+import { arrowUp, arrowDown, ProcessingResults } from "../../PAGES";
 import data from "../cards/data";
 import { useContext } from "react";
 import { CheckedCards } from "../../Context";
 import { Link } from "react-router-dom";
 import Result from "./Result";
-import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const EditUnits = () => {
+  const navigate = useNavigate();
   const [wattage, setWattage] = useState(20);
   const [hours, setHours] = useState(1);
+  const [loading, setLoading] = useState(false);
 
-  const { checkedArray, setCheckedArray } = useContext(CheckedCards);
-  const { results, setResults } = useContext(CheckedCards);
+  const fetchResult = () => {
+    setLoading(true);
+    navigate("/result");
+    setLoading(false);
+  };
 
-  console.log(results);
+  const {
+    checkedArray,
+    setCheckedArray,
+    results,
+    setResults,
+    pageData,
+    setPageData,
+  } = useContext(CheckedCards);
+
+  useEffect(() => {
+    const fetchResultPage = () => {
+      axios
+        .get("/result")
+        .then((response) => {
+          setPageData(response.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    };
+
+    fetchResultPage();
+  }, []);
 
   //the empty array in the console
   const increaseWattage = () => {
@@ -45,17 +73,19 @@ const EditUnits = () => {
 
   return (
     <>
-      {" "}
+      {loading && <ProcessingResults />}
       <div className={`sw ${styles["edit-page"]}`}>
         <div className={`${styles["top-bar"]}`}>
           <span>Edit the wattage and hourly usage for each item</span>
           <div className={styles.back}>
             <span>Back</span>
-            <Link to="/processing">
-              <button className={`root-small-bold ${styles.button}`}>
-                See Results
-              </button>
-            </Link>
+
+            <button
+              className={`root-small-bold ${styles.button}`}
+              onClick={fetchResult}
+            >
+              See Results
+            </button>
           </div>
         </div>
         <div className={styles["border-top"]}></div>

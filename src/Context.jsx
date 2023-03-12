@@ -4,6 +4,7 @@ import data from "./calculator components/cards/data";
 
 export const CheckedCards = createContext();
 const Context = ({ children }) => {
+  const [pageData, setPageData] = useState(null);
   const [checkedArray, setCheckedArray] = useState([]);
   const [counts, setCounts] = useState(Array(data.length).fill(1));
   const [toggleCheckBox, setToggleCheckBox] = useState(
@@ -23,6 +24,8 @@ const Context = ({ children }) => {
           setToggleCheckBox,
           results,
           setResults,
+          pageData,
+          setPageData,
         }}
       >
         {children}
