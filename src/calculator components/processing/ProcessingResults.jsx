@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./ProcessingResults.module.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ProcessingResults = () => {
+  const navigate = useNavigate();
+  const [processing, setProcessing] = useState(false);
+
+  setTimeout(() => {
+    navigate("/result");
+  }, 5000000);
+
   return (
     <div className={`fw ${styles.wrapper}`}>
       <div className={`sw ${styles.content}`}>
@@ -25,6 +32,7 @@ const ProcessingResults = () => {
             <div className={styles.bar}></div>
             <div className={styles.bar}></div>
           </div>
+
           <div className={styles["outer-bar"]}></div>
         </div>
       </div>

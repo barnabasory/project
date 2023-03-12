@@ -53,93 +53,64 @@ $breakpoint-mobile: 480px;
 
 $breakpoint-tablet: 481px;
 @media (min-width: $breakpoint-tablet) {
-  .filter-section {
-    .filter-div {
+  .navbar-wrapper {
+    height: 70px;
+    background-color: #ffffff;
+    position: fixed;
+    z-index: 1000;
+
+    .navbar {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 20px;
-      padding-top: 70px;
-      justify-content: space-between;
       width: 100%;
+      align-items: center;
+      justify-content: space-between;
 
-      .filter {
-        .filter-text {
-        }
-
-        .filter-bars {
-          .form {
-            .select {
-            }
-          }
-
-          .search-box {
-            .search {
-            }
-            .search-icon {
-            }
-          }
-        }
+      .logo {
+        justify-self: start;
       }
-
-      .continue-custom-div {
-        .add-custom-div {
-          .add-icon {
-          }
-        }
-
-        .button {
-        }
+      .navbar-title {
+        display: none;
       }
     }
+    .close {
+      gap: 4px;
 
-    .filter-border-bottom {
+      justify-self: flex-end;
     }
   }
 }
 
 $breakpoint-laptops-desktops: 768px;
 @media (min-width: $breakpoint-laptops-desktops) {
-  .filter-section {
-    .filter-div {
-      display: flex;
-      align-items: end;
-      flex-direction: row;
-      padding-top: 70px;
-      justify-content: space-between;
+  .navbar-wrapper {
+    height: 70px;
+    background-color: #ffffff;
+    position: fixed;
+    z-index: 1000;
+
+    .navbar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       width: 100%;
+      align-items: center;
 
-      .filter {
-        .filter-text {
-        }
-
-        .filter-bars {
-          .form {
-            .select {
-            }
-          }
-
-          .search-box {
-            .search {
-            }
-            .search-icon {
-            }
-          }
-        }
+      .logo {
+        grid-column: span 1;
+        justify-self: start;
       }
-
-      .continue-custom-div {
-        .add-custom-div {
-          .add-icon {
-          }
-        }
-
-        .button {
-        }
+      .navbar-title {
+        display: block;
+        text-align: center;
+        white-space: nowrap;
+        font-weight: 600;
+        grid-column: span 1;
+        justify-self: center;
       }
     }
-
-    .filter-border-bottom {
+    .close {
+      gap: 4px;
+      grid-column: span 1;
+      justify-self: flex-end;
     }
   }
 }

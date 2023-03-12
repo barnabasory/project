@@ -42,6 +42,7 @@ const EditUnits = () => {
     }
     setHours(hours - 1);
   };
+
   return (
     <>
       {" "}
@@ -125,7 +126,7 @@ const EditUnits = () => {
                           </div>
                         </div>
                         <span className={`root-small ${styles["h-acronym"]}`}>
-                          Hrs
+                          H
                         </span>
                       </div>
                     </div>

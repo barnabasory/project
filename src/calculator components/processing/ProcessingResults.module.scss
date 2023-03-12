@@ -40,10 +40,21 @@
       justify-content: center;
       gap: 11px;
       width: 100%;
+
       .bar {
         width: 35px;
         height: 72px;
-        background-color: white;
+        background-color: rgba(217, 217, 217, 0.5);
+        animation: color 1s linear infinite alternate;
+        animation-duration: 1s;
+      }
+
+      @keyframes color {
+        0% {
+        }
+        0% {
+          background-color: white;
+        }
       }
     }
 

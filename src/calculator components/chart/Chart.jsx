@@ -35,7 +35,7 @@ const Chart = () => {
             <h4 className={styles["request-title"]}>
               Send my full energy need report
             </h4>
-            <p className={styles["root-small"]}>
+            <p className={` request_text ${styles["root-small"]}`}>
               Dive deeper into your results, by requesting your customized
               energy need report, see tailored suggestions about the best
               products for you, Learn about how you can save energy in your
