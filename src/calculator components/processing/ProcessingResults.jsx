@@ -1,14 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./ProcessingResults.module.scss";
 import { Link, useNavigate } from "react-router-dom";
 
 const ProcessingResults = () => {
+  const [loadingTime, setLoadingTime] = useState(null);
+  const [animationFinished, setAnimationFinished] = useState(false);
   const navigate = useNavigate();
-  const [processing, setProcessing] = useState(false);
 
-  setTimeout(() => {
-    navigate("/result");
-  }, 5000000);
+  useEffect(() => {
+    // Set a timeout to change the animationFinished state after the loading time has passed
+    const timeout = setTimeout(() => {
+      setAnimationFinished(true);
+    }, loadingTime * 1000);
+
+    // Return a function to clear the timeout if the component unmounts
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [loadingTime]);
+
+  useEffect(() => {
+    // Navigate to Component B after the animation finishes
+    if (animationFinished) {
+      navigate("/result");
+    }
+  }, [animationFinished, navigate]);
 
   return (
     <div className={`fw ${styles.wrapper}`}>
@@ -19,18 +35,54 @@ const ProcessingResults = () => {
         </div>
         <div className={styles.processor}>
           <div className={styles.bars}>
-            <div className={styles.bar}></div>
-            <div className={styles.bar}></div>
-            <div className={styles.bar}></div>
-            <div className={styles.bar}></div>
-            <div className={styles.bar}></div>
-            <div className={styles.bar}></div>
-            <div className={styles.bar}></div>
-            <div className={styles.bar}></div>
-            <div className={styles.bar}></div>
-            <div className={styles.bar}></div>
-            <div className={styles.bar}></div>
-            <div className={styles.bar}></div>
+            <div
+              className={styles.bar}
+              style={{ animationDuration: `${loadingTime}s` }}
+            ></div>
+            <div
+              className={styles.bar}
+              style={{ animationDuration: `${loadingTime}s` }}
+            ></div>
+            <div
+              className={styles.bar}
+              style={{ animationDuration: `${loadingTime}s` }}
+            ></div>
+            <div
+              className={styles.bar}
+              style={{ animationDuration: `${loadingTime}s` }}
+            ></div>
+            <div
+              className={styles.bar}
+              style={{ animationDuration: `${loadingTime}s` }}
+            ></div>
+            <div
+              className={styles.bar}
+              style={{ animationDuration: `${loadingTime}s` }}
+            ></div>
+            <div
+              className={styles.bar}
+              style={{ animationDuration: `${loadingTime}s` }}
+            ></div>
+            <div
+              className={styles.bar}
+              style={{ animationDuration: `${loadingTime}s` }}
+            ></div>
+            <div
+              className={styles.bar}
+              style={{ animationDuration: `${loadingTime}s` }}
+            ></div>
+            <div
+              className={styles.bar}
+              style={{ animationDuration: `${loadingTime}s` }}
+            ></div>
+            <div
+              className={styles.bar}
+              style={{ animationDuration: `${loadingTime}s` }}
+            ></div>
+            <div
+              className={styles.bar}
+              style={{ animationDuration: `${loadingTime}s` }}
+            ></div>
           </div>
 
           <div className={styles["outer-bar"]}></div>
