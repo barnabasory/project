@@ -4,6 +4,7 @@
   justify-content: center;
   flex-direction: column;
   padding-top: 70px;
+  padding-bottom: 150px;
   .top-bar {
     display: flex;
     flex-direction: column;
@@ -39,12 +40,12 @@
       width: 100%;
       padding-top: 24px;
       .card {
-        width: 300px;
-        height: 158px;
         background-color: #fff;
         border-radius: 4px;
         padding: 9px 22px 9px 22px;
         grid-column: span 3;
+        align-items: center;
+        place-items: center;
         width: 100%;
 
         .custom_name_div {
@@ -74,19 +75,19 @@
         .hours-div {
           display: flex;
           align-items: center;
+          justify-content: space-between;
 
           width: 100%;
           .wattage,
           .hours {
             color: var(--cod60);
-            width: 60%;
           }
 
           .calculate {
             display: flex;
             align-items: center;
-            gap: 16px;
-            width: 40%;
+            justify-content: space-between;
+
             .meter,
             .h-meter {
               display: flex;
@@ -136,6 +137,11 @@
             .acronym,
             .h-acronym {
               color: var(--chateau-green);
+              padding-left: 16px;
+            }
+
+            .h-acronym {
+              padding-left: 6px;
             }
           }
         }
@@ -165,116 +171,47 @@ $breakpoint-mobile: 480px;
     .main {
       width: 100%;
       .cards {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-gap: 24px;
-        width: 100%;
-        padding-top: 24px;
         .card {
-          width: 300px;
-          height: 158px;
-          background-color: #fff;
-          border-radius: 4px;
-          padding: 9px 22px 9px 22px;
           grid-column: span 12;
           width: 100%;
-
           .custom_name_div {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-
             .sum {
-              width: 28px;
-              height: 28px;
-              background: rgba(215, 142, 0, 0.08);
-              border-radius: 50%;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              color: var(--gold-drop);
             }
           }
 
           .hr {
-            height: 1px;
-            margin: 7px -22px 12px -22px;
-            background-color: var(--cod20);
           }
 
           .wattage-div,
           .hours-div {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
             .wattage,
             .hours {
               color: var(--cod60);
             }
 
             .calculate {
-              display: flex;
-              align-items: center;
-              gap: 16px;
               .meter,
               .h-meter {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 76px;
-                height: 32px;
-                border: 1px solid var(--kangaroo);
-                border-radius: 4px;
-                background-color: var(--desert-storm);
-
                 .meter-number,
                 .h-number {
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  width: 74%;
-                  padding: 4px 14px 4px 14px;
-                  border-right: 1px solid var(--kangaroo);
                 }
                 .arrows,
                 .h-arrows {
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  flex-direction: column;
-                  width: 26%;
-                  background-color: #fff;
-                  height: 100%;
-                  cursor: pointer;
-
                   .arrow-up,
                   .h-arrow-up {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 6px;
-                    border-bottom: 1px solid var(--kangaroo);
                   }
 
                   .arrow-down,
                   .h-arrow-down {
-                    padding: 6px;
                   }
                 }
               }
               .acronym,
               .h-acronym {
-                color: var(--chateau-green);
               }
             }
           }
           .hr2 {
-            height: 1px;
-            margin: 7px -22px 12px -22px;
-            background-color: var(--cod20);
-            margin-top: 11px;
-            margin-bottom: 11px;
           }
         }
       }
@@ -282,138 +219,188 @@ $breakpoint-mobile: 480px;
   }
 }
 
-// $breakpoint-tablet: 481px;
-// @media (min-width: $breakpoint-tablet) {
-//   .wrapper {
-//     .cards-page {
-//       padding-bottom: 30px;
-//       .cards-section {
-//         .cards {
-//           display: grid;
-//           grid-template-columns: repeat(12, 1fr);
-//           grid-gap: 24px;
-//           width: 100%;
+$breakpoint-tablet: 481px;
+@media (min-width: $breakpoint-tablet) {
+  .edit-page {
+    .top-bar {
+      .back {
+        .button {
+        }
+      }
+    }
+    .border-top {
+    }
+    .main {
+      width: 100%;
+      .cards {
+        .card {
+          grid-column: span 6;
+          width: 100%;
+          .custom_name_div {
+            .sum {
+            }
+          }
 
-//           .card {
-//             grid-column: span 6;
-//             width: 100%;
+          .hr {
+          }
 
-//             .card-content {
-//               .description {
-//                 .calc-card-desc-name {
-//                 }
-//                 .calc-card-desc-unit {
-//                 }
-//               }
+          .wattage-div,
+          .hours-div {
+            .wattage,
+            .hours {
+              color: var(--cod60);
+            }
 
-//               .checkbox {
-//                 .calc-card input[type="checkbox"]:checked {
-//                 }
-//               }
-//             }
+            .calculate {
+              .meter,
+              .h-meter {
+                .meter-number,
+                .h-number {
+                }
+                .arrows,
+                .h-arrows {
+                  .arrow-up,
+                  .h-arrow-up {
+                  }
 
-//             .total {
-//             }
-//           }
-//         }
+                  .arrow-down,
+                  .h-arrow-down {
+                  }
+                }
+              }
+              .acronym,
+              .h-acronym {
+              }
+            }
+          }
+          .hr2 {
+          }
+        }
+      }
+    }
+  }
+}
 
-//         .footer {
-//           display: flex;
+$breakpoint-laptops-desktops: 768px;
+@media (min-width: $breakpoint-laptops-desktops) {
+  .edit-page {
+    .top-bar {
+      .back {
+        .button {
+        }
+      }
+    }
+    .border-top {
+    }
+    .main {
+      width: 100%;
+      .cards {
+        .card {
+          grid-column: span 4;
+          width: 100%;
+          .custom_name_div {
+            .sum {
+            }
+          }
 
-//           flex-direction: column;
-//           gap: 49px;
-//           .footer-content {
-//             gap: 11px;
-//             .footer-instruction {
-//               color: var(--cod60);
-//             }
-//             .add-custom-card {
-//               .add-icon {
-//               }
-//             }
-//           }
+          .hr {
+          }
 
-//           .continue-button {
-//           }
-//         }
-//       }
+          .wattage-div,
+          .hours-div {
+            .wattage,
+            .hours {
+              color: var(--cod60);
+            }
 
-//       .footer-snippet-div {
-//         .border-bottom {
-//         }
+            .calculate {
+              .meter,
+              .h-meter {
+                .meter-number,
+                .h-number {
+                }
+                .arrows,
+                .h-arrows {
+                  .arrow-up,
+                  .h-arrow-up {
+                  }
 
-//         .footer-snippet {
-//         }
-//       }
-//     }
-//   }
-// }
+                  .arrow-down,
+                  .h-arrow-down {
+                  }
+                }
+              }
+              .acronym,
+              .h-acronym {
+              }
+            }
+          }
+          .hr2 {
+          }
+        }
+      }
+    }
+  }
+}
 
-// $breakpoint-laptops-desktops: 768px;
-// @media (min-width: $breakpoint-laptops-desktops) {
-//   .wrapper {
-//     .cards-page {
-//       padding-bottom: 30px;
-//       .cards-section {
-//         .cards {
-//           display: grid;
-//           grid-template-columns: repeat(12, 1fr);
-//           grid-gap: 24px;
+$breakpoint-large-screens: 1205px;
+@media (min-width: $breakpoint-large-screens) {
+  .edit-page {
+    .top-bar {
+      .back {
+        .button {
+        }
+      }
+    }
+    .border-top {
+    }
+    .main {
+      width: 100%;
+      .cards {
+        .card {
+          grid-column: span 3;
+          width: 100%;
+          .custom_name_div {
+            .sum {
+            }
+          }
 
-//           .card {
-//             grid-column: span 4;
+          .hr {
+          }
 
-//             .card-content {
-//               .description {
-//                 .calc-card-desc-name {
-//                 }
-//                 .calc-card-desc-unit {
-//                 }
-//               }
+          .wattage-div,
+          .hours-div {
+            .wattage,
+            .hours {
+              color: var(--cod60);
+            }
 
-//               .checkbox {
-//                 .calc-card input[type="checkbox"]:checked {
-//                 }
-//               }
-//             }
+            .calculate {
+              .meter,
+              .h-meter {
+                .meter-number,
+                .h-number {
+                }
+                .arrows,
+                .h-arrows {
+                  .arrow-up,
+                  .h-arrow-up {
+                  }
 
-//             .total {
-//             }
-//           }
-//         }
-
-//         .footer {
-//           display: flex;
-
-//           flex-direction: column;
-//           gap: 49px;
-//           .footer-content {
-//             gap: 11px;
-//             .footer-instruction {
-//               color: var(--cod60);
-//             }
-//             .add-custom-card {
-//               .add-icon {
-//               }
-//             }
-//           }
-
-//           .continue-button {
-//           }
-//         }
-//       }
-
-//       .footer-snippet-div {
-//         .border-bottom {
-//         }
-
-//         .footer-snippet {
-//         }
-//       }
-//     }
-//   }
-// }
-
-// $breakpoint-large-screens: 1205px;
-// @media (min-width: $breakpoint-large-screens) {
-// }
+                  .arrow-down,
+                  .h-arrow-down {
+                  }
+                }
+              }
+              .acronym,
+              .h-acronym {
+              }
+            }
+          }
+          .hr2 {
+          }
+        }
+      }
+    }
+  }
+}

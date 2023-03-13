@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styles from "./EditUnits.module.scss";
 import { arrowUp, arrowDown, ProcessingResults } from "../../PAGES";
-import data from "../cards/data";
 import { useContext } from "react";
 import { CheckedCards } from "../../Context";
-import { Link } from "react-router-dom";
 import Result from "./Result";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 const EditUnits = () => {
   const navigate = useNavigate();
@@ -21,29 +18,7 @@ const EditUnits = () => {
     setLoading(false);
   };
 
-  const {
-    checkedArray,
-    setCheckedArray,
-    results,
-    setResults,
-    pageData,
-    setPageData,
-  } = useContext(CheckedCards);
-
-  useEffect(() => {
-    const fetchResultPage = () => {
-      axios
-        .get("/result")
-        .then((response) => {
-          setPageData(response.data);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    };
-
-    fetchResultPage();
-  }, []);
+  const { checkedArray, results } = useContext(CheckedCards);
 
   //the empty array in the console
   const increaseWattage = () => {
@@ -70,6 +45,8 @@ const EditUnits = () => {
     }
     setHours(hours - 1);
   };
+
+  const getKwH = () => {};
 
   return (
     <>
@@ -156,7 +133,7 @@ const EditUnits = () => {
                           </div>
                         </div>
                         <span className={`root-small ${styles["h-acronym"]}`}>
-                          H
+                          Hrs
                         </span>
                       </div>
                     </div>

@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
 import styles from "./ProcessingResults.module.scss";
-import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { Link } from "react-router-dom";
 
 const ProcessingResults = () => {
   return (
