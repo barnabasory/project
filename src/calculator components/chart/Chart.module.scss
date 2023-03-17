@@ -42,7 +42,7 @@
         align-items: center;
         gap: 16px;
 
-        .toggle-button {
+        .toggle_button {
           display: flex;
           align-items: center;
           width: 65px;
@@ -53,14 +53,28 @@
           position: relative;
           margin-top: 22px;
           margin-bottom: 29px;
+          transition: all 0.5s ease;
+          cursor: pointer;
 
-          .toggle-ball {
+          .toggle_ball {
             position: absolute;
             width: 24px;
             height: 24px;
             border-radius: 50%;
             background-color: var(--cod60);
             left: 4px;
+            transition: all 0.5s ease;
+          }
+
+          .toggle_ball_moved {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--cod60);
+            left: 4px;
+            position: absolute;
+            transform: translateX(125%);
+            transition: all 0.5s ease;
           }
         }
       }

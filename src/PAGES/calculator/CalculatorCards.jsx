@@ -54,15 +54,6 @@ const CalculatorCards = () => {
 
   const sortedCards = data.sort(sortFunction);
 
-  // const appendArray = (id) => {
-  //   const newData = [...data, { ...value }];
-  //   console.log(newData);
-  //   setData(newData);
-  //   localStorage.setItem("cards", JSON.stringify(newData));
-  //   setValue({ ...initialState });
-  //   onAddCustomItem(id);
-  // };
-
   const addCustom = (id) => {
     const customItem = { ...value, id };
     setData([...data, customItem]);
@@ -167,16 +158,6 @@ const CalculatorCards = () => {
                         onClick={() => decreaseCount(id)}
                       />
                       <div className={styles["border-right"]}></div>
-
-                      {/* <input
-                    type="number"
-                    placeholder="12"
-                    name="counts"
-                    value={value.counts}
-                    className={`root-small ${styles.input}`}
-                    onChange={handleChange}
-                    required
-                  /> */}
 
                       <div className={styles.number}>{counts[id]}</div>
 

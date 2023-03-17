@@ -8,8 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const EditUnits = () => {
   const navigate = useNavigate();
-  const [wattage, setWattage] = useState(20);
-  const [hours, setHours] = useState(1);
+  const { wattage, setHours, hours, setWattage } = useContext(CheckedCards);
   const [loading, setLoading] = useState(false);
 
   const fetchResult = () => {
@@ -21,32 +20,25 @@ const EditUnits = () => {
   const { checkedArray, results } = useContext(CheckedCards);
 
   //the empty array in the console
-  const increaseWattage = () => {
+  const increaseWattage = (index) => {
     setWattage(wattage + 20);
   };
 
   const decreaseWattage = () => {
-    if (wattage === 20) {
-      return wattage === 20;
-    }
     setWattage(wattage - 20);
   };
 
-  const increaseHours = () => {
-    if (hours === 12) {
-      return hours === 12;
-    }
-    setHours(hours + 1);
+  const increaseHours = (index) => {
+    setHours(hours.map((hour, i) => (i === index ? hour + 1 : hour)));
   };
 
-  const decreaseHours = () => {
+  const decreaseHours = (index) => {
     if (hours === 1) {
       return hours === 1;
+    } else {
+      setHours(hours.map((hour, i) => (i === index ? hour - 1 : hour)));
     }
-    setHours(hours - 1);
   };
-
-  const getKwH = () => {};
 
   return (
     <>
@@ -70,7 +62,7 @@ const EditUnits = () => {
           <div className={styles.cards}>
             {checkedArray &&
               checkedArray.map((checkedItem, index) => {
-                const { id, name, wattage, hours, counts } = checkedItem;
+                const { id, name, wattage } = checkedItem;
                 return (
                   <div className={styles.card} key={index}>
                     <div className={styles.custom_name_div}>
@@ -93,13 +85,13 @@ const EditUnits = () => {
                               src={arrowUp}
                               alt="arrow-up"
                               className={styles["arrow-up"]}
-                              onClick={increaseWattage}
+                              onClick={() => increaseWattage(id)}
                             />
                             <img
                               src={arrowDown}
                               alt="arrow-down"
                               className={styles["arrow-down"]}
-                              onClick={decreaseWattage}
+                              onClick={() => decreaseWattage(id)}
                             />
                           </div>
                         </div>
@@ -116,19 +108,19 @@ const EditUnits = () => {
                       </span>
                       <div className={`dd ${styles.calculate}`}>
                         <div className={styles["h-meter"]}>
-                          <div className={styles["h-number"]}>{hours}</div>
+                          <div className={styles["h-number"]}>{hours[id]}</div>
                           <div className={styles["h-arrows"]}>
                             <img
                               src={arrowUp}
                               alt="arrow-up"
                               className={styles["h-arrow-up"]}
-                              onClick={increaseHours}
+                              onClick={() => increaseHours(id)}
                             />
                             <img
                               src={arrowDown}
                               alt="arrow-down"
                               className={styles["h-arrow-down"]}
-                              onClick={decreaseHours}
+                              onClick={() => decreaseHours(id)}
                             />
                           </div>
                         </div>

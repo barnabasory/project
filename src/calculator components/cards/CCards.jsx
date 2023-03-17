@@ -10,7 +10,6 @@ const initialState = {
   name: "",
   wattage: "",
   hours: "",
-  counts: "",
 };
 
 const CCards = ({ handleClick, message, sortedCards }) => {
@@ -51,12 +50,6 @@ const CCards = ({ handleClick, message, sortedCards }) => {
     );
   };
 
-  // const handleCheckBox = (index) => {
-  //   setToggleCheckBox(
-  //     toggleCheckBox.map((checked, i) => (i === index ? !checked : checked))
-  //   );
-  // };
-
   const handleCheckboxChange = (index) => {
     setToggleCheckBox(
       toggleCheckBox.map((checked, i) => (i === index ? !checked : checked))
@@ -72,7 +65,7 @@ const CCards = ({ handleClick, message, sortedCards }) => {
 
   // re-renders the complete array when message arrays changes
   useEffect(() => {
-    setCounts(Array(message.length).fill(1));
+    setCounts(Array(message.length).fill(0));
     setResults(Array(message.length).fill(1));
     setToggleCheckBox(Array(message.length).fill(false));
   }, [message]);
@@ -84,14 +77,13 @@ const CCards = ({ handleClick, message, sortedCards }) => {
           <div className={styles["cards-section"]}>
             <ul className={`cc ${styles["cards"]}`}>
               {sortedCards.map((card, index) => {
-                const { id, name, wattage, hours } = card;
+                const { id, name, wattage } = card;
                 return (
                   <li className={styles.card} key={index}>
                     <div className={styles["card-content"]}>
                       <div className={styles.description}>
                         <span>{name}</span>
                         <span className="root-small">Average kW:{wattage}</span>
-                        <span>{hours}</span>
                       </div>
 
                       <Checkbox
