@@ -13,7 +13,8 @@ const initialState = {
 };
 
 const CCards = ({ handleClick, message, sortedCards }) => {
-  const { counts, setCounts, results, setResults } = useContext(CheckedCards);
+  const { counts, setCounts, results, setResults, filteredArray } =
+    useContext(CheckedCards);
   const [toggleCheckBox, setToggleCheckBox] = useState(
     Array(message.length).fill(false)
   );
@@ -76,7 +77,7 @@ const CCards = ({ handleClick, message, sortedCards }) => {
         <div className={`sw ${styles["cards-page"]}`}>
           <div className={styles["cards-section"]}>
             <ul className={`cc ${styles["cards"]}`}>
-              {sortedCards.map((card, index) => {
+              {filteredArray.map((card, index) => {
                 const { id, name, wattage } = card;
                 return (
                   <li className={styles.card} key={index}>

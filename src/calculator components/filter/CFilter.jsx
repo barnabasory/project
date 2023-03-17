@@ -8,7 +8,15 @@ import data from "../cards/data";
 
 const CFilter = ({ handleClick, setSortOrder, message }) => {
   const [select, setSelect] = useState(false);
-  const { checkedArray, setCheckedArray } = useContext(CheckedCards);
+  const [searchText, setSearchText] = useState("");
+  const {
+    checkedArray,
+    setCheckedArray,
+    filteredArray,
+    setFilteredArray,
+    sortingMethod,
+    setSortingMethod,
+  } = useContext(CheckedCards);
   const [toggleCheckBox, setToggleCheckBox] = useState(
     Array(data.length).fill(false)
   );
@@ -21,6 +29,24 @@ const CFilter = ({ handleClick, setSortOrder, message }) => {
     setToggleCheckBox(
       toggleCheckBox.map((checked, i) => (i === index ? !checked : checked))
     );
+  };
+
+  const handleSearch = (event) => {
+    const searchText = event.target.value.toLowerCase();
+    const filtered = data.filter((item) =>
+      item.name.toLowerCase().includes(searchText)
+    );
+    setFilteredArray(filtered);
+    setSearchText(searchText);
+  };
+
+  const handleSorting = (event) => {
+    const sortingValue = event.target.value;
+    setSortingMethod(sortingValue);
+    const sorted = [...filteredArray].sort((a, b) =>
+      a[sortingValue] > b[sortingValue] ? 1 : -1
+    );
+    setFilteredArray(sorted);
   };
 
   useEffect(() => {
@@ -41,7 +67,7 @@ const CFilter = ({ handleClick, setSortOrder, message }) => {
                 <div className={styles.select}>
                   <div
                     className={`root-small ${styles.select_input}`}
-                    onClick={handleSelect}
+                    onClick={handleSorting}
                   >
                     KW: High to Low
                     <img
@@ -83,6 +109,8 @@ const CFilter = ({ handleClick, setSortOrder, message }) => {
                   type="search"
                   className={`root-small ${styles["search"]}`}
                   placeholder="Search"
+                  value={searchText}
+                  onChange={handleSearch}
                 />
                 <img
                   src={search}

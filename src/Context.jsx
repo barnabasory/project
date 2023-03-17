@@ -12,6 +12,8 @@ const Context = ({ children }) => {
   const [results, setResults] = useState(Array(data.length).fill(1));
   const [wattage, setWattage] = useState(Array(data.length).fill(1));
   const [hours, setHours] = useState(Array(data.length).fill(1));
+  const [filteredArray, setFilteredArray] = useState(data);
+  const [sortingMethod, setSortingMethod] = useState("ascending");
 
   return (
     <div>
@@ -29,6 +31,10 @@ const Context = ({ children }) => {
           setWattage,
           hours,
           setHours,
+          filteredArray,
+          setFilteredArray,
+          sortingMethod,
+          setSortingMethod,
         }}
       >
         {children}

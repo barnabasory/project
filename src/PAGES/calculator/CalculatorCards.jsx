@@ -14,6 +14,7 @@ const initialState = {
 
 const CalculatorCards = () => {
   const [show, setShow] = useState(false);
+
   const [value, setValue] = useState({
     name: "",
     wattage: "",
@@ -95,7 +96,7 @@ const CalculatorCards = () => {
           {sortedCards.map((card, index) => {
             const { id } = card;
             return (
-              <div className={styles["custom-overlay"]} key={id}>
+              <div className={styles["custom-overlay"]} key={index}>
                 <div className={styles["add-custom-item"]}>
                   <span>Add Custom Item</span>
                   <img src={times} alt="close-modal" onClick={showModal} />

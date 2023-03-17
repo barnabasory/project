@@ -29,6 +29,7 @@ export { default as ResultNavbar } from "../calculator components/resultNavbar/R
 export { default as ResultFigure } from "../calculator components/resultFigure/ResultFigure";
 export { default as Browse } from "../calculator components/browseProducts/Browse";
 export { default as Chart } from "../calculator components/chart/Chart";
+export { default as Form } from "../calculator components/addCustomForm/Form";
 
 //stacks
 export { default as Complete } from "../home components/stacks/complete/Complete";
