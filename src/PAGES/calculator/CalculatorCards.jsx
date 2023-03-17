@@ -22,7 +22,7 @@ const CalculatorCards = () => {
   });
   const [data, setData] = useState(cards);
   const [sortOrder, setSortOrder] = useState("ascending");
-  const { counts, setCounts } = useContext(CheckedCards);
+  const { counts, setCounts, filteredArray } = useContext(CheckedCards);
 
   const showModal = () => {
     setShow(!show);
@@ -45,15 +45,15 @@ const CalculatorCards = () => {
     );
   };
 
-  const sortFunction = (a, b) => {
-    if (sortOrder === "ascending") {
-      return a.name.localeCompare(b.name);
-    } else {
-      return b.name.localeCompare(a.name);
-    }
-  };
+  // const sortFunction = (a, b) => {
+  //   if (sortOrder === "ascending") {
+  //     return a.name.localeCompare(b.name);
+  //   } else {
+  //     return b.name.localeCompare(a.name);
+  //   }
+  // };
 
-  const sortedCards = data.sort(sortFunction);
+  // const sortedCards = data.sort(sortFunction);
 
   const addCustom = (id) => {
     const customItem = { ...value, id };
@@ -75,8 +75,8 @@ const CalculatorCards = () => {
       <CNavbar />
       <CFilter
         handleClick={showModal}
-        sortFunction={sortFunction}
-        sortedCards={sortedCards}
+        // sortFunction={sortFunction}
+        // sortedCards={sortedCards}
         sortOrder={sortOrder}
         setSortOrder={setSortOrder}
         message={data}
@@ -84,8 +84,8 @@ const CalculatorCards = () => {
       <CCards
         handleClick={showModal}
         message={data}
-        sortFunction={sortFunction}
-        sortedCards={sortedCards}
+        // sortFunction={sortFunction}
+        // sortedCards={sortedCards}
         sortOrder={sortOrder}
         setSortOrder={setSortOrder}
         onAddCustomItem={(id) => increaseCount(id)}
@@ -93,7 +93,7 @@ const CalculatorCards = () => {
 
       {show && (
         <div className={styles["custom-overlay-wrapper"]}>
-          {sortedCards.map((card, index) => {
+          {filteredArray.map((card, index) => {
             const { id } = card;
             return (
               <div className={styles["custom-overlay"]} key={index}>
