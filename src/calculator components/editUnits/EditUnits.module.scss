@@ -53,6 +53,17 @@
           align-items: center;
           gap: 8px;
 
+          .count_value {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: var(--gold-drop);
+            background-color: rgba($color: #d78e00, $alpha: 0.08);
+            width: 28px;
+            height: 28px;
+          }
+
           .sum {
             width: 28px;
             height: 28px;
@@ -99,8 +110,28 @@
               border-radius: 4px;
               background-color: var(--desert-storm);
 
-              .meter-number,
-              .h-number {
+              .meter_number,
+              .h_number {
+                outline: none;
+                width: 76px;
+                height: 32px;
+                border: 1px solid var(--kangaroo);
+                border-radius: 4px 0 0px 4px;
+                background-color: var(--desert-storm);
+                border-left: none;
+              }
+              input::-webkit-outer-spin-button,
+              input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+              }
+
+              input {
+                -moz-appearance: textfield;
+              }
+
+              .meter_number,
+              .h_number {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -118,6 +149,7 @@
                 background-color: #fff;
                 height: 100%;
                 cursor: pointer;
+                border-radius: 0 4px 4px 0px;
 
                 .arrow-up,
                 .h-arrow-up {

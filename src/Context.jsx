@@ -4,14 +4,15 @@ import data from "./calculator components/cards/data";
 
 export const CheckedCards = createContext();
 const Context = ({ children }) => {
+  const [show, setShow] = useState(false);
   const [checkedArray, setCheckedArray] = useState([]);
-  const [counts, setCounts] = useState(Array(data.length).fill(0));
-  const [toggleCheckBox, setToggleCheckBox] = useState(
+  const [counts, setCounts] = useState(data);
+  const [checkedItems, setCheckedItems] = useState(
     Array(data.length).fill(false)
   );
-  const [results, setResults] = useState(Array(data.length).fill(1));
-  const [wattage, setWattage] = useState(Array(data.length).fill(1));
-  const [hours, setHours] = useState(Array(data.length).fill(1));
+  const [sum, setSum] = useState(0);
+  const [wattage, setWattage] = useState(counts.map((item) => item.wattage));
+  const [hours, setHours] = useState(counts.map((item) => item.hours));
   const [filteredArray, setFilteredArray] = useState(data);
   const [sortingMethod, setSortingMethod] = useState("ascending");
 
@@ -23,10 +24,10 @@ const Context = ({ children }) => {
           setCheckedArray,
           counts,
           setCounts,
-          toggleCheckBox,
-          setToggleCheckBox,
-          results,
-          setResults,
+          checkedItems,
+          setCheckedItems,
+          sum,
+          setSum,
           wattage,
           setWattage,
           hours,
@@ -35,6 +36,8 @@ const Context = ({ children }) => {
           setFilteredArray,
           sortingMethod,
           setSortingMethod,
+          show,
+          setShow,
         }}
       >
         {children}

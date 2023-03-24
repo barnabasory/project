@@ -4,7 +4,6 @@ import { add, plus, minus, checkmark } from "../../PAGES";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CheckedCards } from "../../Context";
-import Checkbox from "./Checkbox";
 
 const initialState = {
   name: "",
@@ -12,64 +11,69 @@ const initialState = {
   hours: "",
 };
 
-const CCards = ({ handleClick, message, sortedCards }) => {
-  const { counts, setCounts, results, setResults, filteredArray } =
-    useContext(CheckedCards);
-  const [toggleCheckBox, setToggleCheckBox] = useState(
-    Array(message.length).fill(false)
-  );
+const CCards = () => {
+  const {
+    counts,
+    setCounts,
+    sum,
+    setSum,
+    checkedItems,
+    setCheckedItems,
+    show,
+    setShow,
+    setCheckedArray,
+  } = useContext(CheckedCards);
 
-  const { checkedArray, setCheckedArray } = useContext(CheckedCards);
-  const [value, setValue] = useState({ ...initialState });
-  const [data, setData] = useState(message);
-  const [checkbox, setCheckbox] = useState(false);
+  const handleIncrement = (id) => {
+    const newCount = counts.map((count) => {
+      if (count.id === id) {
+        return {
+          ...count,
+          count: count.count + 1,
+          sum: count.sum + 1,
+          checked: true,
+        };
+      }
+      return count;
+    });
 
-  const checkCheckBox = (index) => {
-    setCheckbox(toggleCheckBox[index]);
-    setToggleCheckBox(
-      toggleCheckBox.map((checked, i) => (i === index ? !checked : checked))
+    setCounts(newCount);
+    setSum(sum);
+  };
+
+  const handleDecrement = (id) => {
+    const oldCount = counts.map((count) => {
+      if (count.id === id) {
+        return {
+          ...count,
+          count: count.count === 0 ? 0 : count.count - 1,
+          sum: count.sum === 0 ? 0 : count.sum - 1,
+        };
+      }
+      return count;
+    });
+
+    setCounts(oldCount);
+    setSum(sum);
+  };
+
+  const handleChange = (id) => {
+    const updatedCheckedItems = checkedItems.map((item) =>
+      item.id === id ? { ...item, isChecked: !item.isChecked } : item
     );
+    setCheckedItems(updatedCheckedItems);
+  };
+  const displayForm = () => {
+    setShow(!show);
   };
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    setValue({ ...value, [e.target.name]: e.target.value });
-  };
-
-  const increaseCount = (index) => {
-    // increase Count
-    setCounts(counts.map((count, i) => (i === index ? count + 1 : count)));
-    setResults(
-      results.map((result, i) => (i === index ? counts[i] + 1 : result))
+  //get all the checked boxes and send them to the edit-units page
+  const allCheckedItems = () => {
+    const checkedArray = counts.filter(
+      (item) => checkedItems[item.id] === !item.isChecked
     );
+    setCheckedArray(checkedArray);
   };
-
-  const decreaseCount = (index) => {
-    // decrease count
-    setCounts(
-      counts.map((count, i) => (i === index && count > 1 ? count - 1 : count))
-    );
-  };
-
-  const handleCheckboxChange = (index) => {
-    setToggleCheckBox(
-      toggleCheckBox.map((checked, i) => (i === index ? !checked : checked))
-    );
-  };
-
-  useEffect(() => {
-    const savedCards = JSON.parse(sessionStorage.getItem("cards"));
-    if (savedCards) {
-      setData(savedCards);
-    }
-  }, []);
-
-  // re-renders the complete array when message arrays changes
-  useEffect(() => {
-    setCounts(Array(message.length).fill(0));
-    setResults(Array(message.length).fill(1));
-    setToggleCheckBox(Array(message.length).fill(false));
-  }, [message]);
 
   return (
     <>
@@ -77,40 +81,56 @@ const CCards = ({ handleClick, message, sortedCards }) => {
         <div className={`sw ${styles["cards-page"]}`}>
           <div className={styles["cards-section"]}>
             <ul className={`cc ${styles["cards"]}`}>
-              {filteredArray.map((card, index) => {
-                const { id, name, wattage } = card;
+              {counts?.map((card, index) => {
+                const { id, name, wattage, count } = card;
                 return (
-                  <li className={styles.card} key={index}>
+                  <li className={styles.card} key={id}>
                     <div className={styles["card-content"]}>
                       <div className={styles.description}>
                         <span>{name}</span>
                         <span className="root-small">Average kW:{wattage}</span>
                       </div>
-
-                      <Checkbox
-                        index={index}
-                        checked={toggleCheckBox[index]}
-                        onChange={(index) => handleCheckboxChange(index)}
-                      />
+                      <div
+                        aria-roledescription="checkbox"
+                        className={
+                          checkedItems[id]
+                            ? styles.checkbox
+                            : styles.checkbox_empty
+                        }
+                        onClick={() =>
+                          setCheckedItems({
+                            ...checkedItems,
+                            [id]: !checkedItems[id],
+                          })
+                        }
+                        onChange={handleChange}
+                      >
+                        <img src={checkmark} alt="checkmark" />
+                      </div>
                     </div>
                     <div className={styles.total}>
-                      {toggleCheckBox[index] && (
-                        <div className={`dd ${styles.sum}`}>{counts[id]}</div>
+                      {checkedItems[id] && (
+                        <div className={`dd ${styles.sum}`}>
+                          {checkedItems[id] ? count + 1 : 0}
+                        </div>
                       )}
+
                       <div className={styles.calculate}>
                         <img
                           src={minus}
                           alt="minus"
                           className={styles.minus}
-                          onClick={() => decreaseCount(id)}
+                          onClick={() => handleDecrement(id)}
                         />
                         <div className={styles["border-left"]}></div>
-                        <div className={styles.count}>{counts[id]}</div>
+                        <div className={styles.count}>
+                          {checkedItems[id] ? count + 1 : 0}
+                        </div>
                         <img
                           src={plus}
                           alt="plus"
                           className={styles.plus}
-                          onClick={() => increaseCount(id)}
+                          onClick={() => handleIncrement(id)}
                         />
                         <div className={styles["border-right"]}></div>
                       </div>
@@ -126,27 +146,23 @@ const CCards = ({ handleClick, message, sortedCards }) => {
                 </span>
                 <div
                   className={styles["add-custom-card"]}
-                  onClick={handleClick}
+                  onClick={displayForm}
                 >
                   <img
                     src={add}
                     alt="add-icon"
                     className={styles["add-icon"]}
                   />
-                  <span className="root-small">Add Custom Item</span>
+                  <div className="root-small">Add Custom Item</div>
                 </div>
               </div>
-              <Link
-                to={"/calculate-units"}
-                onClick={() => {
-                  const checkedItems = message.filter(
-                    (card, id) => toggleCheckBox[id]
-                  );
-
-                  setCheckedArray([...checkedArray, ...checkedItems]);
-                }}
-              >
-                <button className={styles["continue-button"]}>Continue</button>
+              <Link to={"/calculate-units"}>
+                <button
+                  className={styles["continue-button"]}
+                  onClick={allCheckedItems}
+                >
+                  Continue
+                </button>
               </Link>
             </div>
           </div>

@@ -1,11 +1,11 @@
 import { checkmark } from "../../PAGES";
 import styles from "./CCards.module.scss";
 
-const Checkbox = ({ index, checked, onChange }) => {
+const Checkbox = ({ id, checked, onChange }) => {
   return (
     <div
       className={checked ? styles.checkbox : styles.checkbox_empty}
-      onClick={() => onChange(index)}
+      onClick={() => onChange(id)}
     >
       <img src={checkmark} alt="checkmark" />
     </div>

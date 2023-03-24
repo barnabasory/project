@@ -1,17 +1,23 @@
-.custom-overlay-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 100em;
-  top: 0;
-  background-color: rgba($color: #000000, $alpha: 0.7);
-  position: fixed;
-  z-index: 10;
+.custom_form {
+  position: relative;
+  .custom-overlay-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100em;
+    top: 0;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    position: fixed;
+    z-index: 1;
+  }
 
   .custom-overlay {
     position: fixed;
+    z-index: 10;
     top: calc(10% + 70px);
+    left: 0;
+    right: 0;
     margin: auto;
     width: 345px;
     height: 472px;
@@ -58,6 +64,12 @@
         color: var(--cod60);
       }
 
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
       .quantity {
         display: flex;
         flex-direction: column;
@@ -87,6 +99,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
+            align-self: center;
             border: none;
             outline: none;
             width: 65px;

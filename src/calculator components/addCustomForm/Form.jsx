@@ -1,63 +1,84 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Form.module.scss";
 import { times, minus, plus } from "../../PAGES";
 import { useContext } from "react";
 import { CheckedCards } from "../../Context";
-import cards from "../../calculator components/cards/data";
 
 const initialState = {
   name: "",
   wattage: "",
   hours: "",
+  count: 0,
 };
 
 const Form = () => {
-  const [show, setShow] = useState(false);
-  const { counts, setCounts } = useContext(CheckedCards);
-  const [data, setData] = useState(cards);
-  const [value, setValue] = useState({
+  const { counts, setCounts, show, setShow } = useContext(CheckedCards);
+  const [values, setValues] = useState({
     name: "",
     wattage: "",
     hours: "",
+    count: 0,
   });
 
-  const increaseCount = (index) => {
-    // increase Count
-    setCounts(counts.map((count, i) => (i === index ? count + 1 : count)));
+  const handleMinusClick = () => {
+    setValues((prevValues) => ({
+      ...prevValues,
+      count: prevValues.count === 0 ? 0 : prevValues.count - 1,
+    }));
   };
 
-  const decreaseCount = (index) => {
-    // decrease count
-    setCounts(
-      counts.map((count, i) => (i === index && count > 1 ? count - 1 : count))
-    );
+  const handlePlusClick = () => {
+    setValues((prevValues) => ({
+      ...prevValues,
+      count: prevValues.count + 1,
+    }));
   };
 
   const showModal = () => {
     setShow(!show);
   };
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    setValue({ ...value, [e.target.name]: e.target.value });
+  const handleChange = (event) => {
+    setValues((prevInputs) => ({
+      ...prevInputs,
+      [event.target.name]: event.target.value,
+    }));
   };
 
-  const addCustom = (id) => {
-    const customItem = { ...value, id };
-    setData([...data, customItem]);
-    localStorage.setItem("cards", JSON.stringify([...data, customItem]));
-    setValue(initialState);
-    setCounts([...counts, 1]);
+  const addCustomItem = (id) => {
+    const customItem = { ...values, id: counts.length + 1 };
+    const newData = [...counts, customItem];
+    console.log(newData);
+    setCounts(newData);
+    localStorage.setItem("cards", JSON.stringify(newData));
+    setValues(initialState);
   };
+
+  useEffect(() => {
+    const savedCards = JSON.parse(sessionStorage.getItem("cards"));
+    if (savedCards) {
+      setCounts(savedCards);
+    }
+  }, []);
+
   return (
-    <div className={styles["custom-overlay-wrapper"]}>
-      {data.map((card, index) => {
-        const { id } = card;
+    <div className={styles.custom_form}>
+      <div
+        className={styles["custom-overlay-wrapper"]}
+        onClick={() => setShow(false)}
+      ></div>
+      {counts.map((card, index) => {
+        const { id, count } = card;
         return (
-          <div className={styles["custom-overlay"]} key={id}>
+          <div className={styles["custom-overlay"]}>
             <div className={styles["add-custom-item"]}>
               <span>Add Custom Item</span>
-              <img src={times} alt="close-modal" onClick={showModal} />
+              <img
+                src={times}
+                alt="close-modal"
+                onClick={() => setShow(false)}
+                style={{ cursor: "pointer" }}
+              />
             </div>
             <div className={styles.hr}></div>
             <form className={styles.form} key={id}>
@@ -68,7 +89,7 @@ const Form = () => {
                 type="text"
                 placeholder="Custom made Oven"
                 name="name"
-                value={value.name}
+                value={values.name}
                 className={`root-small ${styles.input}`}
                 onChange={handleChange}
                 required
@@ -80,7 +101,7 @@ const Form = () => {
                 type="number"
                 placeholder="3000"
                 name="wattage"
-                value={value.wattage}
+                value={values.wattage}
                 className={`root-small ${styles.input}`}
                 onChange={handleChange}
                 required
@@ -92,7 +113,7 @@ const Form = () => {
                 type="number"
                 placeholder="12"
                 name="hours"
-                value={value.hours}
+                value={values.hours}
                 className={`root-small ${styles.input}`}
                 onChange={handleChange}
                 required
@@ -105,24 +126,30 @@ const Form = () => {
                     src={minus}
                     alt="minus"
                     className={styles.minus}
-                    onClick={() => decreaseCount(id)}
+                    onClick={handleMinusClick}
                   />
                   <div className={styles["border-right"]}></div>
-
-                  <div className={styles.number}>{counts[id]}</div>
-
+                  <input
+                    type="number"
+                    placeholder="12"
+                    name="hours"
+                    value={values.count}
+                    className={`root-small ${styles.number}`}
+                    onChange={handleChange}
+                    required
+                  />
                   <div className={styles["border-right"]}></div>
                   <img
                     src={plus}
                     alt="add"
                     className={styles.plus}
-                    onClick={() => increaseCount(id)}
+                    onClick={handlePlusClick}
                   />
                 </div>
                 <button
                   className={`root-small-bold ${styles.button}`}
                   onClick={() => {
-                    addCustom(id);
+                    addCustomItem(id);
                     setShow(false);
                   }}
                 >

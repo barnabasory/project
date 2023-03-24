@@ -14,7 +14,6 @@ const CFilter = ({ handleClick, setSortOrder, message }) => {
     setCheckedArray,
     filteredArray,
     setFilteredArray,
-    sortingMethod,
     setSortingMethod,
   } = useContext(CheckedCards);
   const [toggleCheckBox, setToggleCheckBox] = useState(

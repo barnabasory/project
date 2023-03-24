@@ -11,33 +11,29 @@
 //     useContext(CheckedCards);
 //   const [loading, setLoading] = useState(false);
 
-//   const increaseWattage = (id) => {
-//     setWattage((prevWattage) => {
-//       const newWattage = [...prevWattage];
-//       newWattage[id] = newWattage[id] + 1;
-//       return newWattage;
-//     });
+//   const handleInputChange = (e, id) => {
+//     const { name, value } = e.target;
+//     checkedArray((prevState) =>
+//       prevState.map((item) =>
+//         item.id === id ? { ...item, [name]: value } : item
+//       )
+//     );
 //   };
-//   const decreaseWattage = (id) => {
-//     setWattage((prevWattage) => {
-//       const newWattage = [...prevWattage];
-//       newWattage[id] = newWattage[id] - 1;
-//       return newWattage;
-//     });
+
+//   const handleIncrease = (id, name) => {
+//     checkedArray((prevState) =>
+//       prevState.map((item) =>
+//         item.id === id ? { ...item, [name]: +item[name] + 1 } : item
+//       )
+//     );
 //   };
-//   const increaseHours = (id) => {
-//     setHours((prevHours) => {
-//       const newHours = [...prevHours];
-//       newHours[id] = newHours[id] + 1;
-//       return newHours;
-//     });
-//   };
-//   const decreaseHours = (id) => {
-//     setHours((prevHours) => {
-//       const newHours = [...prevHours];
-//       newHours[id] = newHours[id] - 1;
-//       return newHours;
-//     });
+
+//   const handleDecrease = (id, name) => {
+//     checkedArray((prevState) =>
+//       prevState.map((item) =>
+//         item.id === id ? { ...item, [name]: +item[name] - 1 } : item
+//       )
+//     );
 //   };
 
 //   const fetchResult = () => {
@@ -66,7 +62,7 @@
 //         <div className={styles.main}>
 //           <div className={styles.cards}>
 //             {checkedArray?.map((checkedItem, index) => {
-//               const { id, name, count } = checkedItem;
+//               const { id, name, count, wattage, hours } = checkedItem;
 //               return (
 //                 <form className={styles.card} key={index}>
 //                   <div className={styles.custom_name_div}>
@@ -78,35 +74,32 @@
 //                   {/* wattage */}
 //                   <div className={styles.hr}></div>
 //                   <div className={styles["wattage-div"]}>
-//                     <span className={`root-small ${styles.wattage}`}>
+//                     <label
+//                       htmlFor={`wattage-${id}`}
+//                       className={`root-small ${styles.wattage}`}
+//                     >
 //                       Wattage
-//                     </span>
+//                     </label>
 //                     <div className={`dd ${styles.calculate}`}>
 //                       <div className={styles.meter}>
 //                         <input
 //                           className={`root-text ${styles.meter_number}`}
-//                           value={wattage[index]}
+//                           id={`wattage-${id}`}
+//                           value={wattage}
 //                           name="wattage"
-//                           onChange={(e) => {
-//                             const newItems = [...wattage];
-//                             newItems[index].wattage = e.target.value;
-//                             setWattage(newItems);
-//                           }}
-//                           min="1"
-//                           max="10"
+//                           onChange={(e) => handleInputChange(e, id)}
+//                           type="number"
 //                         />
 //                         <div className={styles.arrows}>
 //                           <img
 //                             src={arrowUp}
 //                             alt="arrow-up"
 //                             className={styles["arrow-up"]}
-//                             onClick={() => increaseWattage(index)}
 //                           />
 //                           <img
 //                             src={arrowDown}
 //                             alt="arrow-down"
 //                             className={styles["arrow-down"]}
-//                             onClick={() => decreaseWattage(index)}
 //                           />
 //                         </div>
 //                       </div>
@@ -116,31 +109,35 @@
 //                   <div className={styles.hr2}></div>
 //                   {/* hours */}
 //                   <div className={styles["hours-div"]}>
-//                     <span className={`root-small ${styles.hours}`}>
+//                     <label
+//                       htmlFor={`hours-${id}`}
+//                       className={`root-small ${styles.hours}`}
+//                     >
 //                       Hours used per day
-//                     </span>
+//                     </label>
 //                     <div className={`dd ${styles.calculate}`}>
 //                       <div className={styles["h-meter"]}>
 //                         <input
 //                           className={`root-text ${styles.h_number}`}
-//                           value={hours[index]}
+//                           id={`hours-${id}`}
+//                           value={hours}
 //                           name="hours"
-//                           onChange={(e) => setHours(e.target.value)}
-//                           min="1"
-//                           max="10"
+//                           onChange={(e) => handleInputChange(e, id)}
+//                           type="number"
 //                         />
 //                         <div className={styles["h-arrows"]}>
 //                           <img
 //                             src={arrowUp}
 //                             alt="arrow-up"
 //                             className={styles["h-arrow-up"]}
-//                             onClick={() => increaseHours(index)}
+//                             onClick={() => handleIncrease(id, "hours")}
 //                           />
 //                           <img
 //                             src={arrowDown}
 //                             alt="arrow-down"
 //                             className={styles["h-arrow-down"]}
-//                             onClick={() => decreaseHours(index)}
+//                             onClick={() => handleDecrease(id, "hours")}
+//                             arial-role="button"
 //                           />
 //                         </div>
 //                       </div>
