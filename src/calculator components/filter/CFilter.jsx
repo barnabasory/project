@@ -6,19 +6,39 @@ import { useContext } from "react";
 import { CheckedCards } from "../../Context";
 import data from "../cards/data";
 
-const CFilter = ({ handleClick, setSortOrder, message }) => {
+const CFilter = ({ handleClick, message }) => {
   const [select, setSelect] = useState(false);
   const [searchText, setSearchText] = useState("");
   const {
+    counts,
+    setCounts,
     checkedArray,
     setCheckedArray,
-    filteredArray,
-    setFilteredArray,
-    setSortingMethod,
+    sortOrder,
+    setSortOrder,
   } = useContext(CheckedCards);
   const [toggleCheckBox, setToggleCheckBox] = useState(
     Array(data.length).fill(false)
   );
+
+  const handleSortAsc = () => {
+    const sortedItems = [...counts].sort((a, b) => {
+      return a.name.localeCompare(b.name);
+    });
+
+    setCounts(sortedItems);
+    setSortOrder("ascending");
+    setSelect(false);
+  };
+
+  const handleSortDesc = () => {
+    const sortedItems = [...counts].sort((a, b) => {
+      return b.name.localeCompare(a.name);
+    });
+    setCounts(sortedItems);
+    setSortOrder("descending");
+    setSelect(false);
+  };
 
   const handleSelect = () => {
     setSelect((prev) => !prev);
@@ -32,25 +52,26 @@ const CFilter = ({ handleClick, setSortOrder, message }) => {
 
   const handleSearch = (event) => {
     const searchText = event.target.value.toLowerCase();
-    const filtered = data.filter((item) =>
+
+    const filtered = counts.filter((item) =>
       item.name.toLowerCase().includes(searchText)
     );
-    setFilteredArray(filtered);
+    if (!searchText) {
+      setCounts(data);
+    } else {
+      setCounts(filtered);
+    }
     setSearchText(searchText);
   };
 
-  const handleSorting = (event) => {
-    const sortingValue = event.target.value;
-    setSortingMethod(sortingValue);
-    const sorted = [...filteredArray].sort((a, b) =>
-      a[sortingValue] > b[sortingValue] ? 1 : -1
-    );
-    setFilteredArray(sorted);
-  };
-
-  useEffect(() => {
-    console.log("checkedArray:", checkedArray);
-  }, [checkedArray]);
+  // const handleSorting = (event) => {
+  //   const sortingValue = event.target.value;
+  //   setSortingMethod(sortingValue);
+  //   const sorted = [...counts].sort((a, b) =>
+  //     a[sortingValue] > b[sortingValue] ? 1 : -1
+  //   );
+  //   setCounts(sorted);
+  // };
 
   return (
     <>
@@ -66,7 +87,7 @@ const CFilter = ({ handleClick, setSortOrder, message }) => {
                 <div className={styles.select}>
                   <div
                     className={`root-small ${styles.select_input}`}
-                    onClick={handleSorting}
+                    onClick={() => setSelect(!select)}
                   >
                     KW: High to Low
                     <img
@@ -84,16 +105,10 @@ const CFilter = ({ handleClick, setSortOrder, message }) => {
 
                   {select && (
                     <div className={select ? styles.options : styles.dn}>
-                      <div
-                        className={styles.option}
-                        onClick={() => setSortOrder("ascending")}
-                      >
+                      <div className={styles.option} onClick={handleSortAsc}>
                         Ascending
                       </div>
-                      <div
-                        className={styles.option}
-                        onClick={() => setSortOrder("descending")}
-                      >
+                      <div className={styles.option} onClick={handleSortDesc}>
                         Descending
                       </div>
                       <span className={styles.option}>Kilowatt</span>
