@@ -11,33 +11,27 @@
 //     useContext(CheckedCards);
 //   const [loading, setLoading] = useState(false);
 
-//   const increaseWattage = (id) => {
-//     setWattage((prevWattage) => {
-//       const newWattage = [...prevWattage];
-//       newWattage[id] = newWattage[id] + 1;
-//       return newWattage;
-//     });
+//   const increaseWattage = (index) => {
+//     const newWattage = [...wattage]; // Make a copy of the wattage array
+//     newWattage[index] = parseInt(newWattage[index]) + 1; // Increment the value at the current index by 1
+//     setWattage(newWattage); // Update the state with the new array
 //   };
-//   const decreaseWattage = (id) => {
-//     setWattage((prevWattage) => {
-//       const newWattage = [...prevWattage];
-//       newWattage[id] = newWattage[id] - 1;
-//       return newWattage;
-//     });
+
+//   const decreaseWattage = (index) => {
+//     const newWattage = [...wattage]; // Make a copy of the wattage array
+//     newWattage[index] = parseInt(newWattage[index]) - 1; // Decrement the value at the current index by 1
+//     setWattage(newWattage); // Update the state with the new array
 //   };
-//   const increaseHours = (id) => {
-//     setHours((prevHours) => {
-//       const newHours = [...prevHours];
-//       newHours[id] = newHours[id] + 1;
-//       return newHours;
-//     });
+
+//   const increaseHours = (index) => {
+//     const newHours = [...hours];
+//     newHours[index] = parseInt(newHours[index] + 1);
+//     setHours(newHours);
 //   };
-//   const decreaseHours = (id) => {
-//     setHours((prevHours) => {
-//       const newHours = [...prevHours];
-//       newHours[id] = newHours[id] - 1;
-//       return newHours;
-//     });
+//   const decreaseHours = (index) => {
+//     const newHours = [...hours];
+//     newHours[index] = parseInt(newHours[index] - 1);
+//     setHours(newHours);
 //   };
 
 //   const fetchResult = () => {
@@ -88,12 +82,10 @@
 //                           value={wattage[index]}
 //                           name="wattage"
 //                           onChange={(e) => {
-//                             const newItems = [...wattage];
-//                             newItems[index].wattage = e.target.value;
-//                             setWattage(newItems);
+//                             const newWattage = [...wattage]; // Make a copy of the wattage array
+//                             newWattage[index] = e.target.value; // Update the value at the current index
+//                             setWattage(newWattage); // Update the state with the new array
 //                           }}
-//                           min="1"
-//                           max="10"
 //                         />
 //                         <div className={styles.arrows}>
 //                           <img
@@ -125,9 +117,11 @@
 //                           className={`root-text ${styles.h_number}`}
 //                           value={hours[index]}
 //                           name="hours"
-//                           onChange={(e) => setHours(e.target.value)}
-//                           min="1"
-//                           max="10"
+//                           onChange={(e) => {
+//                             const newHours = [...hours];
+//                             newHours[index] = e.target.value;
+//                             setHours(newHours);
+//                           }}
 //                         />
 //                         <div className={styles["h-arrows"]}>
 //                           <img

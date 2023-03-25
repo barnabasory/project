@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Chart.module.scss";
 import { CheckedCards } from "../../Context";
 import { useContext } from "react";
 
 const Chart = () => {
   const [monthYear, setMonthYear] = useState(true);
+  const [monthlyConsumption, setMonthlyConsumption] = useState(0);
 
   const [value, setValue] = useState({
     name: "",
@@ -17,16 +18,14 @@ const Chart = () => {
     setValue({ ...value, [e.target.name]: e.target.value });
   };
 
-  const { counts, wattage, hours } = useContext(CheckedCards);
-  const cardProducts = counts.map((count, index) => {
-    const wattagePerCard = wattage[index];
-    const hoursPerCard = hours[index];
-    return count * wattagePerCard * hoursPerCard * 2 * 30;
-  });
+  const { counts, wattage, hours, checkedArray } = useContext(CheckedCards);
 
-  const monthlyConsumption = cardProducts.reduce((prev, curr) => {
-    return prev + curr;
-  }, 0);
+  useEffect(() => {
+    const total = checkedArray.reduce((acc, item) => {
+      return acc + (item.count + 1) * item.wattage * item.hours;
+    }, 0);
+    setMonthlyConsumption(total * 30);
+  }, [checkedArray]);
 
   const toggleConsumption = () => {
     setMonthYear(!monthYear);

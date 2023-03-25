@@ -7,31 +7,62 @@ import { useNavigate } from "react-router-dom";
 
 const EditUnits = () => {
   const navigate = useNavigate();
-  const { checkedArray, counts, wattage, setWattage, hours, setHours } =
-    useContext(CheckedCards);
+  const {
+    checkedArray,
+    setCheckedArray,
+    counts,
+    setCounts,
+    wattage,
+    setWattage,
+    hours,
+    setHours,
+  } = useContext(CheckedCards);
   const [loading, setLoading] = useState(false);
 
-  const increaseWattage = (index) => {
-    const newWattage = [...wattage]; // Make a copy of the wattage array
-    newWattage[index] = parseInt(newWattage[index]) + 1; // Increment the value at the current index by 1
-    setWattage(newWattage); // Update the state with the new array
+  const handleWattageChange = (index) => (e) => {
+    const newData = checkedArray.map((item, i) => {
+      if (index === i) {
+        return { ...item, [e.target.name]: e.target.value };
+      } else {
+        return item;
+      }
+    });
+    setCheckedArray(newData);
   };
 
-  const decreaseWattage = (index) => {
-    const newWattage = [...wattage]; // Make a copy of the wattage array
-    newWattage[index] = parseInt(newWattage[index]) - 1; // Decrement the value at the current index by 1
-    setWattage(newWattage); // Update the state with the new array
+  const decreaseWatt = (id) => {
+    const newWattage = checkedArray.map((item) =>
+      item.id === id ? { ...item, wattage: item.wattage - 1 } : item
+    );
+    setCheckedArray(newWattage);
   };
 
-  const increaseHours = (index) => {
-    const newHours = [...hours];
-    newHours[index] = parseInt(newHours[index] + 1);
-    setHours(newHours);
+  const increaseWatt = (id) => {
+    const newWattage = checkedArray.map((item) => {
+      if (item.id === id) {
+        return { ...item, wattage: item.wattage + 1 };
+      } else {
+        return item;
+      }
+    });
+    setCheckedArray(newWattage);
   };
-  const decreaseHours = (index) => {
-    const newHours = [...hours];
-    newHours[index] = parseInt(newHours[index] - 1);
-    setHours(newHours);
+  const decreaseHours = (id) => {
+    const newHours = checkedArray.map((item) =>
+      item.id === id ? { ...item, hours: item.hours - 1 } : item
+    );
+    setCheckedArray(newHours);
+  };
+
+  const increaseHours = (id) => {
+    const newHours = checkedArray.map((item) => {
+      if (item.id === id) {
+        return { ...item, hours: item.hours + 1 };
+      } else {
+        return item;
+      }
+    });
+    setCheckedArray(newHours);
   };
 
   const fetchResult = () => {
@@ -60,7 +91,7 @@ const EditUnits = () => {
         <div className={styles.main}>
           <div className={styles.cards}>
             {checkedArray?.map((checkedItem, index) => {
-              const { id, name, count } = checkedItem;
+              const { id, name, count, wattage, hours } = checkedItem;
               return (
                 <form className={styles.card} key={index}>
                   <div className={styles.custom_name_div}>
@@ -79,26 +110,22 @@ const EditUnits = () => {
                       <div className={styles.meter}>
                         <input
                           className={`root-text ${styles.meter_number}`}
-                          value={wattage[index]}
+                          value={wattage}
                           name="wattage"
-                          onChange={(e) => {
-                            const newWattage = [...wattage]; // Make a copy of the wattage array
-                            newWattage[index] = e.target.value; // Update the value at the current index
-                            setWattage(newWattage); // Update the state with the new array
-                          }}
+                          onChange={handleWattageChange(index)}
                         />
                         <div className={styles.arrows}>
                           <img
                             src={arrowUp}
                             alt="arrow-up"
                             className={styles["arrow-up"]}
-                            onClick={() => increaseWattage(index)}
+                            onClick={() => increaseWatt(id)}
                           />
                           <img
                             src={arrowDown}
                             alt="arrow-down"
                             className={styles["arrow-down"]}
-                            onClick={() => decreaseWattage(index)}
+                            onClick={() => decreaseWatt(id)}
                           />
                         </div>
                       </div>
@@ -115,26 +142,22 @@ const EditUnits = () => {
                       <div className={styles["h-meter"]}>
                         <input
                           className={`root-text ${styles.h_number}`}
-                          value={hours[index]}
+                          value={hours}
                           name="hours"
-                          onChange={(e) => {
-                            const newHours = [...hours];
-                            newHours[index] = e.target.value;
-                            setHours(newHours);
-                          }}
+                          onChange={handleWattageChange(index)}
                         />
                         <div className={styles["h-arrows"]}>
                           <img
                             src={arrowUp}
                             alt="arrow-up"
                             className={styles["h-arrow-up"]}
-                            onClick={() => increaseHours(index)}
+                            onClick={() => increaseHours(id)}
                           />
                           <img
                             src={arrowDown}
                             alt="arrow-down"
                             className={styles["h-arrow-down"]}
-                            onClick={() => decreaseHours(index)}
+                            onClick={() => decreaseHours(id)}
                           />
                         </div>
                       </div>

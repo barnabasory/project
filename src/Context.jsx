@@ -11,6 +11,7 @@ const Context = ({ children }) => {
     Array(data.length).fill(false)
   );
   const [sum, setSum] = useState(0);
+  const [count, setCount] = useState(counts.map((item) => item.count));
   const [wattage, setWattage] = useState(counts.map((item) => item.wattage));
   const [hours, setHours] = useState(counts.map((item) => item.hours));
   const [filteredArray, setFilteredArray] = useState(data);
@@ -28,6 +29,8 @@ const Context = ({ children }) => {
           setCheckedItems,
           sum,
           setSum,
+          count,
+          setCount,
           wattage,
           setWattage,
           hours,

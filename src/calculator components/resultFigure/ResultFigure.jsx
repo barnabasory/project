@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./ResultFigure.module.scss";
 import { useContext } from "react";
 import { CheckedCards } from "../../Context";
 
 const ResultFigure = () => {
-  const { counts, wattage, hours } = useContext(CheckedCards);
-  const cardProducts = counts.map((count, index) => {
-    const wattagePerCard = wattage[index];
-    const hoursPerCard = hours[index];
-    return count * wattagePerCard * hoursPerCard * 2 * 30;
-  });
+  const { counts, wattage, hours, checkedArray, checkedItems } =
+    useContext(CheckedCards);
+  const [monthlyConsumption, setMonthlyConsumption] = useState(0);
 
-  const monthlyConsumption = cardProducts.reduce((prev, curr) => {
-    return prev + curr;
-  }, 0);
+  console.log(checkedArray);
+
+  useEffect(() => {
+    const total = checkedArray.reduce((acc, item) => {
+      return acc + (item.count + 1) * item.wattage * item.hours;
+    }, 0);
+    setMonthlyConsumption(total * 30);
+  }, [checkedArray]);
+
   return (
     <div className={`fw ${styles.wrapper}`}>
       <div className={`sw ${styles.content}`}>

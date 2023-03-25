@@ -11,7 +11,7 @@ const data = [
   {
     id: 2,
     name: "Gas cooker",
-    wattage: 300,
+    wattage: 200,
     hours: 12,
     count: 0,
     sum: 0,
@@ -20,7 +20,7 @@ const data = [
   {
     id: 3,
     name: "Fan",
-    wattage: 300,
+    wattage: 150,
     hours: 12,
     count: 0,
     sum: 0,
@@ -29,7 +29,7 @@ const data = [
   {
     id: 4,
     name: "Lighter",
-    wattage: 300,
+    wattage: 90,
     hours: 12,
     count: 0,
     sum: 0,
@@ -38,7 +38,7 @@ const data = [
   {
     id: 5,
     name: "AC",
-    wattage: 300,
+    wattage: 100,
     hours: 12,
     count: 0,
     sum: 0,
@@ -47,7 +47,7 @@ const data = [
   {
     id: 6,
     name: "Toaster",
-    wattage: 300,
+    wattage: 600,
     hours: 12,
     count: 0,
     sum: 0,
@@ -56,7 +56,7 @@ const data = [
   {
     id: 7,
     name: "Laptop",
-    wattage: 300,
+    wattage: 500,
     hours: 12,
     count: 0,
     sum: 0,
