@@ -16,6 +16,7 @@ const Context = ({ children }) => {
   const [hours, setHours] = useState(counts.map((item) => item.hours));
   const [filteredArray, setFilteredArray] = useState(data);
   const [sortOrder, setSortOrder] = useState("ascending");
+  const [select, setSelect] = useState(false);
 
   return (
     <div>
@@ -41,6 +42,8 @@ const Context = ({ children }) => {
           setSortOrder,
           show,
           setShow,
+          select,
+          setSelect,
         }}
       >
         {children}

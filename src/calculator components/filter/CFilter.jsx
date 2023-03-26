@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CFilter.module.scss";
-import { search, add, arrowDown } from "../../PAGES";
+import { search, add, arrowDown, vertical, horizontal } from "../../PAGES";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CheckedCards } from "../../Context";
 import data from "../cards/data";
 
 const CFilter = ({ handleClick, message }) => {
-  const [select, setSelect] = useState(false);
   const [searchText, setSearchText] = useState("");
   const {
     counts,
@@ -16,6 +15,11 @@ const CFilter = ({ handleClick, message }) => {
     setCheckedArray,
     sortOrder,
     setSortOrder,
+    show,
+    setShow,
+    select,
+    setSelect,
+    checkedItems,
   } = useContext(CheckedCards);
   const [toggleCheckBox, setToggleCheckBox] = useState(
     Array(data.length).fill(false)
@@ -50,6 +54,13 @@ const CFilter = ({ handleClick, message }) => {
     );
   };
 
+  const allCheckedItems = () => {
+    const checkedArray = counts.filter(
+      (item) => checkedItems[item.id] === !item.isChecked
+    );
+    setCheckedArray(checkedArray);
+  };
+
   const handleSearch = (event) => {
     const searchText = event.target.value.toLowerCase();
 
@@ -64,18 +75,16 @@ const CFilter = ({ handleClick, message }) => {
     setSearchText(searchText);
   };
 
-  // const handleSorting = (event) => {
-  //   const sortingValue = event.target.value;
-  //   setSortingMethod(sortingValue);
-  //   const sorted = [...counts].sort((a, b) =>
-  //     a[sortingValue] > b[sortingValue] ? 1 : -1
-  //   );
-  //   setCounts(sorted);
-  // };
+  const displayForm = () => {
+    setShow(!show);
+  };
 
   return (
     <>
-      <div className={`sw ${styles["filter-section"]}`}>
+      <div
+        className={`sw ${styles["filter-section"]}`}
+        // onClick={() => setSelect(false)}
+      >
         <div className={styles["filter-div"]}>
           <div className={styles.filter}>
             <span className={`root-text ${styles["filter-text"]}`}>
@@ -96,12 +105,6 @@ const CFilter = ({ handleClick, message }) => {
                       className={styles.arrow}
                     />
                   </div>
-                  {select && (
-                    <div
-                      className={styles.select_overlay}
-                      onClick={() => setSelect(false)}
-                    ></div>
-                  )}
 
                   {select && (
                     <div className={select ? styles.options : styles.dn}>
@@ -135,21 +138,23 @@ const CFilter = ({ handleClick, message }) => {
             </div>
           </div>
           <div className={styles["continue-custom-div"]}>
-            <div className={styles["add-custom-div"]} onClick={handleClick}>
-              <img src={add} alt="add-icon" className={styles["add-icon"]} />
+            <div className={styles["add-custom-div"]} onClick={displayForm}>
+              <div className={styles.img_bg}>
+                <img
+                  src={vertical}
+                  alt="add-icon"
+                  className={styles.vertical}
+                />
+                <img
+                  src={horizontal}
+                  alt="add-icon"
+                  className={styles.horizontal}
+                />
+              </div>
               <span className={styles[""]}>Add Custom Item</span>
             </div>
-            <Link
-              to={"/calculate-units"}
-              onClick={() => {
-                const checkedItems = message.filter(
-                  (card, id) => toggleCheckBox[id]
-                );
-                setCheckedArray([...checkedArray, ...checkedItems]);
-                console.log("checkedArray:", checkedArray);
-              }}
-            >
-              <button className={`root-text-bold ${styles["button"]}`}>
+            <Link to={"/calculate-units"} onClick={allCheckedItems}>
+              <button className={`root-small-bold ${styles["button"]}`}>
                 Continue
               </button>
             </Link>

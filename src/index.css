@@ -147,9 +147,11 @@ button {
   outline: none;
   color: var(--white);
   cursor: pointer;
+  transition: transform 0.4s ease-in;
 }
 button:hover{
-
+  background-color: var(--everglade);
+  transition: transform 0.6s ease-in;
 }
 
 .fw{

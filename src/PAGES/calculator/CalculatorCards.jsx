@@ -17,7 +17,7 @@ const CalculatorCards = () => {
   const [value, setValue] = useState(initialState);
   const [data, setData] = useState(cards);
   const [sortOrder, setSortOrder] = useState("ascending");
-  const { counts, setCounts, filteredArray, show, setShow } =
+  const { counts, setCounts, filteredArray, show, setShow, select, setSelect } =
     useContext(CheckedCards);
 
   const showModal = () => {
@@ -41,16 +41,6 @@ const CalculatorCards = () => {
     );
   };
 
-  // const sortFunction = (a, b) => {
-  //   if (sortOrder === "ascending") {
-  //     return a.name.localeCompare(b.name);
-  //   } else {
-  //     return b.name.localeCompare(a.name);
-  //   }
-  // };
-
-  // const sortedCards = data.sort(sortFunction);
-
   const addCustomItem = (id) => {
     const customItem = { ...value, id };
     setData([...data, customItem]);
@@ -70,22 +60,25 @@ const CalculatorCards = () => {
     <div className={styles.calculator}>
       <CNavbar />
       <CFilter
-        // sortFunction={sortFunction}
-        // sortedCards={sortedCards}
         sortOrder={sortOrder}
         setSortOrder={setSortOrder}
         message={data}
       />
       <CCards
         message={data}
-        // sortFunction={sortFunction}
-        // sortedCards={sortedCards}
         sortOrder={sortOrder}
         setSortOrder={setSortOrder}
         onAddCustomItem={(id) => increaseCount(id)}
       />
 
       {show && <Form />}
+
+      {select && (
+        <div
+          className={styles.select_overlay}
+          onClick={() => setSelect(false)}
+        ></div>
+      )}
     </div>
   );
 };

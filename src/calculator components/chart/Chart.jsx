@@ -38,7 +38,10 @@ const Chart = () => {
             YOUR AVERAGE ENERGY CONSUMPTION PER MONTH IS
           </span>
           <h3>
-            {monthYear ? monthlyConsumption : monthlyConsumption * 12} KWH
+            {monthYear
+              ? monthlyConsumption.toLocaleString()
+              : monthlyConsumption * 12}
+            {` kwH`}
           </h3>
           <div className={styles.toggle}>
             <span className={`root-small ${styles.month}`}>Per Month</span>

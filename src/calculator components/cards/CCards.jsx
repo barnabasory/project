@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CCards.module.scss";
-import { add, plus, minus, checkmark } from "../../PAGES";
+import { add, plus, minus, checkmark, vertical, horizontal } from "../../PAGES";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CheckedCards } from "../../Context";
@@ -88,7 +88,9 @@ const CCards = () => {
                     <div className={styles["card-content"]}>
                       <div className={styles.description}>
                         <span>{name}</span>
-                        <span className="root-small">Average kW:{wattage}</span>
+                        <span className={`root-small ${styles.average}`}>
+                          Average kW:{` ${wattage}`}
+                        </span>
                       </div>
                       <div
                         aria-roledescription="checkbox"
@@ -144,16 +146,20 @@ const CCards = () => {
                 <span className={`tiny-text ${styles["footer-instruction"]}`}>
                   Can’t find what you are looking for? You can add a custom item
                 </span>
-                <div
-                  className={styles["add-custom-card"]}
-                  onClick={displayForm}
-                >
-                  <img
-                    src={add}
-                    alt="add-icon"
-                    className={styles["add-icon"]}
-                  />
-                  <div className="root-small">Add Custom Item</div>
+                <div className={styles["add-custom-div"]} onClick={displayForm}>
+                  <div className={styles.img_bg}>
+                    <img
+                      src={vertical}
+                      alt="add-icon"
+                      className={styles.vertical}
+                    />
+                    <img
+                      src={horizontal}
+                      alt="add-icon"
+                      className={styles.horizontal}
+                    />
+                  </div>
+                  <span className={styles[""]}>Add Custom Item</span>
                 </div>
               </div>
               <Link to={"/calculate-units"}>

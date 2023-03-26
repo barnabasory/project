@@ -110,4 +110,12 @@
       }
     }
   }
+
+  .select_overlay {
+    background-color: transparent;
+    width: 100vw;
+    height: 100em;
+    position: absolute;
+    top: 0;
+  }
 }

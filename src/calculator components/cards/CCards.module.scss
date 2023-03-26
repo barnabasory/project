@@ -34,6 +34,10 @@
               flex-direction: column;
               gap: 3px;
 
+              .average {
+                color: var(--cod60);
+              }
+
               .calc-card-desc-name {
                 color: var(--cod-gray);
               }
@@ -168,17 +172,54 @@
           .footer-instruction {
             color: var(--cod60);
           }
-          .add-custom-card {
+          .add-custom-div {
             display: flex;
             align-items: center;
             gap: 10px;
-            width: fit-content;
-            height: 34px;
             background-color: white;
             padding: 7px 16px 7px 16px;
             border-radius: 4px;
             cursor: pointer;
-            .add-icon {
+            font-size: 14px;
+            height: 34px;
+            transition: transform 1s ease-in;
+
+            .img_bg {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: #d9d9d9;
+              border-radius: 50%;
+              position: relative;
+              width: 22px;
+              height: 22px;
+              transition: transform 1s ease-in;
+
+              .vertical {
+                height: 12px;
+                transform: translateX(10%);
+                position: absolute;
+                transition: transform 0.4s ease-in;
+              }
+
+              .horizontal {
+                width: 11px;
+                position: absolute;
+                transition: transform 0.4s ease-in;
+              }
+            }
+
+            &:hover {
+              background-color: rgba($color: white, $alpha: 0.5);
+            }
+            &:hover > .img_bg > .vertical {
+              transform: rotate(90deg);
+
+              transition: transform 0.4s ease-in;
+            }
+            &:hover > .img_bg > .horizontal {
+              transform: rotate(90deg);
+              transition: transform 0.4s ease-in;
             }
           }
         }

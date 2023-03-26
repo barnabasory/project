@@ -60,6 +60,8 @@ export { default as search } from "../assets/icons/search.svg";
 export { default as arrowUp } from "../assets/icons/arrow-up.svg";
 export { default as arrowDown } from "../assets/icons/arrow-down.svg";
 export { default as checkmark } from "../assets/icons/checkmark.svg";
+export { default as vertical } from "../assets/icons/vertical.svg";
+export { default as horizontal } from "../assets/icons/horizontal.svg";
 
 //images
 export { default as emailContact } from "../assets/images/email-contact.png";

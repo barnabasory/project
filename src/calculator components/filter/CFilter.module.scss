@@ -77,13 +77,6 @@
               cursor: pointer;
             }
 
-            .select_overlay {
-              background-color: transparent;
-              width: 100vw;
-              height: 100em;
-              position: absolute;
-            }
-
             .options {
               display: flex;
               align-items: flex-start;
@@ -158,17 +151,55 @@
         border-radius: 4px;
         cursor: pointer;
         font-size: 14px;
-        .add-icon {
+        height: 34px;
+        transition: transform 1s ease-in;
+
+        .img_bg {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #d9d9d9;
+          border-radius: 50%;
+          position: relative;
           width: 22px;
           height: 22px;
+          transition: transform 1s ease-in;
+
+          .vertical {
+            height: 12px;
+            transform: translateX(10%);
+            position: absolute;
+            transition: transform 0.4s ease-in;
+          }
+
+          .horizontal {
+            width: 11px;
+            position: absolute;
+            transition: transform 0.4s ease-in;
+          }
+        }
+
+        &:hover {
+          background-color: rgba($color: white, $alpha: 0.5);
+        }
+        &:hover > .img_bg > .vertical {
+          transform: rotate(90deg);
+
+          transition: transform 0.4s ease-in;
+        }
+        &:hover > .img_bg > .horizontal {
+          transform: rotate(90deg);
+          transition: transform 0.4s ease-in;
         }
       }
 
       .button {
         display: flex;
         align-items: center;
+        justify-content: center;
         padding: 8px 40px 8px 40px;
-        width: 137px;
+        width: fit-content;
+        height: 34px;
       }
     }
   }
@@ -248,8 +279,10 @@ $breakpoint-mobile: 480px;
         .button {
           display: flex;
           align-items: center;
+          justify-content: center;
           padding: 8px 40px 8px 40px;
-          width: 137px;
+          width: fit-content;
+          height: 34px;
         }
       }
     }
@@ -311,12 +344,13 @@ $breakpoint-tablet: 481px;
             height: 22px;
           }
         }
-
         .button {
           display: flex;
           align-items: center;
+          justify-content: center;
           padding: 8px 40px 8px 40px;
           width: fit-content;
+          height: 34px;
         }
       }
     }
@@ -381,8 +415,10 @@ $breakpoint-laptops-desktops: 768px;
         .button {
           display: flex;
           align-items: center;
+          justify-content: center;
           padding: 8px 40px 8px 40px;
-          width: 137px;
+          width: fit-content;
+          height: 34px;
         }
       }
     }
@@ -482,8 +518,10 @@ $breakpoint-large-screens: 1205px;
         .button {
           display: flex;
           align-items: center;
+          justify-content: center;
           padding: 8px 40px 8px 40px;
-          width: 137px;
+          width: fit-content;
+          height: 34px;
         }
       }
     }

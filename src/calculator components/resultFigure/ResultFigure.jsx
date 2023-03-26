@@ -24,7 +24,7 @@ const ResultFigure = () => {
           YOUR AVERAGE ENERGY CONSUMPTION PER MONTH IS
         </span>
 
-        <h4>{monthlyConsumption} kWH</h4>
+        <h4>{monthlyConsumption.toLocaleString()} kWH</h4>
 
         <div className={styles.buttons}>
           <button className={`root-small-bold ${styles.restart}`}>
