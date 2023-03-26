@@ -5,7 +5,7 @@ import batteryCards from "./data";
 const Battery = () => {
   return (
     <div className="sw cc battery-cards-wrapper">
-      <h6>battery Services</h6>
+      <h6>Battery Services</h6>
       <div className="battery-cards">
         {batteryCards.map((batteryCard) => {
           const { id, image, desc, price } = batteryCard;

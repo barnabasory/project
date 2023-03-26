@@ -5,7 +5,7 @@ import equipmentCards from "./data";
 const Equipment = () => {
   return (
     <div className="sw cc equipment-cards-wrapper">
-      <h6>equipment Services</h6>
+      <h6>Equipment Services</h6>
       <div className="equipment-cards">
         {equipmentCards.map((equipmentCard) => {
           const { id, image, desc, price } = equipmentCard;

@@ -5,7 +5,7 @@ import accessoryCards from "./data";
 const Accessory = () => {
   return (
     <div className="sw cc accessory-cards-wrapper">
-      <h6>accessory Services</h6>
+      <h6>Accessory Services</h6>
       <div className="accessory-cards">
         {accessoryCards.map((accessoryCard) => {
           const { id, image, desc, price } = accessoryCard;

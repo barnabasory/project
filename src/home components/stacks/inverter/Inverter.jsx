@@ -5,7 +5,7 @@ import inverterCards from "./data";
 const Inverter = () => {
   return (
     <div className="sw cc inverter-cards-wrapper">
-      <h6>inverter Services</h6>
+      <h6>Inverter Services</h6>
       <div className="inverter-cards">
         {inverterCards.map((inverterCard) => {
           const { id, image, desc, price } = inverterCard;
