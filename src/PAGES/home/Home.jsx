@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Home.module.scss";
 import {
   TopSnippet,
   Navbar,
@@ -14,7 +15,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="cc">
+    <div className={`cc ${styles.home_page}`}>
       <TopSnippet />
       <Navbar />
       <BgImg />

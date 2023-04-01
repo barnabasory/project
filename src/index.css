@@ -21,6 +21,13 @@
   --box-shadow: box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
 }
 
+.App{
+  width: 100%;
+}
+
+svg{
+  width: fit-content;
+}
 
 *{
   padding: 0;
@@ -37,7 +44,6 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  width: 100%;
 }
 
 h1 {

@@ -3,7 +3,7 @@ import styles from "./EditUnits.module.scss";
 import { arrowUp, arrowDown, ProcessingResults } from "../../PAGES";
 import { useContext } from "react";
 import { CheckedCards } from "../../Context";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const EditUnits = () => {
   const navigate = useNavigate();
@@ -73,7 +73,11 @@ const EditUnits = () => {
 
   return (
     <>
+      <Link to="/processing">
+        <button style={{ background: "red" }}>Processing results</button>
+      </Link>
       {loading && <ProcessingResults />}
+
       <div className={`sw ${styles["edit-page"]}`}>
         <div className={`${styles["top-bar"]}`}>
           <span>Edit the wattage and hourly usage for each item</span>

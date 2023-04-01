@@ -193,19 +193,19 @@
               position: relative;
               width: 22px;
               height: 22px;
-              transition: transform 1s ease-in;
+              transition: transform 0.2s ease-in;
 
               .vertical {
                 height: 12px;
                 transform: translateX(10%);
                 position: absolute;
-                transition: transform 0.4s ease-in;
+                transition: transform 0.2s ease-in;
               }
 
               .horizontal {
                 width: 11px;
                 position: absolute;
-                transition: transform 0.4s ease-in;
+                transition: transform 0.2s ease-in;
               }
             }
 
@@ -215,11 +215,11 @@
             &:hover > .img_bg > .vertical {
               transform: rotate(90deg);
 
-              transition: transform 0.4s ease-in;
+              transition: transform 0.2s ease-in;
             }
             &:hover > .img_bg > .horizontal {
               transform: rotate(90deg);
-              transition: transform 0.4s ease-in;
+              transition: transform 0.2s ease-in;
             }
           }
         }

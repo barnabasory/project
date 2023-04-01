@@ -1,32 +1,54 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./BestSeller.scss";
-import data from "../bestseller/data";
+import data from "./data";
 import { arrowLeft, arrowRight } from "../../PAGES";
 
 const BestSeller = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const updateIndex = (newIndex) => {
-    if (newIndex < 0) {
-      newIndex = 0;
-    } else if (newIndex >= data.length) {
-      newIndex = 0;
-    }
+  const ref = useRef(null);
 
-    setActiveIndex(newIndex);
+  const handleNavigation = (index) => {
+    if (index >= 0 && index < data.length) {
+      setActiveIndex(index);
+      if (ref.current) {
+        ref.current.scrollTo({
+          top: 0,
+          left: index * 324,
+          behavior: "smooth",
+        });
+      }
+    }
   };
+
+  const prev = () => {
+    let nextIndex = activeIndex - 1;
+    if (nextIndex < 0) {
+      nextIndex = data.length - 1;
+    }
+    handleNavigation(nextIndex);
+  };
+
+  const next = () => {
+    let nextIndex = activeIndex + 1;
+    if (nextIndex === data.length) {
+      nextIndex = 0;
+    }
+    handleNavigation(nextIndex);
+  };
+
+  useEffect(() => {
+    const slideInterval = setInterval(next, 5000);
+
+    return () => clearInterval(slideInterval);
+  }, [activeIndex]);
 
   return (
     <>
       <div className="sw best-seller-all-container">
         <h6 className="best-seller-title">Best Sellers</h6>
-        <div className="best-seller-container">
-          <div
-            className="best-cards-wrapper"
-            style={{
-              transform: `translate(-${activeIndex * 300}px)`,
-            }}
-          >
+        <div className="best-seller-container" ref={ref}>
+          <div className="best-cards-wrapper">
             {data.map((card, index) => (
               <div className="best-seller-card" key={index}>
                 <img src={card.image} alt="bestselling" className="best-img" />
@@ -38,14 +60,24 @@ const BestSeller = () => {
             ))}
           </div>
         </div>
+        <img
+          src={arrowLeft}
+          alt="arrow-left"
+          className={`arrow-left`}
+          onClick={prev}
+        />
+        <img
+          src={arrowRight}
+          alt="arrow-right"
+          className={`arrow-right`}
+          onClick={next}
+        />
         <div className="sw indicators">
           {data.map((item, index) => {
             return (
               <button
                 className="indicator-buttons"
-                onClick={() => {
-                  updateIndex(index);
-                }}
+                onClick={() => handleNavigation(index)}
               >
                 <span
                   className={`material-symbols-outlined ${
@@ -57,25 +89,6 @@ const BestSeller = () => {
               </button>
             );
           })}
-        </div>
-
-        <div className=" arrows">
-          <img
-            src={arrowLeft}
-            alt="arrow-left"
-            className={`arrow-left`}
-            style={{ opacity: activeIndex === 0 ? "0.5" : "1" }}
-            onClick={() => updateIndex(activeIndex - 1)}
-          />
-          <img
-            src={arrowRight}
-            alt="arrow-right"
-            className={`arrow-right`}
-            style={{
-              opacity: activeIndex === data.length - 1 ? "0.5" : "1",
-            }}
-            onClick={() => updateIndex(activeIndex + 1)}
-          />
         </div>
       </div>
     </>

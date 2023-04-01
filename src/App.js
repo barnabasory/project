@@ -20,7 +20,7 @@ function App() {
     }, 2000);
   }
   return (
-    <>
+    <div className="App">
       {!loading && (
         <Router>
           <Routes>
@@ -41,7 +41,7 @@ function App() {
           </Routes>
         </Router>
       )}
-    </>
+    </div>
   );
 }
 
