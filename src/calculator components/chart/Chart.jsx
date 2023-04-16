@@ -2,11 +2,15 @@ import React, { useState, useEffect } from "react";
 import styles from "./Chart.module.scss";
 import { CheckedCards } from "../../Context";
 import { useContext } from "react";
+import { Pie } from "react-chartjs-2";
+import { Chart as ChartJS } from "chart.js/auto";
+import { arrowDown2, Loader, ChartLoader } from "../../PAGES";
+import emailjs from "@emailjs/browser";
 
-const Chart = () => {
+const Chart = ({ chartData }) => {
+  const [showOptions, setShowOptions] = useState(false);
   const [monthYear, setMonthYear] = useState(true);
   const [monthlyConsumption, setMonthlyConsumption] = useState(0);
-
   const [value, setValue] = useState({
     name: "",
     email: "",
@@ -18,13 +22,65 @@ const Chart = () => {
     setValue({ ...value, [e.target.name]: e.target.value });
   };
 
-  const { counts, wattage, hours, checkedArray } = useContext(CheckedCards);
+  const { checkedArray, loading, setLoading } = useContext(CheckedCards);
+  console.log(checkedArray);
+
+  const [userData] = useState({
+    labels: checkedArray.map((data) => data.name),
+    datasets: [
+      {
+        label: "%",
+        data: checkedArray.map(
+          (data) => `${(data.wattage * data.hours * (data.count + 1)) / 100}`
+        ),
+      },
+    ],
+  });
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    const total = checkedArray.reduce((acc, item) => {
+      return acc + (item.count + 1) * item.wattage * item.hours;
+    }, 0);
+
+    const templateParams = {
+      email: value.email,
+      name: value.name,
+      subject: `Your monthly use is ${total * 30} and your yearly use is ${
+        total * 30 * 12
+      }`,
+    };
+
+    emailjs
+      .send(
+        "service_qr2skm6",
+        "template_7w1kzkl",
+        templateParams,
+        "4s6BipyV-2FaHmzWb"
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        (err) => {
+          console.log("FAILED...", err);
+        }
+      );
+
+    setValue({
+      name: "",
+      email: "",
+      number: "",
+    });
+  };
 
   useEffect(() => {
+    setLoading(true);
     const total = checkedArray.reduce((acc, item) => {
       return acc + (item.count + 1) * item.wattage * item.hours;
     }, 0);
     setMonthlyConsumption(total * 30);
+    setLoading(false);
   }, [checkedArray]);
 
   const toggleConsumption = () => {
@@ -55,7 +111,7 @@ const Chart = () => {
             <span className={`root-small ${styles.year}`}>Per Year</span>
           </div>
 
-          <div className={styles.ball}></div>
+          <Pie data={userData} />
         </div>
         <div className={styles.form}>
           <div className={styles.request}>
@@ -69,7 +125,7 @@ const Chart = () => {
               home.
             </p>
           </div>
-          <form>
+          <form onSubmit={sendEmail}>
             <input
               type="text"
               required
@@ -94,12 +150,33 @@ const Chart = () => {
               value={value.number}
               name="number"
               onChange={handleForm}
-              pattern="[0-9]{3}-[0-9]{4}-[0-9]{3}"
-              placeholder="000 0000 000"
-              className={`root-small tel ${styles.input}`}
+              placeholder="000-0000-000"
+              className={`root-small tel ${styles.input_tel}`}
             />
-
-            <button className={styles.button}>Send my Full Report</button>
+            <div className={styles.country_code}>
+              <select className={styles.code}>
+                <option className={styles.first_code}>+234 </option>
+                <option> +244 </option>
+                <option> +229 </option>
+                <option>+267 </option>
+                <option> +238</option>
+              </select>
+            </div>
+            <img
+              src={arrowDown2}
+              alt="arrow-down"
+              className={styles.arrow_down}
+              onClick={() => setShowOptions(!showOptions)}
+            />
+            <a
+              href={`mailto:${value.email}`}
+              data-subject="A strange email"
+              data-body="This email is for me with me also in cc and in bcc"
+            >
+              <button className={styles.button} type="submit">
+                Send my Full Report
+              </button>
+            </a>
           </form>
           <div className={styles.snippet}>
             <div className={`root-small ${styles["snippet-a"]}`}>
@@ -114,6 +191,7 @@ const Chart = () => {
           </div>
         </div>
       </div>
+      {loading && <ChartLoader />}
     </section>
   );
 };

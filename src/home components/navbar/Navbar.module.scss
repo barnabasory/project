@@ -487,8 +487,7 @@
         gap: 5.53px;
         text-transform: uppercase;
         width: 100%;
-        margin-right: 23px;
-
+        margin-right: 73px;
         .energy-title {
           display: flex;
           font-weight: 400;
@@ -518,6 +517,7 @@
       }
 
       .mobile-menu {
+        display: none;
         .menu-wrapper {
           width: 100vw;
           height: 100vh;
@@ -526,7 +526,7 @@
           position: absolute;
           height: 90vh;
           left: 0;
-          top: 59px;
+          top: 70px;
         }
         .dropdown {
           color: var(--white);

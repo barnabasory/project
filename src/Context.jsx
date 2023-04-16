@@ -17,6 +17,7 @@ const Context = ({ children }) => {
   const [filteredArray, setFilteredArray] = useState(data);
   const [sortOrder, setSortOrder] = useState("ascending");
   const [select, setSelect] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   return (
     <div>
@@ -44,6 +45,8 @@ const Context = ({ children }) => {
           setShow,
           select,
           setSelect,
+          loading,
+          setLoading,
         }}
       >
         {children}

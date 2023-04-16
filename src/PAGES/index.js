@@ -30,6 +30,9 @@ export { default as ResultFigure } from "../calculator components/resultFigure/R
 export { default as Browse } from "../calculator components/browseProducts/Browse";
 export { default as Chart } from "../calculator components/chart/Chart";
 export { default as Form } from "../calculator components/addCustomForm/Form";
+export { default as PieChart } from "../calculator components/PieChart/PieChart";
+export { default as Loader } from "../calculator components/loader/Loader";
+export { default as ChartLoader } from "../calculator components/chart/ChartLoader";
 
 //stacks
 export { default as Complete } from "../home components/stacks/complete/Complete";
@@ -59,6 +62,7 @@ export { default as plus } from "../assets/icons/plus.svg";
 export { default as search } from "../assets/icons/search.svg";
 export { default as arrowUp } from "../assets/icons/arrow-up.svg";
 export { default as arrowDown } from "../assets/icons/arrow-down.svg";
+export { default as arrowDown2 } from "../assets/icons/arrowDown2.svg";
 export { default as checkmark } from "../assets/icons/checkmark.svg";
 export { default as vertical } from "../assets/icons/vertical.svg";
 export { default as horizontal } from "../assets/icons/horizontal.svg";
