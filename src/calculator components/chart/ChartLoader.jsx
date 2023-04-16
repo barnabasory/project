@@ -43,7 +43,12 @@ const ChartLoader = () => {
           <form>
             <input
               className={`${styles["skeleton-loading"]}`}
-              style={{ height: "250px" }}
+              style={{ height: "200px" }}
+            />
+
+            <input
+              className={`${styles["skeleton-loading"]}`}
+              style={{ height: "50px" }}
             />
             <div className={styles.country_code}></div>
           </form>
