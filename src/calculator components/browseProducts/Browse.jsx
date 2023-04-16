@@ -7,10 +7,7 @@ const Browse = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const delay = setTimeout(() => {
-      setIsLoading(false);
-    });
-    return () => clearTimeout(delay);
+    setIsLoading(false);
   }, []);
   return (
     <>

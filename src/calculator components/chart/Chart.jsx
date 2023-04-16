@@ -19,9 +19,7 @@ const Chart = ({ chartData }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const delay = setTimeout(() => {
-      setIsLoading(false);
-    });
+    setIsLoading(false);
   }, []);
 
   const handleForm = (e) => {
