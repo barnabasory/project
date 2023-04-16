@@ -192,7 +192,6 @@ const Chart = ({ chartData }) => {
         </div>
       </div>
       {loading && <ChartLoader />}
-      <ChartLoader />
     </section>
   );
 };
