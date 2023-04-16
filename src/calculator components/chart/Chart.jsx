@@ -16,15 +16,20 @@ const Chart = ({ chartData }) => {
     email: "",
     number: "",
   });
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const delay = setTimeout(() => {
+      setIsLoading(false);
+    });
+  }, []);
 
   const handleForm = (e) => {
     e.preventDefault();
     setValue({ ...value, [e.target.name]: e.target.value });
   };
-
-  const { checkedArray, loading, setLoading } = useContext(CheckedCards);
+  const { checkedArray } = useContext(CheckedCards);
   console.log(checkedArray);
-
   const [userData] = useState({
     labels: checkedArray.map((data) => data.name),
     datasets: [
@@ -36,7 +41,6 @@ const Chart = ({ chartData }) => {
       },
     ],
   });
-
   const sendEmail = (e) => {
     e.preventDefault();
     const total = checkedArray.reduce((acc, item) => {
@@ -73,20 +77,18 @@ const Chart = ({ chartData }) => {
       number: "",
     });
   };
-
   useEffect(() => {
     const total = checkedArray.reduce((acc, item) => {
       return acc + (item.count + 1) * item.wattage * item.hours;
     }, 0);
     setMonthlyConsumption(total * 30);
   }, [checkedArray]);
-
   const toggleConsumption = () => {
     setMonthYear(!monthYear);
   };
   return (
     <>
-      {loading ? (
+      {isLoading ? (
         <ChartLoader />
       ) : (
         <section className={`fw ${styles.wrapper}`}>

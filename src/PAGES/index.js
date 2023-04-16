@@ -33,6 +33,7 @@ export { default as Form } from "../calculator components/addCustomForm/Form";
 export { default as PieChart } from "../calculator components/PieChart/PieChart";
 export { default as Loader } from "../calculator components/loader/Loader";
 export { default as ChartLoader } from "../calculator components/chart/ChartLoader";
+export { default as BrowseLoader } from "../calculator components/browseProducts/BrowseLoader";
 
 //stacks
 export { default as Complete } from "../home components/stacks/complete/Complete";

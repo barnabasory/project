@@ -1,0 +1,137 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 39px;
+  background-color: white;
+  gap: 43px;
+  width: 100%;
+  padding-bottom: 55px;
+  color: transparent;
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 4px;
+    .title {
+      font-weight: 600;
+    }
+
+    .texta,
+    .textb {
+      color: var(--cod60);
+    }
+
+    .skeleton-loading {
+      opacity: 0.7;
+      animation: skeleton-loading 1s linear infinite alternate;
+      border-radius: 8px;
+      @keyframes skeleton-loading {
+        0% {
+          background-color: rgba(0, 0, 0, 0.08);
+        }
+
+        100% {
+          background-color: rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+  }
+
+  .images {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-self: start;
+    grid-gap: 24px;
+    transition: transform 1s ease;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+
+    .card {
+      width: 100%;
+      grid-column: span 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 26px;
+      flex-direction: column;
+      border-radius: 4px;
+      background: rgba(247, 247, 245, 1);
+      width: 300px;
+      height: 330px;
+      cursor: pointer;
+      box-shadow: var(--box-shadow);
+      transition: transform 1s ease;
+      padding-top: 30px;
+      padding-bottom: 34px;
+
+      &:hover .image {
+        transform: translateY(-1%);
+        transition: all 0.1s ease-in-out;
+      }
+
+      .image {
+        object-fit: contain;
+        width: 230px;
+        height: 189px;
+        mix-blend-mode: multiply;
+      }
+
+      .text-div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-direction: column;
+        text-align: center;
+
+        .desc {
+          color: var(--cod-gray);
+        }
+      }
+    }
+
+    .skeleton-loading {
+      opacity: 0.7;
+      animation: skeleton-loading 1s linear infinite alternate;
+      border-radius: 8px;
+      width: 100%;
+      @keyframes skeleton-loading {
+        0% {
+          background-color: rgba(0, 0, 0, 0.08);
+        }
+
+        100% {
+          background-color: rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+  }
+
+  button {
+    padding: 10px 51px 10px 51px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    width: fit-content;
+    color: transparent;
+
+    .skeleton-loading {
+      opacity: 0.7;
+      animation: skeleton-loading 1s linear infinite alternate;
+      border-radius: 8px;
+
+      @keyframes skeleton-loading {
+        0% {
+          background-color: rgba(0, 0, 0, 0.08);
+        }
+
+        100% {
+          background-color: rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+  }
+}
