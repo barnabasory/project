@@ -1,0 +1,46 @@
+.navbar-wrapper {
+  height: 70px;
+  background-color: #ffffff;
+  position: fixed;
+  z-index: 1000;
+
+  .navbar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    align-items: center;
+    color: transparent;
+
+    .skeleton-loading {
+      opacity: 0.7;
+      animation: skeleton-loading 1s linear infinite alternate;
+      border-radius: 8px;
+
+      @keyframes skeleton-loading {
+        0% {
+          background-color: rgba(0, 0, 0, 0.08);
+        }
+
+        100% {
+          background-color: rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+
+    .logo {
+      grid-column: span 1;
+      justify-self: start;
+    }
+    .navbar-title {
+      font-weight: 600;
+      grid-column: span 1;
+      justify-self: center;
+    }
+  }
+  .close {
+    gap: 4px;
+    grid-column: span 1;
+    justify-self: flex-end;
+    color: transparent;
+  }
+}

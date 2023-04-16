@@ -31,10 +31,11 @@ export { default as Browse } from "../calculator components/browseProducts/Brows
 export { default as Chart } from "../calculator components/chart/Chart";
 export { default as Form } from "../calculator components/addCustomForm/Form";
 export { default as PieChart } from "../calculator components/PieChart/PieChart";
-export { default as Loader } from "../calculator components/loader/Loader";
+//loaders
 export { default as ChartLoader } from "../calculator components/chart/ChartLoader";
 export { default as BrowseLoader } from "../calculator components/browseProducts/BrowseLoader";
-
+export { default as ResultFigureLoader } from "../calculator components/resultFigure/ResultFigureLoader";
+export { default as ResultNavbarLoader } from "../calculator components/resultNavbar/ResultNavbarLoader";
 //stacks
 export { default as Complete } from "../home components/stacks/complete/Complete";
 export { default as Solar } from "../home components/stacks/solar/Solar";
