@@ -1,5 +1,5 @@
 import React from "react";
-import "./HomeCards.scss";
+import styles from "./HomeCards.module.scss";
 import {
   house,
   battery,
@@ -12,30 +12,36 @@ import {
 const HomeCards = () => {
   return (
     <>
-      <div className="sw home-cards">
-        <div className="home-card">
+      <div className={`sw ${styles["home-cards"]}`}>
+        <div className={styles["home-card"]}>
           <img src={house} alt="house" />
-          <p className="root-small home-card-text">Complete Solution</p>
+          <p className={`root-small ${styles["home-card-text"]}`}>
+            Complete Solution
+          </p>
         </div>
-        <div className="home-card">
+        <div className={styles["home-card"]}>
           <img src={solar} alt="house" />
-          <p className="root-small home-card-text">Solar Panel</p>
+          <p className={`root-small ${styles["home-card-text"]}`}>
+            Solar Panel
+          </p>
         </div>
-        <div className="home-card">
+        <div className={styles["home-card"]}>
           <img src={inverter} alt="house" />
-          <p className="root-small home-card-text">Inverter</p>
+          <p className={`root-small ${styles["home-card-text"]}`}>Inverter</p>
         </div>
-        <div className="home-card">
+        <div className={styles["home-card"]}>
           <img src={battery} alt="house" />
-          <p className="root-small home-card-text">Battery</p>
+          <p className={`root-small ${styles["home-card-text"]}`}>Battery</p>
         </div>
-        <div className="home-card">
+        <div className={styles["home-card"]}>
           <img src={bulb} alt="house" />
-          <p className="root-small home-card-text">Accessory</p>
+          <p className={`root-small ${styles["home-card-text"]}`}>Accessory</p>
         </div>
-        <div className="home-card">
+        <div className={styles["home-card"]}>
           <img src={equipment} alt="house" />
-          <p className="root-small home-card-text">Home Equipment</p>
+          <p className={`root-small ${styles["home-card-text"]}`}>
+            Home Equipment
+          </p>
         </div>
       </div>
     </>

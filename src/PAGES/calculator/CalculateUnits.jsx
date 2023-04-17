@@ -1,12 +1,33 @@
-import React from "react";
-import { CNavbar, EditUnits } from "../../PAGES";
+import { useState, useEffect } from "react";
+import {
+  CNavbar,
+  EditUnits,
+  CNavbarLoader,
+  EditUnitsLoader,
+} from "../../PAGES";
 
 const CalculateUnits = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
   return (
-    <div>
-      <CNavbar />
-      <EditUnits />
-    </div>
+    <>
+      {" "}
+      {isLoading ? (
+        <div>
+          {" "}
+          <CNavbarLoader />
+          <EditUnitsLoader />
+        </div>
+      ) : (
+        <div>
+          <CNavbar />
+          <EditUnits />
+        </div>
+      )}
+    </>
   );
 };
 

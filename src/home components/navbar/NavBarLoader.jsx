@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import styles from "./Navbar.module.scss";
+import styles from "./NavbarLoader.module.scss";
 import logo from "../../assets/icons/logo.svg";
 import energyNeed from "../../assets/icons/energy-green.svg";
 import { RxDragHandleHorizontal } from "react-icons/rx";
@@ -16,33 +16,36 @@ const Navbar = () => {
   useEffect(() => {
     setShowMenu(false);
   }, []);
-
   return (
     <>
       <div className={`fw ${styles["navbar-wrapper"]}`}>
         <div className={`sw ${styles.navbar}`}>
-          <div className={styles.logo}>
-            <Link to="/">
-              <img src={logo} alt="" />
-            </Link>
-          </div>
-          <div className={styles["energy-needs"]}>
-            <img src={energyNeed} alt="" />
+          <div
+            className={`${styles.logo} skeleton-loading`}
+            style={{ width: "180px", height: "40px" }}
+          ></div>
+          <div
+            className={`skeleton-loading ${styles["energy-needs"]}`}
+            style={{ width: "300px", height: "40px" }}
+          >
             <Link to="/start-calculating">
-              <p className={styles["energy-title"]}>
+              <p className={`${styles["energy-title"]}`}>
                 Calculate your Energy Needs
               </p>
             </Link>
           </div>
           <div>
-            <ul className={`root-small ${styles.navlinks}`}>
+            <ul
+              className={`root-small skeleton-loading ${styles.navlinks}`}
+              style={{ width: "180px", height: "40px" }}
+            >
               <li>
-                <a href="#Search">Search</a>
+                <a href="#Search"></a>
               </li>
               <li>
-                <a href="#My-account">My Account</a>
+                <a href="#My-account"></a>
               </li>
-              <li className={styles.count}>0</li>
+              {/* <li className={styles.count}></li> */}
             </ul>
           </div>
           <div className={styles["mobile-menu"]}>
@@ -53,20 +56,20 @@ const Navbar = () => {
               ></div>
             )}
             {!showMenu && (
-              <RxDragHandleHorizontal
+              <div
                 size={40}
-                style={{ cursor: "pointer" }}
+                style={{ cursor: "pointer", width: "50px", height: "40px" }}
                 onClick={handleShowMenu}
-                className={styles.open_menu}
-              />
+                className={`skeleton-loading ${styles.open_menu}`}
+              ></div>
             )}
             {showMenu && (
-              <FiX
+              <div
                 size={40}
-                style={{ cursor: "pointer" }}
+                style={{ cursor: "pointer", width: "50px", height: "40px" }}
                 onClick={handleShowMenu}
-                className={styles.close_menu}
-              />
+                className={`skeleton-loading ${styles.close_menu}`}
+              ></div>
             )}
             <div>
               {showMenu && (

@@ -1,34 +1,50 @@
 import React, { useState, useEffect } from "react";
-import styles from "./ResultFigureLoader.module.scss";
+import styles from "./ResultFigure.module.scss";
+import { useContext } from "react";
+import { CheckedCards } from "../../Context";
 
 const ResultFigure = () => {
-  useEffect(() => {}, []);
+  const { checkedArray } = useContext(CheckedCards);
+  const [monthlyConsumption, setMonthlyConsumption] = useState(0);
+
+  useEffect(() => {
+    const total = checkedArray.reduce((acc, item) => {
+      return acc + (item.count + 1) * item.wattage * item.hours;
+    }, 0);
+    setMonthlyConsumption(total * 30);
+  }, [checkedArray]);
 
   return (
-    <div className={`fw ${styles.wrapper}`}>
-      <div className={`sw ${styles.content}`}>
-        <span className={styles["skeleton-loading"]}>
-          YOUR AVERAGE ENERGY CONSUMPTION PER MONTH IS
-        </span>
-
-        <h4 className={styles["skeleton-loading"]}> kWH</h4>
-
-        <div className={styles.buttons}>
-          <button
-            className={styles["skeleton-loading"]}
-            style={{ padding: "8px 46px 8px 46px", color: "transparent" }}
+    <>
+      <div className={`fw ${styles.wrapper}`}>
+        <div className={`sw ${styles.content}`}>
+          <span
+            className={`skeleton-loading ${styles.title}`}
+            style={{ color: "transparent" }}
           >
-            Restart
-          </button>
-          <button
-            className={styles["skeleton-loading"]}
-            style={{ padding: "8px 32px 8px 32px", color: "transparent" }}
-          >
-            Full Energy Report
-          </button>
+            YOUR AVERAGE ENERGY CONSUMPTION PER MONTH IS
+          </span>
+          <h4
+            className={`${styles["skeleton-loading"]}`}
+            style={{ width: "150px", height: "30px" }}
+          ></h4>
+          <div className={styles.buttons}>
+            <button
+              className={`root-small-bold skeleton-loading ${styles.restart}`}
+              style={{ color: "transparent" }}
+            >
+              Restart
+            </button>
+            <button
+              className={`root-small-bold skeleton-loading ${styles.report}`}
+              style={{ color: "transparent" }}
+            >
+              Full Energy Report
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

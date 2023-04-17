@@ -7,21 +7,10 @@ import {
   ResultPage,
 } from "./PAGES";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
 
 function App() {
-  // const [loading, setLoading] = useState(true);
-  // const spinner = document.getElementById("spinner");
-
-  // if (loading) {
-  //   setTimeout(() => {
-  //     spinner.style.display = "none";
-  //     setLoading(false);
-  //   }, 2000);
-  // }
   return (
     <div className="App">
-      {/* {!loading && ( */}
       <Router>
         <Routes>
           <Route
@@ -36,7 +25,6 @@ function App() {
           <Route path="/result" element={<ResultPage />} />
         </Routes>
       </Router>
-      {/* )} */}
     </div>
   );
 }

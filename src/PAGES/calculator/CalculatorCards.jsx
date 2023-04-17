@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { CNavbar, CFilter, CCards, Form } from "../index";
 import styles from "./calculator.module.scss";
-import { times, minus, plus } from "../../PAGES";
+import { CNavbarLoader, CFilterLoader, CCardsLoader } from "../../PAGES";
 import cards from "../../calculator components/cards/data";
 import { useContext } from "react";
 import { CheckedCards } from "../../Context";
@@ -19,6 +19,7 @@ const CalculatorCards = () => {
   const [sortOrder, setSortOrder] = useState("ascending");
   const { counts, setCounts, filteredArray, show, setShow, select, setSelect } =
     useContext(CheckedCards);
+  const [isLoading, setIsLoading] = useState(true);
 
   const showModal = () => {
     setShow(!show);
@@ -56,30 +57,44 @@ const CalculatorCards = () => {
     }
   }, []);
 
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
+
   return (
-    <div className={styles.calculator}>
-      <CNavbar />
-      <CFilter
-        sortOrder={sortOrder}
-        setSortOrder={setSortOrder}
-        message={data}
-      />
-      <CCards
-        message={data}
-        sortOrder={sortOrder}
-        setSortOrder={setSortOrder}
-        onAddCustomItem={(id) => increaseCount(id)}
-      />
+    <>
+      {isLoading ? (
+        <div>
+          <CNavbarLoader />
+          <CFilterLoader />
+          <CCardsLoader />
+        </div>
+      ) : (
+        <div className={styles.calculator}>
+          <CNavbar />
+          <CFilter
+            sortOrder={sortOrder}
+            setSortOrder={setSortOrder}
+            message={data}
+          />
+          <CCards
+            message={data}
+            sortOrder={sortOrder}
+            setSortOrder={setSortOrder}
+            onAddCustomItem={(id) => increaseCount(id)}
+          />
 
-      {show && <Form />}
+          {show && <Form />}
 
-      {select && (
-        <div
-          className={styles.select_overlay}
-          onClick={() => setSelect(false)}
-        ></div>
+          {select && (
+            <div
+              className={styles.select_overlay}
+              onClick={() => setSelect(false)}
+            ></div>
+          )}
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

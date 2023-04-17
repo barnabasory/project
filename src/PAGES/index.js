@@ -36,6 +36,25 @@ export { default as ChartLoader } from "../calculator components/chart/ChartLoad
 export { default as BrowseLoader } from "../calculator components/browseProducts/BrowseLoader";
 export { default as ResultFigureLoader } from "../calculator components/resultFigure/ResultFigureLoader";
 export { default as ResultNavbarLoader } from "../calculator components/resultNavbar/ResultNavbarLoader";
+export { default as TopSnippetLoader } from "../home components/topSnippet/TopSnippetLoader";
+export { default as NavBarLoader } from "../home components/navbar/NavBarLoader";
+export { default as BgImgLoader } from "../home components/bgImg/BgImgLoader";
+export { default as HomeCardsLoader } from "../home components/homeCards/HomeCardsLoader";
+export { default as BestSellerLoader } from "../home components/bestseller/BestSellerLoader";
+export { default as CompleteLoader } from "../home components/stacks/complete/CompleteLoader";
+export { default as SolarLoader } from "../home components/stacks/solar/SolarLoader";
+export { default as InverterLoader } from "../home components/stacks/inverter/InverterLoader";
+export { default as BatteryLoader } from "../home components/stacks/battery/BatteryLoader";
+export { default as AccessoryLoader } from "../home components/stacks/accessory/AccessoryLoader";
+export { default as EquipmentLoader } from "../home components/stacks/equipment/EquipmentLoader";
+export { default as ContactLoader } from "../home components/contact/ContactLoader";
+export { default as CalculateLoader } from "../home components/calculate/CalculateLoader";
+export { default as FooterLoader } from "../home components/footer/FooterLoader";
+export { default as CNavbarLoader } from "../calculator components/navbar/CNavbarLoader";
+export { default as CMainLoader } from "../calculator components/main/CMainLoader";
+export { default as CFilterLoader } from "../calculator components/filter/CFilterLoader";
+export { default as CCardsLoader } from "../calculator components/cards/CCardsLoader";
+export { default as EditUnitsLoader } from "../calculator components/editUnits/EditUnitsLoader";
 //stacks
 export { default as Complete } from "../home components/stacks/complete/Complete";
 export { default as Solar } from "../home components/stacks/solar/Solar";
