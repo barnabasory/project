@@ -8,7 +8,13 @@ import {
   ResultPage,
 } from "./PAGES";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import { HomeLoader } from "./PAGES/index";
+import {
+  HomeLoader,
+  ResultLoader,
+  CalculatorCardsLoader,
+  CalculatorStartLoader,
+  CalculateUnitsLoader,
+} from "./PAGES/index";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -23,7 +29,9 @@ function App() {
             <Route
               exact
               path="/start-calculating"
-              element={<CalculatorStart />}
+              element={
+                isLoading ? <CalculatorStartLoader /> : <CalculatorStart />
+              }
             />
 
             <Route
@@ -35,11 +43,21 @@ function App() {
             <Route
               exact
               path="/calculate-cards"
-              element={<CalculatorCards />}
+              element={
+                isLoading ? <CalculatorCardsLoader /> : <CalculatorCards />
+              }
             />
-            <Route path="/calculate-units" element={<CalculateUnits />} />
+            <Route
+              path="/calculate-units"
+              element={
+                isLoading ? <CalculateUnitsLoader /> : <CalculateUnits />
+              }
+            />
             <Route path="/processing" element={<Processing />} />
-            <Route path="/result" element={<ResultPage />} />
+            <Route
+              path="/result"
+              element={isLoading ? <ResultLoader /> : <ResultPage />}
+            />
           </Routes>
         </Router>
       </div>

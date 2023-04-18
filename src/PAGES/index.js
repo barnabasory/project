@@ -60,6 +60,9 @@ export { default as FooterLoader } from "../home components/footer/FooterLoader"
 //page loaders
 export { default as HomeLoader } from "./home/HomeLoader";
 export { default as ResultLoader } from "./calculator/loaders/ResultLoader";
+export { default as CalculatorCardsLoader } from "./calculator/loaders/CalculatorCardsLoader";
+export { default as CalculatorStartLoader } from "./calculator/loaders/CalculatorStartLoader";
+export { default as CalculateUnitsLoader } from "./calculator/loaders/CalculateUnitsLoader";
 //stacks
 export { default as Complete } from "../home components/stacks/complete/Complete";
 export { default as Solar } from "../home components/stacks/solar/Solar";
