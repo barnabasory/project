@@ -55,6 +55,7 @@ export { default as CMainLoader } from "../calculator components/main/CMainLoade
 export { default as CFilterLoader } from "../calculator components/filter/CFilterLoader";
 export { default as CCardsLoader } from "../calculator components/cards/CCardsLoader";
 export { default as EditUnitsLoader } from "../calculator components/editUnits/EditUnitsLoader";
+export { default as HomeLoader } from "./home/HomeLoader";
 //stacks
 export { default as Complete } from "../home components/stacks/complete/Complete";
 export { default as Solar } from "../home components/stacks/solar/Solar";

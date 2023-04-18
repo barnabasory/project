@@ -27,6 +27,7 @@ import {
   CalculateLoader,
   FooterLoader,
 } from "../index";
+import HomeLoader from "./HomeLoader";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -37,18 +38,7 @@ const Home = () => {
   return (
     <>
       {isLoading ? (
-        <div>
-          <TopSnippetLoader /> <NavBarLoader /> <BgImgLoader />
-          <HomeCardsLoader /> <BestSellerLoader />
-          <CompleteLoader />
-          <InverterLoader />
-          <BatteryLoader />
-          <AccessoryLoader />
-          <EquipmentLoader />
-          <ContactLoader />
-          <CalculateLoader />
-          <FooterLoader />
-        </div>
+        <HomeLoader />
       ) : (
         <div className={`cc ${styles.home_page}`}>
           <TopSnippet />
