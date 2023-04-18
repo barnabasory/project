@@ -27,6 +27,14 @@
       }
     </style>
   </head>
+  <script>
+    const root = document.getElementById("root");
+    let isLoading = true;
+    isLoading && <h1>Loadddddddiiiiiiiinggggggggg</h1>;
+    if (root) {
+      isLoading = false;
+    }
+  </script>
   <body>
     <div id="root"></div>
   </body>
