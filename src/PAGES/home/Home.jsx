@@ -12,21 +12,6 @@ import {
   Footer,
 } from "../index";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import {
-  TopSnippetLoader,
-  NavBarLoader,
-  BgImgLoader,
-  HomeCardsLoader,
-  BestSellerLoader,
-  CompleteLoader,
-  InverterLoader,
-  BatteryLoader,
-  AccessoryLoader,
-  EquipmentLoader,
-  ContactLoader,
-  CalculateLoader,
-  FooterLoader,
-} from "../index";
 import HomeLoader from "./HomeLoader";
 
 const Home = () => {

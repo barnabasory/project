@@ -87,42 +87,27 @@ const CFilter = ({ handleClick, message }) => {
       >
         <div className={styles["filter-div"]}>
           <div className={styles.filter}>
-            <span
-              className={`root-text skeleton-loading ${styles["filter-text"]}`}
-              style={{ color: "transparent" }}
-            >
+            <span className={`root-text ${styles["filter-text"]}`}>
               Let’s start with selecting the Items you want to power with your
               solar system
             </span>
             <div className={`dd ${styles["filter-bars"]}`}>
               <form className={styles.form}>
-                <div
-                  className={`skeleton-loading ${styles.select}`}
-                  style={{
-                    cursor: "auto",
-                  }}
-                >
+                <div className={styles.select}>
                   <div
-                    className={`root-small  ${styles.select_input}`}
-                    style={{
-                      visibility: "hidden",
-                      cursor: "auto",
-                    }}
+                    className={`root-small ${styles.select_input}`}
+                    onClick={() => setSelect(!select)}
                   >
                     KW: High to Low
                     <img
                       src={arrowDown}
                       alt="arrowDown"
                       className={styles.arrow}
-                      style={{ visibility: "hidden" }}
                     />
                   </div>
 
                   {select && (
-                    <div
-                      className={select ? styles.options : styles.dn}
-                      style={{ visibility: "hidden" }}
-                    >
+                    <div className={select ? styles.options : styles.dn}>
                       <div className={styles.option} onClick={handleSortAsc}>
                         Ascending
                       </div>
@@ -136,52 +121,40 @@ const CFilter = ({ handleClick, message }) => {
                 </div>
               </form>
 
-              <div className={`dd skeleton-loading ${styles["search-box"]}`}>
+              <div className={`dd ${styles["search-box"]}`}>
                 <input
                   type="search"
                   className={`root-small ${styles["search"]}`}
                   placeholder="Search"
                   value={searchText}
                   onChange={handleSearch}
-                  style={{ visibility: "hidden", cursor: "auto" }}
                 />
                 <img
                   src={search}
                   alt="search-icon"
                   className={styles["search-icon"]}
-                  style={{ visibility: "hidden", cursor: "auto" }}
                 />
               </div>
             </div>
           </div>
           <div className={styles["continue-custom-div"]}>
-            <div
-              className={`skeleton-loading ${styles["add-custom-div"]}`}
-              onClick={displayForm}
-            >
+            <div className={styles["add-custom-div"]} onClick={displayForm}>
               <div className={styles.img_bg}>
                 <img
                   src={vertical}
                   alt="add-icon"
                   className={styles.vertical}
-                  style={{ visibility: "hidden" }}
                 />
                 <img
                   src={horizontal}
                   alt="add-icon"
                   className={styles.horizontal}
-                  style={{ visibility: "hidden" }}
                 />
               </div>
-              <span className={styles[""]} style={{ color: "transparent" }}>
-                Add Custom Item
-              </span>
+              <span className={styles[""]}>Add Custom Item</span>
             </div>
             <Link to={"/calculate-units"} onClick={allCheckedItems}>
-              <button
-                className={`root-small-bold skeleton-loading ${styles["button"]}`}
-                style={{ color: "transparent" }}
-              >
+              <button className={`root-small-bold ${styles["button"]}`}>
                 Continue
               </button>
             </Link>

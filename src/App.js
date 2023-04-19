@@ -7,7 +7,7 @@ import {
   Processing,
   ResultPage,
 } from "./PAGES";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   HomeLoader,
   ResultLoader,
@@ -19,7 +19,9 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(false);
+    setTimeout(() => {
+      setIsLoading(false);
+    });
   }, []);
   return (
     <>
@@ -55,7 +57,7 @@ function App() {
             />
             <Route path="/processing" element={<Processing />} />
             <Route
-              path="/result"
+              path="/result-page"
               element={isLoading ? <ResultLoader /> : <ResultPage />}
             />
           </Routes>

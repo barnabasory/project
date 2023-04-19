@@ -84,11 +84,8 @@ const CCards = () => {
               {counts?.map((card, index) => {
                 const { id, name, wattage, count } = card;
                 return (
-                  <li className={`skeleton-loading ${styles.card}`} key={id}>
-                    <div
-                      className={`${styles["card-content"]}`}
-                      style={{ visibility: "hidden" }}
-                    >
+                  <li className={styles.card} key={id}>
+                    <div className={styles["card-content"]}>
                       <div className={styles.description}>
                         <span>{name}</span>
                         <span className={`root-small ${styles.average}`}>
@@ -113,15 +110,32 @@ const CCards = () => {
                         <img src={checkmark} alt="checkmark" />
                       </div>
                     </div>
-                    <div
-                      className={styles.total}
-                      style={{ visibility: "hidden" }}
-                    >
+                    <div className={styles.total}>
                       {checkedItems[id] && (
                         <div className={`dd ${styles.sum}`}>
                           {checkedItems[id] ? count + 1 : 0}
                         </div>
                       )}
+
+                      <div className={styles.calculate}>
+                        <img
+                          src={minus}
+                          alt="minus"
+                          className={styles.minus}
+                          onClick={() => handleDecrement(id)}
+                        />
+                        <div className={styles["border-left"]}></div>
+                        <div className={styles.count}>
+                          {checkedItems[id] ? count + 1 : 0}
+                        </div>
+                        <img
+                          src={plus}
+                          alt="plus"
+                          className={styles.plus}
+                          onClick={() => handleIncrement(id)}
+                        />
+                        <div className={styles["border-right"]}></div>
+                      </div>
                     </div>
                   </li>
                 );
@@ -129,51 +143,38 @@ const CCards = () => {
             </ul>
             <div className={styles.footer}>
               <div className={`cc ${styles["footer-content"]}`}>
-                <span
-                  className={`tiny-text skeleton-loading ${styles["footer-instruction"]}`}
-                  style={{ color: "transparent" }}
-                >
+                <span className={`tiny-text ${styles["footer-instruction"]}`}>
                   Can’t find what you are looking for? You can add a custom item
                 </span>
-                <div
-                  className={`skeleton-loading ${styles["add-custom-div"]}`}
-                  onClick={displayForm}
-                >
+                <div className={styles["add-custom-div"]} onClick={displayForm}>
                   <div className={styles.img_bg}>
                     <img
                       src={vertical}
                       alt="add-icon"
                       className={styles.vertical}
-                      style={{ visibility: "hidden" }}
                     />
                     <img
                       src={horizontal}
                       alt="add-icon"
                       className={styles.horizontal}
-                      style={{ visibility: "hidden" }}
                     />
                   </div>
-                  <span className={styles[""]} style={{ color: "transparent" }}>
-                    Add Custom Item
-                  </span>
+                  <span className={styles[""]}>Add Custom Item</span>
                 </div>
               </div>
-
-              <button
-                className={`skeleton-loading ${styles["continue-button"]}`}
-                style={{ cursor: "auto", color: "transparent" }}
-                onClick={allCheckedItems}
-              >
-                Continue
-              </button>
+              <Link to={"/calculate-units"}>
+                <button
+                  className={styles["continue-button"]}
+                  onClick={allCheckedItems}
+                >
+                  Continue
+                </button>
+              </Link>
             </div>
           </div>
           <div className={styles["footer-snippet-div"]}>
             <div className={styles["border-bottom"]}></div>
-            <p
-              className={`root-small skeleton-loading ${styles["footer-snippet"]}`}
-              style={{ color: "transparent" }}
-            >
+            <p className={`root-small ${styles["footer-snippet"]}`}>
               This energy needs calculator is offered for informational purposes
               only. The results it provides are based on your inputs, and are
               not intended to substitute for professional advice, Please consult

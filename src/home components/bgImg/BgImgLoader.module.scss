@@ -7,14 +7,12 @@
   height: 100%;
 
   .bg-img {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100vw;
     object-fit: cover;
-    height: 184px;
-    z-index: -100;
+    height: 384px;
   }
   .bg-image-content {
     display: flex;
@@ -25,10 +23,10 @@
     gap: 34px;
     position: absolute;
     color: var(--white);
-
+    background-color: rgba(26, 26, 26, 0.7);
     width: 100vw;
     height: 384px;
-    margin-top: -35%;
+    margin-top: -5%;
     .bg-image-content-text {
       display: flex;
       flex-direction: column;
@@ -45,12 +43,12 @@
 }
 
 /*********************
-  **********************
-  **********************
-  **********************
-   MEDIA QUERIES********
-   *********************
-   ******************** */
+**********************
+**********************
+**********************
+ MEDIA QUERIES********
+ *********************
+ ******************** */
 $breakpoint-mobile: 480px;
 @media (max-width: $breakpoint-mobile) {
   .bg-image {
@@ -127,7 +125,6 @@ $breakpoint-tablet: 481px;
       width: 100vw;
       height: 65vh;
       margin-top: 10%;
-
       .bg-image-content-text {
         display: flex;
         flex-direction: column;
@@ -216,10 +213,10 @@ $breakpoint-large-screens: 1205px;
       gap: 34px;
       position: absolute;
       color: var(--white);
+      background-color: rgba(26, 26, 26, 0.7);
       width: 100vw;
       height: 384px;
       margin-top: -5%;
-
       .bg-image-content-text {
         display: flex;
         flex-direction: column;

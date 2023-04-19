@@ -8,20 +8,16 @@ const Navbar = () => {
     <div>
       <div className={`fw dd ${styles["navbar-wrapper"]}`}>
         <div className={`sw ${styles["navbar"]}`}>
-          <div
-            className="skeleton-loading"
-            style={{ width: "150px", height: "40px", cursor: "auto" }}
-          ></div>
-
-          <h6
-            className={`skeleton-loading ${styles["navbar-title"]}`}
-            style={{ width: "250px", height: "40px", marginLeft: "5px" }}
-          ></h6>
-
-          <div
-            className="skeleton-loading"
-            style={{ width: "150px", height: "40px", cursor: "auto" }}
-          ></div>
+          <Link to="/">
+            <img src={logo} alt="logo" />
+          </Link>
+          <h6 className={styles["navbar-title"]}>Energy Needs Calculator</h6>
+          <Link to="/">
+            <div className={`dd ${styles.close}`}>
+              <img src={times} alt="" />
+              <span className="root-text">Close</span>
+            </div>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,28 +1,30 @@
-import React from "react";
 import styles from "./BgImgLoader.module.scss";
-import bgImage from "../../assets/images/bgImg.jpg";
-import { BgImgLoader } from "../../PAGES";
+import { placeholder } from "../../PAGES";
 
 const BgImg = () => {
   return (
     <>
       <div className={`fw ${styles["bg-image"]}`}>
-        <div className={styles["bg-img"]}></div>
-        <div className={styles["bg-image-content"]}>
+        <img
+          src={placeholder}
+          alt="background-imagg"
+          className={styles["bg-img"]}
+        />
+        <div
+          className={styles["bg-image-content"]}
+          style={{ marginBottom: "-5%" }}
+        >
           <div className={styles["bg-image-content-text"]}>
-            <h3
-              className={styles["skeleton-loading"]}
-              style={{ width: "700px", height: "60px" }}
-            ></h3>
-            <span
-              className={` skeleton-loading ${styles["root-text"]}`}
-              style={{ width: "700px", height: "30px" }}
-            ></span>
+            <h3>Solar Power for Your Daily Needs.</h3>
+            <span className={styles["root-text"]}>
+              Choose a package that suits you and make payment in installments.
+            </span>
           </div>
           <button
-            className={`root-small-bold skeleton-loading ${styles["bg-image-content-button"]}`}
-            style={{ width: "300px", height: "30px" }}
-          ></button>
+            className={`root-small-bold ${styles["bg-image-content-button"]}`}
+          >
+            Browse Special Offers
+          </button>
         </div>
       </div>
     </>

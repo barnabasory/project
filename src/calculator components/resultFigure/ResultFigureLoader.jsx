@@ -18,27 +18,17 @@ const ResultFigure = () => {
     <>
       <div className={`fw ${styles.wrapper}`}>
         <div className={`sw ${styles.content}`}>
-          <span
-            className={`skeleton-loading ${styles.title}`}
-            style={{ color: "transparent" }}
-          >
+          <span className={styles.title}>
             YOUR AVERAGE ENERGY CONSUMPTION PER MONTH IS
           </span>
-          <h4
-            className={`${styles["skeleton-loading"]}`}
-            style={{ width: "150px", height: "30px" }}
-          ></h4>
+
+          <h4>{monthlyConsumption.toLocaleString()} kWH</h4>
+
           <div className={styles.buttons}>
-            <button
-              className={`root-small-bold skeleton-loading ${styles.restart}`}
-              style={{ color: "transparent" }}
-            >
+            <button className={`root-small-bold ${styles.restart}`}>
               Restart
             </button>
-            <button
-              className={`root-small-bold skeleton-loading ${styles.report}`}
-              style={{ color: "transparent" }}
-            >
+            <button className={`root-small-bold ${styles.report}`}>
               Full Energy Report
             </button>
           </div>

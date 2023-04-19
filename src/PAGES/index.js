@@ -42,10 +42,7 @@ export { default as CCardsLoader } from "../calculator components/cards/CCardsLo
 export { default as EditUnitsLoader } from "../calculator components/editUnits/EditUnitsLoader";
 export { default as CNavbarLoader } from "../calculator components/navbar/CNavbarLoader";
 //home component loaders
-export { default as TopSnippetLoader } from "../home components/topSnippet/TopSnippetLoader";
-export { default as NavBarLoader } from "../home components/navbar/NavBarLoader";
 export { default as BgImgLoader } from "../home components/bgImg/BgImgLoader";
-export { default as HomeCardsLoader } from "../home components/homeCards/HomeCardsLoader";
 export { default as BestSellerLoader } from "../home components/bestseller/BestSellerLoader";
 export { default as CompleteLoader } from "../home components/stacks/complete/CompleteLoader";
 export { default as SolarLoader } from "../home components/stacks/solar/SolarLoader";
@@ -95,6 +92,7 @@ export { default as arrowDown2 } from "../assets/icons/arrowDown2.svg";
 export { default as checkmark } from "../assets/icons/checkmark.svg";
 export { default as vertical } from "../assets/icons/vertical.svg";
 export { default as horizontal } from "../assets/icons/horizontal.svg";
+export { default as placeholder } from "../assets/icons/placeholder.svg";
 
 //images
 export { default as emailContact } from "../assets/images/email-contact.png";

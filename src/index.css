@@ -208,7 +208,7 @@ a:hover{
 .skeleton-loading {
   animation: skeleton-loading 1s linear infinite alternate;
   border-radius: 8px;
-  opacity: 1;
+
 }
 
 @keyframes skeleton-loading {

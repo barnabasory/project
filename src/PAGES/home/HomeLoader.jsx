@@ -1,11 +1,11 @@
 import React from "react";
 import {
-  TopSnippetLoader,
-  NavBarLoader,
+  Navbar,
   BgImgLoader,
-  HomeCardsLoader,
+  HomeCards,
   BestSellerLoader,
   CompleteLoader,
+  SolarLoader,
   InverterLoader,
   BatteryLoader,
   AccessoryLoader,
@@ -13,14 +13,17 @@ import {
   ContactLoader,
   CalculateLoader,
   FooterLoader,
+  TopSnippet,
 } from "../index";
 
 const HomeLoader = () => {
   return (
     <div>
-      <TopSnippetLoader /> <NavBarLoader /> <BgImgLoader />
-      <HomeCardsLoader /> <BestSellerLoader />
+      <TopSnippet />
+      <Navbar /> <BgImgLoader />
+      <HomeCards /> <BestSellerLoader />
       <CompleteLoader />
+      <SolarLoader />
       <InverterLoader />
       <BatteryLoader />
       <AccessoryLoader />

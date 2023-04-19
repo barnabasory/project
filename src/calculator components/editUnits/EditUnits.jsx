@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./EditUnits.module.scss";
 import { arrowUp, arrowDown, ProcessingResults } from "../../PAGES";
 import { useContext } from "react";
@@ -7,16 +7,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 const EditUnits = () => {
   const navigate = useNavigate();
-  const {
-    checkedArray,
-    setCheckedArray,
-    counts,
-    setCounts,
-    wattage,
-    setWattage,
-    hours,
-    setHours,
-  } = useContext(CheckedCards);
+  const { checkedArray, setCheckedArray } = useContext(CheckedCards);
   const [loading, setLoading] = useState(false);
 
   const handleWattageChange = (index) => (e) => {
@@ -67,17 +58,13 @@ const EditUnits = () => {
 
   const fetchResult = () => {
     setLoading(true);
-    navigate("/result");
+    navigate("/result-page");
     setLoading(false);
   };
 
   return (
     <>
-      <Link to="/processing">
-        <button style={{ background: "red" }}>Processing results</button>
-      </Link>
       {loading && <ProcessingResults />}
-
       <div className={`sw ${styles["edit-page"]}`}>
         <div className={`${styles["top-bar"]}`}>
           <span>Edit the wattage and hourly usage for each item</span>

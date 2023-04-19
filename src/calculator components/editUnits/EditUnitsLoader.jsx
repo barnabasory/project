@@ -7,16 +7,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 const EditUnits = () => {
   const navigate = useNavigate();
-  const {
-    checkedArray,
-    setCheckedArray,
-    counts,
-    setCounts,
-    wattage,
-    setWattage,
-    hours,
-    setHours,
-  } = useContext(CheckedCards);
+  const { checkedArray, setCheckedArray } = useContext(CheckedCards);
   const [loading, setLoading] = useState(false);
 
   const handleWattageChange = (index) => (e) => {
@@ -77,22 +68,19 @@ const EditUnits = () => {
         <button style={{ background: "red" }}>Processing results</button>
       </Link>
       {loading && <ProcessingResults />}
-
       <div className={`sw ${styles["edit-page"]}`}>
-        <div className={` ${styles["top-bar"]}`}>
-          <span className="skeleton-loading" style={{ color: "transparent" }}>
-            Edit the wattage and hourly usage for each item
-          </span>
+        <div className={`${styles["top-bar"]}`}>
+          <span>Edit the wattage and hourly usage for each item</span>
           <div className={styles.back}>
-            <span className="skeleton-loading" style={{ color: "transparent" }}>
-              Back
-            </span>
-            <button
-              className={`root-small-bold skeleton-loading ${styles.button}`}
-              style={{ color: "transparent", cursor: "auto" }}
-            >
-              See Results
-            </button>
+            <span>Back</span>
+            <Link to="/result">
+              <button
+                className={`root-small-bold ${styles.button}`}
+                onClick={fetchResult}
+              >
+                See Results
+              </button>
+            </Link>
           </div>
         </div>
         <div className={styles["border-top"]}></div>
@@ -101,25 +89,16 @@ const EditUnits = () => {
             {checkedArray?.map((checkedItem, index) => {
               const { id, name, count, wattage, hours } = checkedItem;
               return (
-                <form className={`skeleton-loading ${styles.card}`} key={index}>
+                <form className={styles.card} key={index}>
                   <div className={styles.custom_name_div}>
-                    <span style={{ visibility: "hidden" }}>{name}</span>
-                    <span
-                      className={`tiny-text-bold ${styles.count_value}`}
-                      style={{ visibility: "hidden" }}
-                    >
+                    <span>{name}</span>
+                    <span className={`tiny-text-bold ${styles.count_value}`}>
                       {count + 1}
                     </span>
                   </div>
                   {/* wattage */}
-                  <div
-                    className={styles.hr}
-                    style={{ visibility: "hidden" }}
-                  ></div>
-                  <div
-                    className={styles["wattage-div"]}
-                    style={{ visibility: "hidden" }}
-                  >
+                  <div className={styles.hr}></div>
+                  <div className={styles["wattage-div"]}>
                     <span className={`root-small ${styles.wattage}`}>
                       Wattage
                     </span>
@@ -149,15 +128,9 @@ const EditUnits = () => {
                       <span className={`root-small ${styles.acronym}`}>W</span>
                     </div>
                   </div>
-                  <div
-                    className={styles.hr2}
-                    style={{ visibility: "hidden" }}
-                  ></div>
+                  <div className={styles.hr2}></div>
                   {/* hours */}
-                  <div
-                    className={styles["hours-div"]}
-                    style={{ visibility: "hidden" }}
-                  >
+                  <div className={styles["hours-div"]}>
                     <span className={`root-small ${styles.hours}`}>
                       Hours used per day
                     </span>
