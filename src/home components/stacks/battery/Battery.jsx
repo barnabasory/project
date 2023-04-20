@@ -8,6 +8,7 @@ const Battery = () => {
   useEffect(() => {
     setIsLoading(false);
   }, []);
+
   return (
     <div className="sw cc battery-cards-wrapper">
       <h6>Battery Services</h6>

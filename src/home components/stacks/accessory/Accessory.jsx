@@ -8,6 +8,7 @@ const Accessory = () => {
   useEffect(() => {
     setIsLoading(false);
   }, []);
+
   return (
     <div className="sw cc accessory-cards-wrapper">
       <h6>Accessory Services</h6>
