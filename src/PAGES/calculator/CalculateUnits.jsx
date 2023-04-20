@@ -14,19 +14,10 @@ const CalculateUnits = () => {
   }, []);
   return (
     <>
-      {" "}
-      {isLoading ? (
-        <div>
-          {" "}
-          <CNavbarLoader />
-          <EditUnitsLoader />
-        </div>
-      ) : (
-        <div>
-          <CNavbar />
-          <EditUnits />
-        </div>
-      )}
+      <div>
+        <CNavbar />
+        <EditUnits />
+      </div>
     </>
   );
 };

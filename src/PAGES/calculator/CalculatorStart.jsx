@@ -9,17 +9,10 @@ const CalculatorStart = () => {
   }, []);
   return (
     <>
-      {isLoading ? (
-        <div>
-          <CNavbarLoader />
-          <CMainLoader />
-        </div>
-      ) : (
-        <div>
-          <CNavbar />
-          <CMain />
-        </div>
-      )}
+      <div>
+        <CNavbar />
+        <CMain />
+      </div>
     </>
   );
 };

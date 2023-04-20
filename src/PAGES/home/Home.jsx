@@ -11,7 +11,6 @@ import {
   Calculate,
   Footer,
 } from "../index";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomeLoader from "./HomeLoader";
 
 const Home = () => {
@@ -22,21 +21,17 @@ const Home = () => {
   }, []);
   return (
     <>
-      {isLoading ? (
-        <HomeLoader />
-      ) : (
-        <div className={`cc ${styles.home_page}`}>
-          <TopSnippet />
-          <Navbar />
-          <BgImg />
-          <HomeCards />
-          <BestSeller />
-          <Stack />
-          <Contact />
-          <Calculate />
-          <Footer />
-        </div>
-      )}
+      <div className={`cc ${styles.home_page}`}>
+        <TopSnippet />
+        <Navbar />
+        <BgImg />
+        <HomeCards />
+        <BestSeller />
+        <Stack />
+        <Contact />
+        <Calculate />
+        <Footer />
+      </div>
     </>
   );
 };

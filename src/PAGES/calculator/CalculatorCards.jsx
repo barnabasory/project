@@ -63,37 +63,29 @@ const CalculatorCards = () => {
 
   return (
     <>
-      {isLoading ? (
-        <div>
-          <CNavbarLoader />
-          <CFilterLoader />
-          <CCardsLoader />
-        </div>
-      ) : (
-        <div className={styles.calculator}>
-          <CNavbar />
-          <CFilter
-            sortOrder={sortOrder}
-            setSortOrder={setSortOrder}
-            message={data}
-          />
-          <CCards
-            message={data}
-            sortOrder={sortOrder}
-            setSortOrder={setSortOrder}
-            onAddCustomItem={(id) => increaseCount(id)}
-          />
+      <div className={styles.calculator}>
+        <CNavbar />
+        <CFilter
+          sortOrder={sortOrder}
+          setSortOrder={setSortOrder}
+          message={data}
+        />
+        <CCards
+          message={data}
+          sortOrder={sortOrder}
+          setSortOrder={setSortOrder}
+          onAddCustomItem={(id) => increaseCount(id)}
+        />
 
-          {show && <Form />}
+        {show && <Form />}
 
-          {select && (
-            <div
-              className={styles.select_overlay}
-              onClick={() => setSelect(false)}
-            ></div>
-          )}
-        </div>
-      )}
+        {select && (
+          <div
+            className={styles.select_overlay}
+            onClick={() => setSelect(false)}
+          ></div>
+        )}
+      </div>
     </>
   );
 };
