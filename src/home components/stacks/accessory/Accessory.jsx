@@ -1,19 +1,24 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import "./Accessory.scss";
 import accessoryCards from "./data";
 
 const Accessory = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
   return (
     <div className="sw cc accessory-cards-wrapper">
       <h6>Accessory Services</h6>
       <div className="accessory-cards">
         {accessoryCards.map((accessoryCard) => {
-          const { id, image, desc, price } = accessoryCard;
+          const { id, image, desc, price, placeholder } = accessoryCard;
           return (
             <div className="accessory-card cc" key={id}>
               {" "}
               <img
-                src={image}
+                src={isLoading ? placeholder : image}
                 alt="accessory-set"
                 className="accessory-card-image"
               />

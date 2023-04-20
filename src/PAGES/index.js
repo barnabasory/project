@@ -42,13 +42,6 @@ export { default as EditUnitsLoader } from "../calculator components/editUnits/E
 export { default as CNavbarLoader } from "../calculator components/navbar/CNavbarLoader";
 //home component loaders
 export { default as BgImgLoader } from "../home components/bgImg/BgImgLoader";
-export { default as BestSellerLoader } from "../home components/bestseller/BestSellerLoader";
-export { default as CompleteLoader } from "../home components/stacks/complete/CompleteLoader";
-export { default as SolarLoader } from "../home components/stacks/solar/SolarLoader";
-export { default as InverterLoader } from "../home components/stacks/inverter/InverterLoader";
-export { default as BatteryLoader } from "../home components/stacks/battery/BatteryLoader";
-export { default as AccessoryLoader } from "../home components/stacks/accessory/AccessoryLoader";
-export { default as EquipmentLoader } from "../home components/stacks/equipment/EquipmentLoader";
 export { default as ContactLoader } from "../home components/contact/ContactLoader";
 export { default as CalculateLoader } from "../home components/calculate/CalculateLoader";
 export { default as FooterLoader } from "../home components/footer/FooterLoader";

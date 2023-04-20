@@ -1,19 +1,24 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import "./Battery.scss";
 import batteryCards from "./data";
 
 const Battery = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
   return (
     <div className="sw cc battery-cards-wrapper">
       <h6>Battery Services</h6>
       <div className="battery-cards">
         {batteryCards.map((batteryCard) => {
-          const { id, image, desc, price } = batteryCard;
+          const { id, image, desc, price, placeholder } = batteryCard;
           return (
             <div className="battery-card cc" key={id}>
               {" "}
               <img
-                src={image}
+                src={isLoading ? placeholder : image}
                 alt="battery-set"
                 className="battery-card-image"
               />

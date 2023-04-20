@@ -1,18 +1,23 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import "./Inverter.scss";
 import inverterCards from "./data";
 
 const Inverter = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
   return (
     <div className="sw cc inverter-cards-wrapper">
       <h6>Inverter Services</h6>
       <div className="inverter-cards">
         {inverterCards.map((inverterCard) => {
-          const { id, image, desc, price } = inverterCard;
+          const { id, image, desc, price, placeholder } = inverterCard;
           return (
             <div className="inverter-card cc" key={id}>
               <img
-                src={image}
+                src={isLoading ? placeholder : image}
                 alt="inverter-panel"
                 className="inverter-card-image"
               />

@@ -3,13 +3,6 @@ import {
   Navbar,
   BgImgLoader,
   HomeCards,
-  BestSellerLoader,
-  CompleteLoader,
-  SolarLoader,
-  InverterLoader,
-  BatteryLoader,
-  AccessoryLoader,
-  EquipmentLoader,
   ContactLoader,
   CalculateLoader,
   FooterLoader,
@@ -21,13 +14,7 @@ const HomeLoader = () => {
     <div>
       <TopSnippet />
       <Navbar /> <BgImgLoader />
-      <HomeCards /> <BestSellerLoader />
-      <CompleteLoader />
-      <SolarLoader />
-      <InverterLoader />
-      <BatteryLoader />
-      <AccessoryLoader />
-      <EquipmentLoader />
+      <HomeCards />
       <ContactLoader />
       <CalculateLoader />
       <FooterLoader />

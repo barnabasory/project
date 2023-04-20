@@ -1,0 +1,276 @@
+.wrapper {
+  background-color: var(--carrara);
+  padding-top: 90px;
+  padding-bottom: 161px;
+  color: transparent;
+
+  .content {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 59px;
+    .chart {
+      grid-column: span 6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+      background-color: #fff;
+      padding-top: 36px;
+      padding-bottom: 42px;
+      padding-left: 147px;
+      padding-right: 147px;
+      border-radius: 4px;
+      text-align: center;
+      white-space: nowrap;
+
+      .skeleton-loading {
+        opacity: 0.7;
+        animation: skeleton-loading 1s linear infinite alternate;
+        border-radius: 8px;
+        @keyframes skeleton-loading {
+          0% {
+            background-color: rgba(0, 0, 0, 0.08);
+          }
+
+          100% {
+            background-color: rgba(0, 0, 0, 0.12);
+          }
+        }
+      }
+
+      .title {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0em;
+        background-color: black;
+        max-width: 100%;
+      }
+
+      h3 {
+        font-weight: 600;
+        padding-top: 6px;
+        background-color: black;
+      }
+
+      .toggle {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        background-color: black;
+
+        .toggle_button {
+          display: flex;
+          align-items: center;
+          width: 65px;
+          height: 32px;
+          border: 1.5px solid var(--cod60);
+          border-radius: 21px;
+          background-color: var(--desert-storm);
+          position: relative;
+          margin-top: 22px;
+          margin-bottom: 29px;
+          transition: all 0.5s ease;
+          cursor: pointer;
+          background-color: black;
+
+          .toggle_ball {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--cod60);
+            left: 4px;
+            transition: all 0.5s ease;
+            background-color: black;
+          }
+
+          .toggle_ball_moved {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--cod60);
+            left: 4px;
+            position: absolute;
+            transform: translateX(125%);
+            transition: all 0.5s ease;
+            background-color: black;
+          }
+        }
+      }
+
+      .ball {
+        width: 328px;
+        height: 328px;
+        background-color: red;
+        border-radius: 50%;
+        background-color: black;
+      }
+    }
+
+    .form {
+      grid-column: span 6;
+      width: 100%;
+      padding-top: 19px;
+
+      .request {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .request-title {
+          font-weight: 600;
+          max-width: 75%;
+          color: black;
+          height: 50px;
+        }
+        .request-text {
+          color: black;
+          background-color: black;
+          max-width: 100%;
+        }
+      }
+
+      form {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin-top: 19px;
+        gap: 12px;
+
+        .input {
+          height: 44px;
+          background-color: white;
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-top: 12px;
+          padding-bottom: 12px;
+          border: none;
+          outline: none;
+          border-radius: 4px;
+          background-color: black;
+          max-width: 100%;
+        }
+
+        .input_tel {
+          padding-left: 87px;
+          max-width: 100%;
+          height: 44px;
+          padding-right: 20px;
+          padding-top: 12px;
+          padding-bottom: 12px;
+          border-radius: 4px;
+          background-color: black;
+          border: none;
+          outline: none;
+        }
+        .country_code {
+          .code {
+            .first_code {
+            }
+
+            .other_codes {
+            }
+            .option {
+              appearance: none;
+            }
+          }
+        }
+        .arrow_down {
+          position: absolute;
+          cursor: pointer;
+          top: 129px;
+          left: 65px;
+          margin-right: 10px;
+        }
+
+        .button {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          height: 50px;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+          margin-top: 16px;
+          background-color: black;
+          margin-bottom: 10px;
+          max-width: 100%;
+        }
+      }
+
+      .snippet {
+        color: black;
+        padding-top: 16px;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+
+        .snippet-a {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          background-color: black;
+
+          input[type="checkbox"] {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-radius: 2px;
+            cursor: pointer;
+            pointer-events: auto;
+            appearance: none;
+            border: 1px solid var(--cod60);
+            width: 18px;
+            height: 18px;
+            position: relative;
+            border-radius: 2px;
+          }
+          input[type="checkbox"]:checked::before {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            content: "\2713";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--chateau-green);
+            font-size: 12px;
+            border-radius: 2px;
+            line-height: 18px;
+            color: #fff;
+          }
+          input[type="checkbox"]:checked {
+            border: none;
+          }
+        }
+
+        .snippet-b {
+          background-color: black;
+        }
+      }
+
+      .skeleton-loading {
+        opacity: 0.7;
+        animation: skeleton-loading 1s linear infinite alternate;
+        border-radius: 8px;
+        border: none;
+        @keyframes skeleton-loading {
+          0% {
+            background-color: rgba(0, 0, 0, 0.08);
+          }
+
+          100% {
+            background-color: rgba(0, 0, 0, 0.12);
+          }
+        }
+      }
+    }
+  }
+}

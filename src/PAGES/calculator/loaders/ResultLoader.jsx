@@ -1,17 +1,11 @@
 import React from "react";
-import {
-  ResultNavbarLoader,
-  ResultFigureLoader,
-  BrowseLoader,
-  Chart,
-} from "../../index";
+import { ResultNavbarLoader, ResultFigureLoader, Chart } from "../../index";
 
 const ResultLoader = () => {
   return (
     <div>
       <ResultNavbarLoader />
       <ResultFigureLoader />
-      <BrowseLoader />
       <Chart />
     </div>
   );

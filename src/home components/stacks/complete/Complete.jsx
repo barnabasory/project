@@ -1,19 +1,24 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import "./Complete.scss";
 import completeCards from "./data";
 
 const Complete = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
   return (
     <div className="sw cc complete-cards-wrapper">
       <h6>Complete Services</h6>
       <div className="complete-cards">
         {completeCards.map((completeCard) => {
-          const { id, image, desc, price } = completeCard;
+          const { id, image, desc, price, placeholder } = completeCard;
           return (
             <div className="complete-card cc" key={id}>
               {" "}
               <img
-                src={image}
+                src={isLoading ? placeholder : image}
                 alt="complete-set"
                 className="complete-card-image"
               />
