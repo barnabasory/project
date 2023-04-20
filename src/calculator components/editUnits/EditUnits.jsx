@@ -58,7 +58,7 @@ const EditUnits = () => {
 
   const fetchResult = () => {
     setLoading(true);
-    navigate("/result-page");
+    navigate("/result");
     setLoading(false);
   };
 

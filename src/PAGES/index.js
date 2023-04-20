@@ -32,7 +32,6 @@ export { default as Chart } from "../calculator components/chart/Chart";
 export { default as Form } from "../calculator components/addCustomForm/Form";
 export { default as PieChart } from "../calculator components/PieChart/PieChart";
 //calculator component loaders
-export { default as ChartLoader } from "../calculator components/chart/ChartLoader";
 export { default as BrowseLoader } from "../calculator components/browseProducts/BrowseLoader";
 export { default as ResultFigureLoader } from "../calculator components/resultFigure/ResultFigureLoader";
 export { default as ResultNavbarLoader } from "../calculator components/resultNavbar/ResultNavbarLoader";

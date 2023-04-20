@@ -3,7 +3,7 @@ import {
   ResultNavbarLoader,
   ResultFigureLoader,
   BrowseLoader,
-  ChartLoader,
+  Chart,
 } from "../../index";
 
 const ResultLoader = () => {
@@ -12,7 +12,7 @@ const ResultLoader = () => {
       <ResultNavbarLoader />
       <ResultFigureLoader />
       <BrowseLoader />
-      <ChartLoader />
+      <Chart />
     </div>
   );
 };

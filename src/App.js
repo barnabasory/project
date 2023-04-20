@@ -25,44 +25,50 @@ function App() {
   }, []);
   return (
     <>
-      <div className="App">
-        <Router>
-          <Routes>
-            <Route
-              exact
-              path="/start-calculating"
-              element={
-                isLoading ? <CalculatorStartLoader /> : <CalculatorStart />
-              }
-            />
+      {isLoading ? (
+        <h1>Loadinnnnnnnnnnnnnngggggggggg</h1>
+      ) : (
+        <div className="App">
+          <Router>
+            <Routes>
+              <Route
+                exact
+                path="/start-calculating"
+                element={
+                  isLoading ? <CalculatorStartLoader /> : <CalculatorStart />
+                }
+              />
 
-            <Route
-              exact
-              path="/"
-              element={isLoading ? <HomeLoader /> : <Home />}
-            />
+              <Route
+                exact
+                path="/"
+                element={isLoading ? <HomeLoader /> : <Home />}
+              />
 
-            <Route
-              exact
-              path="/calculate-cards"
-              element={
-                isLoading ? <CalculatorCardsLoader /> : <CalculatorCards />
-              }
-            />
-            <Route
-              path="/calculate-units"
-              element={
-                isLoading ? <CalculateUnitsLoader /> : <CalculateUnits />
-              }
-            />
-            <Route path="/processing" element={<Processing />} />
-            <Route
-              path="/result-page"
-              element={isLoading ? <ResultLoader /> : <ResultPage />}
-            />
-          </Routes>
-        </Router>
-      </div>
+              <Route
+                exact
+                path="/calculate-cards"
+                element={
+                  isLoading ? <CalculatorCardsLoader /> : <CalculatorCards />
+                }
+              />
+              <Route
+                exact
+                path="/calculate-units"
+                element={
+                  isLoading ? <CalculateUnitsLoader /> : <CalculateUnits />
+                }
+              />
+              <Route exact path="/processing" element={<Processing />} />
+              <Route
+                exact
+                path="/result"
+                element={isLoading ? <ResultLoader /> : <ResultPage />}
+              />
+            </Routes>
+          </Router>
+        </div>
+      )}
     </>
   );
 }

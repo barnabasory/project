@@ -18,21 +18,12 @@ const ResultPage = () => {
   }, []);
   return (
     <>
-      {isLoading ? (
-        <div>
-          <ResultNavbarLoader />
-          <ResultFigureLoader />
-          <BrowseLoader />
-          <ChartLoader />
-        </div>
-      ) : (
-        <div>
-          <ResultNavbar />
-          <ResultFigure />
-          <Browse />
-          <Chart />
-        </div>
-      )}
+      <div>
+        <ResultNavbar />
+        <ResultFigure />
+        <Browse />
+        <Chart />
+      </div>
     </>
   );
 };
