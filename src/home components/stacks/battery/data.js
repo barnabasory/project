@@ -24,7 +24,7 @@ const batteryCards = [
     id: 4,
     image: "/images/battery4.png",
     desc: "3.5kva Solar Essential System",
-    placeholder: "/icons/placeholder.svg",
+    placeholder: "/icons/placeholder.png",
     price: "N700,000",
   },
 ];
