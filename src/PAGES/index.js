@@ -84,7 +84,7 @@ export { default as arrowDown2 } from "../assets/icons/arrowDown2.svg";
 export { default as checkmark } from "../assets/icons/checkmark.svg";
 export { default as vertical } from "../assets/icons/vertical.svg";
 export { default as horizontal } from "../assets/icons/horizontal.svg";
-export { default as placeholder } from "../assets/icons/placeholder.svg";
+export { default as placeholder } from "../assets/icons/placeholder.png";
 
 //images
 export { default as emailContact } from "../assets/images/email-contact.png";
