@@ -35,7 +35,6 @@ export { default as PieChart } from "../calculator components/PieChart/PieChart"
 export { default as BrowseLoader } from "../calculator components/browseProducts/BrowseLoader";
 export { default as ResultFigureLoader } from "../calculator components/resultFigure/ResultFigureLoader";
 export { default as ResultNavbarLoader } from "../calculator components/resultNavbar/ResultNavbarLoader";
-export { default as CMainLoader } from "../calculator components/main/CMainLoader";
 export { default as CFilterLoader } from "../calculator components/filter/CFilterLoader";
 export { default as CCardsLoader } from "../calculator components/cards/CCardsLoader";
 export { default as EditUnitsLoader } from "../calculator components/editUnits/EditUnitsLoader";
@@ -84,7 +83,7 @@ export { default as arrowDown2 } from "../assets/icons/arrowDown2.svg";
 export { default as checkmark } from "../assets/icons/checkmark.svg";
 export { default as vertical } from "../assets/icons/vertical.svg";
 export { default as horizontal } from "../assets/icons/horizontal.svg";
-export { default as placeholder } from "../assets/icons/placeholder.png";
+export { default as placeholder } from "../assets/images/placeholder.jpg";
 
 //images
 export { default as emailContact } from "../assets/images/email-contact.png";

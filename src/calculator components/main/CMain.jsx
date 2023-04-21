@@ -1,9 +1,15 @@
 import React from "react";
 import styles from "./CMain.module.scss";
-import { bgImg } from "../../PAGES";
+import { bgImg, placeholder } from "../../PAGES";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Main = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
   return (
     <div className={`fw cc ${styles["start-page"]}`}>
       <div className={`fw cc ${styles["wrapper"]}`}></div>
@@ -29,7 +35,11 @@ const Main = () => {
           </Link>
         </div>
       </div>
-      <img src={bgImg} alt="bg-img" className={` fw ${styles.image}`} />
+      <img
+        src={isLoading ? placeholder : bgImg}
+        alt="bg-img"
+        className={` fw ${styles.image}`}
+      />
     </div>
   );
 };

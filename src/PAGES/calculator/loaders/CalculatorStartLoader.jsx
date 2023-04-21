@@ -1,11 +1,10 @@
 import React from "react";
-import { CNavbarLoader, CMainLoader } from "../..";
+import { CNavbarLoader } from "../..";
 
 const CalculatorStartLoader = () => {
   return (
     <div>
       <CNavbarLoader />
-      <CMainLoader />
     </div>
   );
 };
