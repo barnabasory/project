@@ -16,11 +16,19 @@ const Solar = () => {
           const { id, image, desc, price, placeholder } = solarCard;
           return (
             <div className="solar-card cc" key={id}>
-              <img
-                src={isLoading ? placeholder : image}
-                alt="solar-panel"
-                className="solar-card-image"
-              />
+              {isLoading ? (
+                <img
+                  src={placeholder}
+                  alt="solar-panel"
+                  className="solar-card-image"
+                />
+              ) : (
+                <img
+                  src={image}
+                  alt="solar-panel"
+                  className="solar-card-image"
+                />
+              )}
               <div className="solar-card-text cc">
                 <p className="root-small solar-card-desc">{desc}</p>
                 <p className="root-text-bold solar-card-price">{price}</p>

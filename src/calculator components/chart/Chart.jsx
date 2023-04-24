@@ -43,10 +43,11 @@ const Chart = ({ chartData }) => {
     const templateParams = {
       email: value.email,
       name: value.name,
-      subject: `Your monthly use is ${total * 30} and your yearly use is ${
-        total * 30 * 12
-      }`,
+      subject: `Click on http://localhost:3000/#/email-result to get your data`,
     };
+    // subject: `Your monthly use is ${total * 30} and your yearly use is ${
+    //   total * 30 * 12
+    // }`
 
     emailjs
       .send(

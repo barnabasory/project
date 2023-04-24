@@ -18,11 +18,19 @@ const Battery = () => {
           return (
             <div className="battery-card cc" key={id}>
               {" "}
-              <img
-                src={isLoading ? placeholder : image}
-                alt="battery-set"
-                className="battery-card-image"
-              />
+              {isLoading ? (
+                <img
+                  src={placeholder}
+                  alt="battery-set"
+                  className="battery-card-image"
+                />
+              ) : (
+                <img
+                  src={image}
+                  alt="battery-set"
+                  className="battery-card-image"
+                />
+              )}
               <div className="battery-card-text cc">
                 {" "}
                 <p className="root-small battery-card-desc">{desc}</p>

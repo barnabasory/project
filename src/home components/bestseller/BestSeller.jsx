@@ -57,11 +57,19 @@ const BestSeller = () => {
           <div className="best-cards-wrapper">
             {data.map((card, index) => (
               <div className="best-seller-card" key={index}>
-                <img
-                  src={isLoading ? card.placeholder : card.image}
-                  alt="bestselling"
-                  className="best-img"
-                />
+                {isLoading ? (
+                  <img
+                    src={card.placeholder}
+                    alt="bestselling"
+                    className="best-img"
+                  />
+                ) : (
+                  <img
+                    src={card.image}
+                    alt="bestselling"
+                    className="best-img"
+                  />
+                )}
                 <div className="best-seller-text">
                   <p className="root-small best-desc">{card.desc}</p>
                   <p className="best-price root-text-bold">{card.price}</p>

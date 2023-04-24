@@ -18,11 +18,19 @@ const Accessory = () => {
           return (
             <div className="accessory-card cc" key={id}>
               {" "}
-              <img
-                src={isLoading ? placeholder : image}
-                alt="accessory-set"
-                className="accessory-card-image"
-              />
+              {isLoading ? (
+                <img
+                  src={placeholder}
+                  alt="accessory-set"
+                  className="accessory-card-image"
+                />
+              ) : (
+                <img
+                  src={image}
+                  alt="accessory-set"
+                  className="accessory-card-image"
+                />
+              )}
               <div className="accessory-card-text cc">
                 {" "}
                 <p className="root-small accessory-card-desc">{desc}</p>

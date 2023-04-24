@@ -6,6 +6,7 @@ export { default as CalculatorCards } from "./calculator/CalculatorCards";
 export { default as CalculatorStart } from "./calculator/CalculatorStart";
 export { default as Processing } from "./calculator/Processing";
 export { default as ResultPage } from "./calculator/ResultPage";
+export { default as EmailResult } from "../calculator components/emailResult/EmailResult";
 
 //home components
 export { default as TopSnippet } from "../home components/topSnippet/TopSnippet";

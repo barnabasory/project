@@ -17,11 +17,19 @@ const Complete = () => {
           return (
             <div className="complete-card cc" key={id}>
               {" "}
-              <img
-                src={isLoading ? placeholder : image}
-                alt="complete-set"
-                className="complete-card-image"
-              />
+              {isLoading ? (
+                <img
+                  src={placeholder}
+                  alt="complete-set"
+                  className="complete-card-image"
+                />
+              ) : (
+                <img
+                  src={image}
+                  alt="complete-set"
+                  className="complete-card-image"
+                />
+              )}
               <div className="complete-card-text cc">
                 {" "}
                 <p className="root-small complete-card-desc">{desc}</p>

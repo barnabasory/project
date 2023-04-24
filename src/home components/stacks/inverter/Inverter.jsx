@@ -16,11 +16,19 @@ const Inverter = () => {
           const { id, image, desc, price, placeholder } = inverterCard;
           return (
             <div className="inverter-card cc" key={id}>
-              <img
-                src={isLoading ? placeholder : image}
-                alt="inverter-panel"
-                className="inverter-card-image"
-              />
+              {isLoading ? (
+                <img
+                  src={placeholder}
+                  alt="inverter-panel"
+                  className="inverter-card-image"
+                />
+              ) : (
+                <img
+                  src={image}
+                  alt="inverter-panel"
+                  className="inverter-card-image"
+                />
+              )}
               <div className="inverter-card-text cc">
                 <p className="root-small inverter-card-desc">{desc}</p>
                 <p className="root-text-bold inverter-card-price">{price}</p>

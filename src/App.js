@@ -6,6 +6,7 @@ import {
   CalculatorStart,
   Processing,
   ResultPage,
+  EmailResult,
 } from "./PAGES";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import {
@@ -60,6 +61,7 @@ function App() {
               path="/result"
               element={isLoading ? <ResultLoader /> : <ResultPage />}
             />
+            <Route exact path="/email-result" element={<EmailResult />} />
           </Routes>
         </Router>
       </div>
