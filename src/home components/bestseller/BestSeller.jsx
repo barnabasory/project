@@ -4,6 +4,7 @@ import data from "./data";
 import { arrowLeft, arrowRight } from "../../PAGES";
 
 const BestSeller = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const ref = useRef(null);
@@ -42,8 +43,6 @@ const BestSeller = () => {
 
     return () => clearInterval(slideInterval);
   }, [activeIndex, next]);
-
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setIsLoading(false);
