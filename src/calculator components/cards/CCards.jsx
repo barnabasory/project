@@ -61,6 +61,7 @@ const CCards = () => {
     const updatedCheckedItems = checkedItems.map((item) =>
       item.id === id ? { ...item, isChecked: !item.isChecked } : item
     );
+
     setCheckedItems(updatedCheckedItems);
   };
   const displayForm = () => {
@@ -73,7 +74,20 @@ const CCards = () => {
       (item) => checkedItems[item.id] === !item.isChecked
     );
     setCheckedArray(checkedArray);
+    localStorage.removeItem("checkedArray");
   };
+  useEffect(() => {
+    const checkedArray = counts.filter(
+      (item) => checkedItems[item.id] === !item.isChecked
+    );
+    setCheckedArray(checkedArray);
+    localStorage.setItem("checkedArray", JSON.stringify(checkedArray));
+  }, [counts, checkedItems, setCheckedArray]);
+
+  useEffect(() => {
+    const checked = JSON.parse(localStorage.getItem("checkedArray"));
+    setCheckedArray(checked);
+  }, [setCheckedArray]);
 
   return (
     <>

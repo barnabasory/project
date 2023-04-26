@@ -5,14 +5,20 @@ import { CheckedCards } from "../../Context";
 
 const ResultFigure = () => {
   const { checkedArray } = useContext(CheckedCards);
-  const [monthlyConsumption, setMonthlyConsumption] = useState(0);
+  let [monthlyConsumption, setMonthlyConsumption] = useState(0);
 
   useEffect(() => {
-    const total = checkedArray.reduce((acc, item) => {
+    let total = checkedArray.reduce((acc, item) => {
       return acc + (item.count + 1) * item.wattage * item.hours;
     }, 0);
-    setMonthlyConsumption(total * 30);
-  }, [checkedArray]);
+    setMonthlyConsumption(total);
+    localStorage.setItem("result", JSON.stringify(total));
+  }, [checkedArray, monthlyConsumption]);
+
+  useEffect(() => {
+    const savedResult = JSON.parse(localStorage.getItem("result"));
+    setMonthlyConsumption(savedResult);
+  }, []);
 
   return (
     <>

@@ -12,30 +12,22 @@
 
     <title>React App</title>
     <style>
-      #spinner {
+      .loading {
         display: flex;
         align-items: center;
         justify-content: center;
         position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        inset: 0;
         margin: auto;
-        height: 100%;
-        border-color: rgba(black, black, black, 0.3);
+        height: 15%;
+        width: 15%;
+        z-index: -1;
       }
     </style>
   </head>
-  <!-- <script>
-    const root = document.getElementById("root");
-    let isLoading = true;
-    isLoading && <h1>Loadddddddiiiiiiiinggggggggg</h1>;
-    if (root) {
-      isLoading = false;
-    }
-  </script> -->
+
   <body>
     <div id="root"></div>
+    <img src="./icons/logo_icon.svg" alt="Loading...." class="loading" />
   </body>
 </html>

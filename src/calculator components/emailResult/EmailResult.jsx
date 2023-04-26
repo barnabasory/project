@@ -4,6 +4,7 @@ import { CheckedCards } from "../../Context";
 import { useContext } from "react";
 import { Pie } from "react-chartjs-2";
 import emailjs from "@emailjs/browser";
+import PieChart from "../PieChart/PieChart";
 
 const EmailResult = ({ chartData }) => {
   const [monthYear, setMonthYear] = useState(true);

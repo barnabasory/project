@@ -22,7 +22,6 @@ const Chart = ({ chartData }) => {
     setValue({ ...value, [e.target.name]: e.target.value });
   };
   const { checkedArray } = useContext(CheckedCards);
-  console.log(checkedArray);
   const [userData] = useState({
     labels: checkedArray.map((data) => data.name),
     datasets: [
@@ -75,8 +74,23 @@ const Chart = ({ chartData }) => {
     const total = checkedArray.reduce((acc, item) => {
       return acc + (item.count + 1) * item.wattage * item.hours;
     }, 0);
-    setMonthlyConsumption(total * 30);
+    const monthlyConsumption = total * 30;
+    setMonthlyConsumption(monthlyConsumption);
+    localStorage.setItem(
+      "monthlyConsumption",
+      JSON.stringify(monthlyConsumption)
+    );
   }, [checkedArray]);
+
+  useEffect(() => {
+    const savedMonthlyConsumption = JSON.parse(
+      localStorage.getItem("monthlyConsumption")
+    );
+    if (savedMonthlyConsumption) {
+      setMonthlyConsumption(savedMonthlyConsumption);
+    }
+  }, []);
+
   const toggleConsumption = () => {
     setMonthYear(!monthYear);
   };
