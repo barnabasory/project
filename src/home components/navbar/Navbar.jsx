@@ -5,12 +5,20 @@ import energyNeed from "../../assets/icons/energy-green.svg";
 import { RxDragHandleHorizontal } from "react-icons/rx";
 import { FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CheckedCards } from "../../Context";
+import { Login } from "../../PAGES";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(true);
+  const { showLogin, setShowLogin } = useContext(CheckedCards);
 
   const handleShowMenu = () => {
     setShowMenu(!showMenu);
+  };
+
+  const showLoginDropDown = () => {
+    setShowLogin(true);
   };
 
   useEffect(() => {
@@ -40,7 +48,9 @@ const Navbar = () => {
                 <a href="#Search">Search</a>
               </li>
               <li>
-                <a href="#My-account">My Account</a>
+                <a href="#" onClick={showLoginDropDown}>
+                  My Account
+                </a>
               </li>
               <li className={styles.count}>0</li>
             </ul>

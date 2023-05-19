@@ -22,16 +22,13 @@
 
     a {
       color: var(--cod-gray);
+      cursor: pointer;
     }
 
     .seller-login {
       display: flex;
       align-items: center;
       gap: 6.5px;
-    }
-
-    .top-snippet a {
-      color: var(--cod-gray);
     }
   }
 }

@@ -11,8 +11,8 @@ const ResultFigure = () => {
     let total = checkedArray.reduce((acc, item) => {
       return acc + (item.count + 1) * item.wattage * item.hours;
     }, 0);
-    setMonthlyConsumption(total);
-    localStorage.setItem("result", JSON.stringify(total));
+    setMonthlyConsumption(total * 30);
+    localStorage.setItem("result", JSON.stringify(total * 30));
   }, [checkedArray, monthlyConsumption]);
 
   useEffect(() => {

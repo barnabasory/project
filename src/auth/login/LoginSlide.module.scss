@@ -1,0 +1,101 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 2000;
+  width: 100%;
+  animation: slide 0.3s linear;
+
+  @keyframes slide {
+    0% {
+      transform: translateX(100vw);
+    }
+    100% {
+      transform: translateX(0vw);
+    }
+  }
+
+  .login_overlay {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba($color: #000000, $alpha: 0.05);
+    top: 0;
+  }
+  .login_div {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 375px;
+    background-color: var(--cararra);
+    height: 100vh;
+    padding: 38px;
+    right: 0;
+    top: 0px;
+
+    .title {
+      font-weight: 500;
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .input {
+          width: 300px;
+          height: 44px;
+          background-color: cod10;
+          border: 1px solid #1a1a1a1a;
+          padding-left: 20px;
+        }
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .remember_me {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          .checkbox {
+            background-color: red;
+            width: 18px;
+            height: 18px;
+          }
+          .checkbox::after {
+            content: "";
+            background-color: red;
+            width: 18px;
+            height: 18px;
+          }
+        }
+
+        .forgot_password {
+        }
+      }
+
+      .button {
+        width: 300px;
+        height: 44px;
+        font-size: 16px;
+      }
+    }
+    .sign_up {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      text-decoration: underline;
+    }
+  }
+}

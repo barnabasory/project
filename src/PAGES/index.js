@@ -1,4 +1,34 @@
-//home pages
+//about-us page
+export { default as AboutUs } from "./aboutUs/AboutUs";
+
+//about-us components
+export { default as AboutHero } from "../about/hero/Hero";
+export { default as AboutAfterHero } from "../about/afterHero/AfterHero";
+export { default as AboutEvaluation } from "../about/evaluation/Evaluation";
+export { default as AboutSolutions } from "../about/solutions/Solutions";
+export { default as AboutPartnership } from "../about/partnership/Partnership";
+export { default as AboutFeatured } from "../about/featured/Featured";
+export { default as AboutGlobal } from "../about/global/Global";
+
+//sign up page
+export { default as SignUpPage } from "./signUp/SignUpPage";
+
+//login page
+export { default as LoginPage } from "./login/LoginPage";
+
+//PowerService
+export { default as PowerServicePage } from "./powerService/PowerServicePage";
+export { default as PowerService } from "../power/PowerService";
+export { default as Sponsor } from "../power/sponsor/Sponsor";
+
+//sellers pages
+export { default as SelectRolePage } from "./sellers/SelectRolePage";
+export { default as VendorAccount } from "./sellers/VendorAccount";
+
+//sellers components
+export { default as SellersNavbar } from "../sellers/sellersNavbar/SellersNavbar";
+export { default as SelectRole } from "../sellers/selectRole/SelectRole";
+export { default as StoreProfile } from "../sellers/storeProfile/StoreProfile";
 
 //calculator pages
 export { default as CalculateUnits } from "./calculator/CalculateUnits";
@@ -7,6 +37,10 @@ export { default as CalculatorStart } from "./calculator/CalculatorStart";
 export { default as Processing } from "./calculator/Processing";
 export { default as ResultPage } from "./calculator/ResultPage";
 export { default as EmailResult } from "../calculator components/emailResult/EmailResult";
+
+//login and sign-up components
+export { default as LoginSlide } from "../auth/login/LoginSlide";
+export { default as SignUp } from "../auth/signup/SignUp";
 
 //home components
 export { default as TopSnippet } from "../home components/topSnippet/TopSnippet";
@@ -62,6 +96,7 @@ export { default as Equipment } from "../home components/stacks/equipment/Equipm
 
 //images
 export { default as bgImg } from "../assets/images/bgImg.jpg";
+export { default as about_hero } from "../assets/images/about-hero.png";
 
 //icons
 export { default as logo } from "../assets/icons/logo.svg";
@@ -85,6 +120,24 @@ export { default as checkmark } from "../assets/icons/checkmark.svg";
 export { default as vertical } from "../assets/icons/vertical.svg";
 export { default as horizontal } from "../assets/icons/horizontal.svg";
 export { default as placeholder } from "../assets/images/placeholder.png";
+export { default as sellerbadge } from "../assets/icons/sellerbadge.svg";
+export { default as facebook } from "../assets/icons/facebook.svg";
+export { default as instagram } from "../assets/icons/instagram.svg";
+export { default as linkedIn } from "../assets/icons/linkedIn.svg";
+export { default as insta } from "../assets/icons/insta.svg";
+export { default as sellerbadge2 } from "../assets/icons/sellerbadge2.svg";
+export { default as panel1 } from "../assets/icons/panel1.svg";
+export { default as panel2 } from "../assets/icons/panel2.svg";
+export { default as panel3 } from "../assets/icons/panel3.svg";
+export { default as nigerian_states } from "../assets/icons/nigerian-states.svg";
+export { default as homes } from "../assets/icons/homes.svg";
+export { default as partnership } from "../assets/icons/partnership.svg";
+export { default as industrial_solution } from "../assets/icons/industrial-solution.svg";
+export { default as solar_appliance } from "../assets/icons/solar-appliance.svg";
+export { default as solar_home } from "../assets/icons/solar_home.svg";
+export { default as mini_grid } from "../assets/icons/mini_grid.svg";
+export { default as uploadGreen } from "../assets/icons/uploadGreen.svg";
+export { default as uploadBlack } from "../assets/icons/uploadBlack.svg";
 
 //images
 export { default as emailContact } from "../assets/images/email-contact.png";
@@ -121,3 +174,17 @@ export { default as home1 } from "../assets/images/home1.png";
 export { default as home2 } from "../assets/images/home2.png";
 export { default as home3 } from "../assets/images/home3.png";
 export { default as home4 } from "../assets/images/home4.png";
+
+//about images
+export { default as uadf } from "../assets/images/uadf.png";
+export { default as giz } from "../assets/images/giz.png";
+export { default as rea } from "../assets/images/rea.png";
+export { default as usaid } from "../assets/images/usaid.png";
+export { default as companies_logo } from "../assets/images/companies-logo.png";
+export { default as bullet } from "../assets/images/bullet.png";
+export { default as sf } from "../assets/images/sf.png";
+export { default as privida } from "../assets/images/privida.png";
+export { default as electric_hand } from "../assets/images/electric_hand.png";
+export { default as green_crest } from "../assets/images/green_crest.png";
+export { default as solar_direct } from "../assets/images/solar_direct.png";
+export { default as blue_camel } from "../assets/images/blue_camel.png";

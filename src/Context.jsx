@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect, useMemo } from "react";
 import { createContext, useState } from "react";
 import data from "./calculator components/cards/data";
 
@@ -17,13 +17,83 @@ const Context = ({ children }) => {
   const [filteredArray, setFilteredArray] = useState(data);
   const [sortOrder, setSortOrder] = useState("ascending");
   const [select, setSelect] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+
+  //method to set Items to Loacal Storage
+  const onSetCheckedArray = useCallback((items) => {
+    setCheckedArray(items);
+    localStorage.setItem("checkedArray", JSON.stringify(items));
+  }, []);
+
+  //method to get items from local storage
+  useEffect(() => {
+    const checked = JSON.parse(localStorage.getItem("checkedArray"));
+    setCheckedArray(checked);
+  }, [onSetCheckedArray]);
+
+  const value = useMemo(
+    () => ({
+      showLogin,
+      setShowLogin,
+      checkedArray,
+      onSetCheckedArray,
+      counts,
+      setCounts,
+      checkedItems,
+      setCheckedItems,
+      sum,
+      setSum,
+      count,
+      setCount,
+      wattage,
+      setWattage,
+      hours,
+      setHours,
+      filteredArray,
+      setFilteredArray,
+      sortOrder,
+      setSortOrder,
+      show,
+      setShow,
+      select,
+      setSelect,
+    }),
+    [
+      showLogin,
+      setShowLogin,
+      checkedArray,
+      onSetCheckedArray,
+      counts,
+      setCounts,
+      checkedItems,
+      setCheckedItems,
+      sum,
+      setSum,
+      count,
+      setCount,
+      wattage,
+      setWattage,
+      hours,
+      setHours,
+      filteredArray,
+      setFilteredArray,
+      sortOrder,
+      setSortOrder,
+      show,
+      setShow,
+      select,
+      setSelect,
+    ]
+  );
 
   return (
     <div>
       <CheckedCards.Provider
         value={{
+          showLogin,
+          setShowLogin,
           checkedArray,
-          setCheckedArray,
+          onSetCheckedArray,
           counts,
           setCounts,
           checkedItems,

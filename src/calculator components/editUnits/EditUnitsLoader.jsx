@@ -7,7 +7,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 const EditUnits = () => {
   const navigate = useNavigate();
-  const { checkedArray, setCheckedArray } = useContext(CheckedCards);
+  const { checkedArray, onSetCheckedArray } = useContext(CheckedCards);
   const [loading, setLoading] = useState(false);
 
   const handleWattageChange = (index) => (e) => {
@@ -18,14 +18,14 @@ const EditUnits = () => {
         return item;
       }
     });
-    setCheckedArray(newData);
+    onSetCheckedArray(newData);
   };
 
   const decreaseWatt = (id) => {
     const newWattage = checkedArray.map((item) =>
       item.id === id ? { ...item, wattage: item.wattage - 1 } : item
     );
-    setCheckedArray(newWattage);
+    onSetCheckedArray(newWattage);
   };
 
   const increaseWatt = (id) => {
@@ -36,13 +36,13 @@ const EditUnits = () => {
         return item;
       }
     });
-    setCheckedArray(newWattage);
+    onSetCheckedArray(newWattage);
   };
   const decreaseHours = (id) => {
     const newHours = checkedArray.map((item) =>
       item.id === id ? { ...item, hours: item.hours - 1 } : item
     );
-    setCheckedArray(newHours);
+    onSetCheckedArray(newHours);
   };
 
   const increaseHours = (id) => {
@@ -53,7 +53,7 @@ const EditUnits = () => {
         return item;
       }
     });
-    setCheckedArray(newHours);
+    onSetCheckedArray(newHours);
   };
 
   const fetchResult = () => {

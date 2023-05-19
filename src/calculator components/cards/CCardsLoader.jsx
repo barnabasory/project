@@ -21,7 +21,7 @@ const CCards = () => {
     setCheckedItems,
     show,
     setShow,
-    setCheckedArray,
+    onSetCheckedArray,
   } = useContext(CheckedCards);
 
   const handleIncrement = (id) => {
@@ -72,7 +72,7 @@ const CCards = () => {
     const checkedArray = counts.filter(
       (item) => checkedItems[item.id] === !item.isChecked
     );
-    setCheckedArray(checkedArray);
+    onSetCheckedArray(checkedArray);
   };
 
   return (

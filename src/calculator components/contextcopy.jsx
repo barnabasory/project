@@ -4,7 +4,7 @@
 
 // export const CheckedCards = createContext();
 // const Context = ({ children }) => {
-//   const [checkedArray, setCheckedArray] = useState([]);
+//   const [checkedArray, onSetCheckedArray] = useState([]);
 //   const [counts, setCounts] = useState(Array(data.length).fill(0));
 //   const [toggleCheckBox, setToggleCheckBox] = useState(
 //     Array(data.length).fill(false)
@@ -20,7 +20,7 @@
 //       <CheckedCards.Provider
 //         value={{
 //           checkedArray,
-//           setCheckedArray,
+//           onSetCheckedArray,
 //           counts,
 //           setCounts,
 //           toggleCheckBox,

@@ -1,5 +1,6 @@
 import Home from "./PAGES/home/Home";
 import { useState, useEffect } from "react";
+
 import {
   CalculatorCards,
   CalculateUnits,
@@ -7,6 +8,11 @@ import {
   Processing,
   ResultPage,
   EmailResult,
+  SignUpPage,
+  LoginPage,
+  AboutUs,
+  PowerServicePage,
+  VendorAccount,
 } from "./PAGES";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import {
@@ -16,6 +22,7 @@ import {
   CalculatorStartLoader,
   CalculateUnitsLoader,
 } from "./PAGES/index";
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const loader = document.querySelector(".loading");
@@ -69,6 +76,19 @@ function App() {
                 element={isLoading ? <ResultLoader /> : <ResultPage />}
               />
               <Route exact path="/email-result" element={<EmailResult />} />
+              <Route exact path="/signup" element={<SignUpPage />} />
+              <Route exact path="/login" element={<LoginPage />} />
+              <Route exact path="/about-us" element={<AboutUs />} />
+              <Route
+                exact
+                path="/power-service"
+                element={<PowerServicePage />}
+              />
+              <Route
+                exact
+                path="/create-vendor-account"
+                element={<VendorAccount />}
+              />
             </Routes>
           </Router>
         </div>

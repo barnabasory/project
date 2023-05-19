@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styles from "./CCards.module.scss";
-import { add, plus, minus, checkmark, vertical, horizontal } from "../../PAGES";
+import { plus, minus, checkmark, vertical, horizontal } from "../../PAGES";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CheckedCards } from "../../Context";
 
-const initialState = {
-  name: "",
-  wattage: "",
-  hours: "",
-};
+// const initialState = {
+//   name: "",
+//   wattage: "",
+//   hours: "",
+// };
 
 const CCards = () => {
   const {
@@ -21,7 +21,7 @@ const CCards = () => {
     setCheckedItems,
     show,
     setShow,
-    setCheckedArray,
+    onSetCheckedArray,
   } = useContext(CheckedCards);
 
   const handleIncrement = (id) => {
@@ -73,21 +73,14 @@ const CCards = () => {
     const checkedArray = counts.filter(
       (item) => checkedItems[item.id] === !item.isChecked
     );
-    setCheckedArray(checkedArray);
-    localStorage.removeItem("checkedArray");
+    onSetCheckedArray(checkedArray);
   };
   useEffect(() => {
     const checkedArray = counts.filter(
       (item) => checkedItems[item.id] === !item.isChecked
     );
-    setCheckedArray(checkedArray);
-    localStorage.setItem("checkedArray", JSON.stringify(checkedArray));
-  }, [counts, checkedItems, setCheckedArray]);
-
-  useEffect(() => {
-    const checked = JSON.parse(localStorage.getItem("checkedArray"));
-    setCheckedArray(checked);
-  }, [setCheckedArray]);
+    onSetCheckedArray(checkedArray);
+  }, [counts, checkedItems, onSetCheckedArray]);
 
   return (
     <>

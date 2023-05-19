@@ -1,5 +1,6 @@
 import styles from "./TopSnippet.module.scss";
 import blackBox from "../../assets/icons/black-box.svg";
+import { Link } from "react-router-dom";
 
 const TopSnippet = () => {
   return (
@@ -11,19 +12,13 @@ const TopSnippet = () => {
             option. Learn More
           </p>
           <nav>
-            <ul className={`${styles["top-snippet-nav"]}`}>
-              <li>
-                <a href="#About Us">About Us</a>
-              </li>
-              <li>
-                <a href="#Power">Power as a service</a>
-              </li>
-              <li>
-                <a href="#seller" className={styles["seller-login"]}>
-                  Seller Login <img src={blackBox} alt="seller-login" />
-                </a>
-              </li>
-            </ul>
+            <div className={`${styles["top-snippet-nav"]}`}>
+              <Link to="/about-us">About Us</Link>
+              <Link to="/power-service">Power as a service</Link>
+              <Link to="/select-role" className={styles["seller-login"]}>
+                Seller Login <img src={blackBox} alt="seller-login" />
+              </Link>
+            </div>
           </nav>
         </div>
       </div>

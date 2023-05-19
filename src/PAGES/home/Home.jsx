@@ -10,6 +10,7 @@ import {
   Contact,
   Calculate,
   Footer,
+  LoginSlide,
 } from "../index";
 import HomeLoader from "./HomeLoader";
 
@@ -31,6 +32,7 @@ const Home = () => {
         <Contact />
         <Calculate />
         <Footer />
+        <LoginSlide />
       </div>
     </>
   );

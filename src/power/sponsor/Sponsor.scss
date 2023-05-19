@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 283px;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 25px;
+
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      gap: 8px;
+
+      .heading {
+        color: var(--chateau-green);
+        font-weight: 500;
+      }
+    }
+
+    .button {
+      width: 127px;
+      height: 44px;
+    }
+  }
+}

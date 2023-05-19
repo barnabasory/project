@@ -1,0 +1,120 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  padding-top: 24px;
+  margin-bottom: 191px;
+
+  .title {
+    font-weight: 600;
+    padding-bottom: 24px;
+  }
+
+  .form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 33px;
+    .input {
+      width: 350px;
+      height: 44px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 299px;
+      height: 57px;
+      font-family: Roboto;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+  }
+
+  .after_form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 300px;
+
+    .login_condition {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+      padding-bottom: 30px;
+
+      .login {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-decoration: underline;
+      }
+
+      .condition {
+        text-align: center;
+        color: var(--cod60);
+      }
+    }
+
+    .seller {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5.5px;
+      background-color: white;
+      width: 245px;
+      height: 40px;
+      border-radius: 4px;
+      margin-bottom: 37px;
+    }
+
+    .socials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 9px;
+      margin-bottom: 32.9px;
+
+      .icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12.2px;
+
+        .icon {
+          width: 17.1px;
+          height: 17.1px;
+        }
+      }
+    }
+
+    .privacy_terms {
+      display: flex;
+      align-items: center;
+      color: var(--cod60);
+      gap: 12px;
+
+      .privacy {
+        display: flex;
+        align-items: center;
+        border-right: 1px solid var(--cod60);
+        height: 20px;
+        padding-right: 12px;
+      }
+    }
+  }
+}

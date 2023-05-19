@@ -12,7 +12,7 @@ const CFilter = ({ handleClick, message }) => {
     counts,
     setCounts,
     checkedArray,
-    setCheckedArray,
+    onSetCheckedArray,
     sortOrder,
     setSortOrder,
     show,
@@ -58,7 +58,7 @@ const CFilter = ({ handleClick, message }) => {
     const checkedArray = counts.filter(
       (item) => checkedItems[item.id] === !item.isChecked
     );
-    setCheckedArray(checkedArray);
+    onSetCheckedArray(checkedArray);
   };
 
   const handleSearch = (event) => {

@@ -483,13 +483,13 @@
         align-items: center;
         gap: 5.53px;
         text-transform: uppercase;
-        width: 122%;
+        width: 116%;
 
         .energy-title {
           display: flex;
           font-weight: 400;
           font-size: 14px;
-          line-height: 18;
+          line-height: 18px;
         }
       }
 
@@ -497,6 +497,7 @@
         display: flex;
         align-items: center;
         gap: 16px;
+        width: 100%;
         .navlinks a {
           color: var(--cod-gray);
         }

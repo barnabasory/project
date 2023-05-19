@@ -1,0 +1,131 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 124px;
+  gap: 45px;
+
+  .heading {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 2px;
+
+    .title {
+      font-weight: 500;
+    }
+
+    .desc {
+      color: var(--cod60);
+    }
+  }
+
+  .cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 29px;
+    width: 100%;
+
+    .card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 232px;
+      height: 145px;
+      background-color: white;
+      border-radius: 4px;
+      color: var(--cod60);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .card_clicked {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 232px;
+      height: 145px;
+      background-color: white;
+      border-radius: 4px;
+      color: var(--everglade);
+      cursor: pointer;
+      border: 1px solid var(--everglade);
+    }
+  }
+
+  .button {
+    width: 242px;
+    height: 44px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 124px;
+    gap: 45px;
+    width: 100%;
+
+    .heading {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      gap: 2px;
+
+      .title {
+        font-weight: 500;
+      }
+
+      .desc {
+        color: var(--cod60);
+      }
+    }
+
+    .cards {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 29px;
+      width: 100%;
+
+      .card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 232px;
+        height: 145px;
+        background-color: white;
+        border-radius: 4px;
+        color: var(--cod60);
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .card_clicked {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 232px;
+        height: 145px;
+        background-color: white;
+        border-radius: 4px;
+        color: var(--everglade);
+        cursor: pointer;
+        border: 1px solid var(--everglade);
+      }
+    }
+
+    .button {
+      width: 242px;
+      height: 44px;
+    }
+  }
+}

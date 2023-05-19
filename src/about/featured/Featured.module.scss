@@ -1,0 +1,139 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 521px;
+  width: 100%;
+  background-color: white;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+
+    .heading {
+      display: flex;
+      gap: 2px;
+      flex-direction: column;
+      .title {
+        color: var(--chateau-green);
+        font-weight: 500;
+      }
+
+      .text {
+        max-width: 932px;
+      }
+    }
+
+    .images {
+      display: flex;
+      width: 90%;
+      margin-bottom: 70px;
+
+      .image_div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        width: 30%;
+        max-height: 64px;
+        background-color: white;
+
+        .image {
+          object-fit: cover;
+        }
+      }
+    }
+
+    .button {
+      width: 184px;
+      height: 44px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 521px;
+    width: 100%;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      width: 100%;
+
+      .heading {
+        display: flex;
+        gap: 2px;
+        flex-direction: column;
+
+        .title {
+          color: var(--chateau-green);
+          font-weight: 500;
+        }
+
+        .text {
+          max-width: 932px;
+        }
+      }
+
+      .images {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        place-items: center;
+        width: 100%;
+
+        .image {
+          width: 100%;
+        }
+
+        .blue_camel {
+          width: 64px;
+          height: 64px;
+          grid-column: span 2;
+        }
+        .solar_direct {
+          width: 273px;
+          height: 64px;
+          grid-column: span 2;
+          background-color: transparent;
+        }
+        .green_crest {
+          width: 74px;
+          height: 64px;
+          grid-column: span 2;
+        }
+
+        .electric_hand {
+          width: 85px;
+          height: 64px;
+          grid-column: span 2;
+        }
+        .privida {
+          width: 58px;
+          height: 64px;
+          grid-column: span 2;
+        }
+        .sf {
+          width: 64px;
+          height: 64px;
+          grid-column: span 2;
+        }
+      }
+
+      .button {
+        width: 184px;
+        height: 44px;
+      }
+    }
+  }
+}
