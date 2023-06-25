@@ -13,6 +13,7 @@ import {
   AboutUs,
   PowerServicePage,
   VendorAccount,
+  SelectRolePage,
 } from "./PAGES";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import {
@@ -84,6 +85,7 @@ function App() {
                 path="/power-service"
                 element={<PowerServicePage />}
               />
+              <Route exact path="/select-role" element={<SelectRolePage />} />
               <Route
                 exact
                 path="/create-vendor-account"

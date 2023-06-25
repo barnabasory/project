@@ -1,577 +1,205 @@
-.wrapper {
-  background-color: var(--carrara);
-  padding-top: 90px;
-  padding-bottom: 161px;
+.chart {
+  grid-column: span 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  background-color: white;
+  padding-top: 36px;
+  padding-bottom: 42px;
+  padding-left: 147px;
+  padding-right: 147px;
+  border-radius: 4px;
+  text-align: center;
 
-  .content {
-    display: grid;
+  .title {
+    display: flex;
     align-items: center;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 59px;
-    .chart {
-      grid-column: span 6;
+    align-self: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  h3 {
+    font-weight: 600;
+    padding-top: 6px;
+  }
+
+  .toggle {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .toggle_button {
       display: flex;
       align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      width: 100%;
-      background-color: white;
-      padding-top: 36px;
-      padding-bottom: 42px;
-      padding-left: 147px;
-      padding-right: 147px;
-      border-radius: 4px;
-      text-align: center;
-      white-space: nowrap;
+      width: 65px;
+      height: 32px;
+      border: 1.5px solid var(--cod60);
+      border-radius: 21px;
+      background-color: var(--desert-storm);
+      position: relative;
+      margin-top: 22px;
+      margin-bottom: 29px;
+      transition: all 0.5s ease;
+      cursor: pointer;
 
-      .title {
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 18px;
-        letter-spacing: 0em;
-      }
-
-      h3 {
-        font-weight: 600;
-        padding-top: 6px;
-      }
-
-      .toggle {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-
-        .toggle_button {
-          display: flex;
-          align-items: center;
-          width: 65px;
-          height: 32px;
-          border: 1.5px solid var(--cod60);
-          border-radius: 21px;
-          background-color: var(--desert-storm);
-          position: relative;
-          margin-top: 22px;
-          margin-bottom: 29px;
-          transition: all 0.5s ease;
-          cursor: pointer;
-
-          .toggle_ball {
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background-color: var(--cod60);
-            left: 4px;
-            transition: all 0.5s ease;
-          }
-
-          .toggle_ball_moved {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background-color: var(--cod60);
-            left: 4px;
-            position: absolute;
-            transform: translateX(125%);
-            transition: all 0.5s ease;
-          }
-        }
-      }
-
-      .ball {
-        width: 328px;
-        height: 328px;
-        background-color: red;
+      .toggle_ball {
+        position: absolute;
+        width: 24px;
+        height: 24px;
         border-radius: 50%;
+        background-color: var(--cod60);
+        left: 4px;
+        transition: all 0.5s ease;
+      }
+
+      .toggle_ball_moved {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: var(--cod60);
+        left: 4px;
+        position: absolute;
+        transform: translateX(125%);
+        transition: all 0.5s ease;
       }
     }
+  }
 
-    .form {
-      grid-column: span 6;
-      width: 100%;
-      padding-top: 19px;
-      .request {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        .request-title {
-          font-weight: 600;
-        }
-        .request-text {
-          color: var(--cod60);
-        }
-      }
-
-      form {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        margin-top: 19px;
-        gap: 12px;
-        .input {
-          width: 460px;
-          height: 44px;
-          background-color: white;
-          padding-left: 20px;
-          padding-right: 20px;
-          padding-top: 12px;
-          padding-bottom: 12px;
-          border: none;
-          outline: none;
-          border-radius: 4px;
-        }
-        .message {
-          display: none;
-        }
-        .input_tel {
-          padding-left: 87px;
-          width: 100%;
-          height: 44px;
-          background-color: white;
-          padding-right: 20px;
-          padding-top: 12px;
-          padding-bottom: 12px;
-          border: none;
-          outline: none;
-          border-radius: 4px;
-        }
-        .country_code {
-          position: absolute;
-          top: 124px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 10;
-          padding-left: 20px;
-
-          .code {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            border: none;
-            outline: none;
-            appearance: none;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 20px;
-            letter-spacing: 0em;
-            cursor: pointer;
-
-            .first_code {
-              padding-bottom: 5px;
-            }
-
-            .other_codes {
-              position: absolute;
-              top: 25px;
-              display: flex;
-              flex-direction: column;
-              gap: 5px;
-              background-color: #fff;
-              margin-left: -10px;
-              padding-left: 20px;
-              padding-bottom: 10px;
-              border-radius: 4px;
-              padding-right: 10px;
-            }
-            .option {
-              appearance: none;
-            }
-          }
-        }
-        .arrow_down {
-          position: absolute;
-          cursor: pointer;
-          top: 129px;
-          left: 65px;
-          margin-right: 10px;
-        }
-
-        .button {
-          padding-top: 10px;
-          padding-bottom: 10px;
-          width: 460px;
-          font-size: 16px;
-          font-weight: 500;
-          line-height: 24px;
-          margin-top: 16px;
-        }
-      }
-
-      .snippet {
-        padding-top: 16px;
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 16px;
-        .snippet-a {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-
-          input[type="checkbox"] {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            border-radius: 2px;
-            cursor: pointer;
-            pointer-events: auto;
-            appearance: none;
-            border: 1px solid var(--cod60);
-            width: 18px;
-            height: 18px;
-            position: relative;
-            border-radius: 2px;
-          }
-          input[type="checkbox"]:checked::before {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            content: "\2713";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: var(--chateau-green);
-            font-size: 12px;
-            border-radius: 2px;
-            line-height: 18px;
-            color: #fff;
-          }
-          input[type="checkbox"]:checked {
-            border: none;
-          }
-        }
-
-        .snippet-b {
-          color: rgba(36, 36, 36, 0.56);
-        }
-      }
-    }
+  .ball {
+    width: 328px;
+    height: 328px;
+    background-color: red;
+    border-radius: 50%;
   }
 }
 
 $breakpoint-mobile: 480px;
 @media (max-width: $breakpoint-mobile) {
-  .wrapper {
-    .content {
-      display: flex;
-      flex-direction: column;
-      .chart {
-        width: 100%;
+  .chart {
+    width: 100%;
+    grid-column: span 12;
+    padding-left: 47px;
+    padding-right: 47px;
 
-        .title {
-        }
+    .title {
+    }
 
-        h3 {
-        }
+    h3 {
+    }
 
-        .toggle {
-          .toggle-button {
-            .toggle-ball {
-            }
-          }
-        }
-
-        .ball {
-          width: 250px;
-          height: 250px;
+    .toggle {
+      .toggle-button {
+        .toggle-ball {
         }
       }
+    }
 
-      .form {
-        width: 100%;
-
-        .request {
-          .request-title {
-          }
-          .request-text {
-          }
-        }
-
-        form {
-          .input {
-            width: 100%;
-          }
-
-          .tel {
-          }
-
-          .button {
-            width: 100%;
-          }
-        }
-
-        .snippet {
-          .snippet-a {
-            input[type="checkbox"] {
-            }
-            input[type="checkbox"]:checked::before {
-            }
-            input[type="checkbox"]:checked {
-            }
-          }
-
-          .snippet-b {
-            color: rgba(36, 36, 36, 0.56);
-          }
-        }
-      }
+    .ball {
+      width: 250px;
+      height: 250px;
     }
   }
 }
 
 $breakpoint-tablet: 481px;
 @media (min-width: $breakpoint-tablet) {
-  .wrapper {
-    .content {
-      display: flex;
-      flex-direction: column;
-      .chart {
-        width: 100%;
+  .chart {
+    width: 100%;
+    padding-left: 47px;
+    padding-right: 47px;
 
-        .title {
-        }
+    .title {
+    }
 
-        h3 {
-        }
+    h3 {
+    }
 
-        .toggle {
-          .toggle-button {
-            .toggle-ball {
-            }
-          }
-        }
-
-        .ball {
-          width: 328px;
-          height: 328px;
+    .toggle {
+      .toggle-button {
+        .toggle-ball {
         }
       }
+    }
 
-      .form {
-        width: 100%;
-
-        .request {
-          .request-title {
-          }
-          .request-text {
-          }
-        }
-
-        form {
-          .input {
-            width: 100%;
-          }
-
-          .tel {
-          }
-
-          .button {
-            width: 100%;
-          }
-        }
-
-        .snippet {
-          .snippet-a {
-            input[type="checkbox"] {
-            }
-            input[type="checkbox"]:checked::before {
-            }
-            input[type="checkbox"]:checked {
-            }
-          }
-
-          .snippet-b {
-            color: rgba(36, 36, 36, 0.56);
-          }
-        }
-      }
+    .ball {
+      width: 328px;
+      height: 328px;
     }
   }
 }
 
 $breakpoint-laptops-desktops: 768px;
 @media (min-width: $breakpoint-laptops-desktops) {
-  .wrapper {
-    background-color: var(--carrara);
-    padding-top: 90px;
-    padding-bottom: 161px;
+  .chart {
+    grid-column: span 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    background-color: white;
+    padding-top: 36px;
+    padding-bottom: 42px;
+    padding-left: 147px;
+    padding-right: 147px;
+    border-radius: 4px;
+    text-align: center;
+    white-space: nowrap;
 
-    .content {
-      display: grid;
+    .title {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0em;
+    }
+
+    h3 {
+      font-weight: 600;
+      padding-top: 6px;
+    }
+
+    .toggle {
+      display: flex;
       align-items: center;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 59px;
-      .chart {
-        grid-column: span 6;
+      gap: 16px;
+
+      .toggle-button {
         display: flex;
         align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        text-align: center;
-        width: 100%;
-        background-color: white;
-        padding-top: 36px;
-        padding-bottom: 42px;
-        padding-left: 147px;
-        padding-right: 147px;
-        border-radius: 4px;
-        text-align: center;
-        white-space: nowrap;
+        width: 65px;
+        height: 32px;
+        border: 1.5px solid var(--cod60);
+        border-radius: 21px;
+        background-color: var(--desert-storm);
+        position: relative;
+        margin-top: 22px;
+        margin-bottom: 29px;
 
-        .title {
-          font-size: 14px;
-          font-weight: 400;
-          line-height: 18px;
-          letter-spacing: 0em;
-        }
-
-        h3 {
-          font-weight: 600;
-          padding-top: 6px;
-        }
-
-        .toggle {
-          display: flex;
-          align-items: center;
-          gap: 16px;
-
-          .toggle-button {
-            display: flex;
-            align-items: center;
-            width: 65px;
-            height: 32px;
-            border: 1.5px solid var(--cod60);
-            border-radius: 21px;
-            background-color: var(--desert-storm);
-            position: relative;
-            margin-top: 22px;
-            margin-bottom: 29px;
-
-            .toggle-ball {
-              position: absolute;
-              width: 24px;
-              height: 24px;
-              border-radius: 50%;
-              background-color: var(--cod60);
-              left: 4px;
-            }
-          }
-        }
-
-        .ball {
-          width: 328px;
-          height: 328px;
-          background-color: red;
+        .toggle-ball {
+          position: absolute;
+          width: 24px;
+          height: 24px;
           border-radius: 50%;
-        }
-      }
-
-      .form {
-        grid-column: span 6;
-        width: 100%;
-        padding-top: 19px;
-        .request {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-          .request-title {
-            font-weight: 600;
-          }
-          .request-text {
-            color: var(--cod60);
-          }
-        }
-
-        form {
-          display: flex;
-          flex-direction: column;
-          margin-top: 19px;
-          gap: 12px;
-          .input {
-            width: 100%;
-            height: 44px;
-            background-color: white;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-top: 12px;
-            padding-bottom: 12px;
-            border: none;
-            outline: none;
-            border-radius: 4px;
-          }
-
-          .tel {
-            padding-left: 85px;
-          }
-
-          .button {
-            padding-top: 10px;
-            padding-bottom: 10px;
-            width: 100%;
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 24px;
-            margin-top: 16px;
-          }
-        }
-
-        .snippet {
-          padding-top: 16px;
-          display: flex;
-          align-items: flex-start;
-          flex-direction: column;
-          gap: 16px;
-          .snippet-a {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-
-            input[type="checkbox"] {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              position: relative;
-              border-radius: 2px;
-              cursor: pointer;
-              pointer-events: auto;
-              appearance: none;
-              border: 1px solid var(--cod60);
-              width: 18px;
-              height: 18px;
-              position: relative;
-              border-radius: 2px;
-            }
-            input[type="checkbox"]:checked::before {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              content: "\2713";
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              background-color: var(--chateau-green);
-              font-size: 12px;
-              border-radius: 2px;
-              line-height: 18px;
-              color: #fff;
-            }
-            input[type="checkbox"]:checked {
-              border: none;
-            }
-          }
-
-          .snippet-b {
-            color: rgba(36, 36, 36, 0.56);
-          }
+          background-color: var(--cod60);
+          left: 4px;
         }
       }
     }
-  }
-}
 
-$breakpoint-large-screens: 1205px;
-@media (min-width: $breakpoint-large-screens) {
+    .ball {
+      width: 328px;
+      height: 328px;
+      background-color: red;
+      border-radius: 50%;
+    }
+  }
 }

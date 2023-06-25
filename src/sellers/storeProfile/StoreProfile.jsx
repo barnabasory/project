@@ -38,17 +38,20 @@ const StoreProfile = () => {
         </div>
         <div className={styles.store_logo}>
           <div className={styles.upload_box}>
+            <label htmlFor="store-logo" className={styles.input_file_label}>
+              <img src={uploadGreen} alt="upload" />
+            </label>
             <input
               type="file"
               className={styles.input_file}
               title="select a file"
+              id="store-logo"
             />
-            <img src={uploadGreen} alt="upload" />
+
             <span className={`root-text ${styles.upload_text}`}>
               Upload Store Logo
             </span>
           </div>
-
           <div className={`tiny-text ${styles.upload_info}`}>
             We HIGHLY recommended that you upload your logo in the .PNG format.
             it offers better image quality for limited color images such as a
@@ -58,63 +61,89 @@ const StoreProfile = () => {
           </div>
         </div>
         <div className={styles.about_store}>
-          <textarea className={styles.store_box}></textarea>
+          <textarea
+            className={`root-small ${styles.store_box}`}
+            placeholder="About your Store"
+          ></textarea>
           <span className={`tiny-text ${styles.about_text}`}>
             Let buyers who visit your profile learn more about your business
             (About is limited to 300 characters)
           </span>
         </div>
 
-        <div className="inputs">
+        <div className={styles.inputs}>
           <div className={styles.input}>
-            <select name="" id="">
+            <select name="" id="" className={styles.select_input}>
               <option value="">Number of Employees</option>
               <option value="">1</option>
               <option value="">2</option>
               <option value="">3</option>
               <option value="">4</option>
             </select>
-            <img src={arrowDown} alt="arrow-down" />
+            <img
+              src={arrowDown}
+              alt="arrow-down"
+              className={styles.select_arrow}
+            />
           </div>
           <div className={styles.input}>
-            <select name="" id="">
+            <select name="" id="" className={styles.select_input}>
               <option value="">State</option>
               <option value="">1</option>
               <option value="">2</option>
               <option value="">3</option>
               <option value="">4</option>
             </select>
-            <img src={arrowDown} alt="arrow-down" />
+            <img
+              src={arrowDown}
+              alt="arrow-down"
+              className={styles.select_arrow}
+            />
           </div>
-          <div className={styles.input}>
-            <input type="text" placeholder="Business Address Line 1" />
-          </div>
-          <div className={styles.input}>
-            <input type="text" placeholder="Business Address Line 2" />
-          </div>
+          <input
+            type="text"
+            placeholder="Business Address Line 1"
+            className={styles.business_line}
+          />
+
+          <input
+            type="text"
+            placeholder="Business Address Line 2"
+            className={styles.business_line}
+          />
+
           <span className={`tiny-text ${styles.input_text}`}>
             If you are a Business Entity/Company, indicate the official address
             of the entity. If you are an individual, indicate your address.
           </span>
-          <div className={styles.input}>
-            <input type="text" placeholder="Zip Code" />
-            <input type="text" placeholder="CAC Registration Number" />
-            <div className={styles.cac_certificate}>
-              <div className="certificate_box">
+
+          <input type="number" placeholder="Zip Code" />
+          <input type="number" placeholder="CAC Registration Number" />
+          <div className={styles.cac_certificate}>
+            <div className={styles.certificate_box}>
+              <label
+                htmlFor="cac_certificate"
+                className={styles.cac_certificate_label}
+              >
                 <img src={uploadBlack} alt="upload" />
-                <span className={`root-text ${styles.upload_text}`}>
-                  Upload CAC Certificate
-                </span>
-              </div>
-              <div className={`tiny-text ${styles.upload_info}`}>
-                Please ensure that the document that you provide includes the
-                list of the company ultimate beneficial owners. ImperiumNG
-                reserves the right to contact you to confirm beneficial
-                ownership.
-              </div>
+              </label>
+              <input
+                type="file"
+                className={styles.cac_certificate_file}
+                title="select a file"
+                id="cac_certificate"
+              />
+              <span className={`root-text ${styles.upload_text}`}>
+                Upload CAC Certificate
+              </span>
             </div>
-            <button className={styles.button}>Continue</button>
+            <div className={`tiny-text ${styles.upload_info}`}>
+              Please ensure that the document that you provide includes the list
+              of the company ultimate beneficial owners. ImperiumNG reserves the
+              right to contact you to confirm beneficial ownership.
+            </div>
           </div>
+          <button className={styles.button}>Continue</button>
         </div>
       </form>
     </section>

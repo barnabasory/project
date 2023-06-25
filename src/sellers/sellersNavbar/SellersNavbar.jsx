@@ -1,6 +1,7 @@
 import styles from "./SellersNavbar.module.scss";
 import { logo } from "../../PAGES";
 import { Link } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons";
 
 const SellersNavbar = () => {
   return (

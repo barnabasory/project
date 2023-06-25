@@ -149,14 +149,23 @@ select{
   cursor: pointer;
 }
 input{
-  border: 1px solid #1a1a1a1a;
+  border: 1px solid var(--10-cod);
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0em;
-  
-
-  
+  height: 44px;
+  display: flex;
+  padding: 12px 32px 12px 20px;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  appearance: none;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 input:focus {
@@ -193,6 +202,27 @@ button:hover{
   transition: transform 0.6s ease-in;
 }
 
+.dark_btn{
+  background-color: var(--cod-gray);
+}
+
+select{
+display: flex;
+height: 44px;
+padding: 12px 20px 9px 20px;
+justify-content: center;
+align-items: center;
+border-radius: 4px;
+border: 1px solid var(--10-cod, rgba(26, 26, 26, 0.10));
+background: var(--white, #FFF);
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 20px;
+outline: none;
+
+}
+
 .fw{
   width: 100%;
   margin: auto auto;
@@ -200,7 +230,7 @@ button:hover{
 }
 
 .sw{
-  max-width: 1280px;
+  max-width: 1200px;
   display: flex;
   margin: auto auto;
   padding-left: 20px;

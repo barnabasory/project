@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from "react";
-import {
-  ResultNavbar,
-  ResultFigure,
-  Browse,
-  Chart,
-  ResultNavbarLoader,
-  ResultFigureLoader,
-  BrowseLoader,
-  ChartLoader,
-} from "../../PAGES";
+import { ResultNavbar, ResultFigure, Browse, Chart, SendReport } from "../..";
+import styles from "./ResultPage.module.scss";
 
 const ResultPage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,7 +14,10 @@ const ResultPage = () => {
         <ResultNavbar />
         <ResultFigure />
         <Browse />
-        <Chart />
+        <div className={`sw ${styles.chart_form_wrapper}`}>
+          <Chart />
+          <SendReport />
+        </div>
       </div>
     </>
   );

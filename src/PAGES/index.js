@@ -35,7 +35,7 @@ export { default as CalculateUnits } from "./calculator/CalculateUnits";
 export { default as CalculatorCards } from "./calculator/CalculatorCards";
 export { default as CalculatorStart } from "./calculator/CalculatorStart";
 export { default as Processing } from "./calculator/Processing";
-export { default as ResultPage } from "./calculator/ResultPage";
+export { default as ResultPage } from "./calculator/resultPage/ResultPage";
 export { default as EmailResult } from "../calculator components/emailResult/EmailResult";
 
 //login and sign-up components
@@ -66,6 +66,8 @@ export { default as Browse } from "../calculator components/browseProducts/Brows
 export { default as Chart } from "../calculator components/chart/Chart";
 export { default as Form } from "../calculator components/addCustomForm/Form";
 export { default as PieChart } from "../calculator components/PieChart/PieChart";
+export { default as SendReport } from "../calculator components/sendReport/SendReport";
+
 //calculator component loaders
 export { default as BrowseLoader } from "../calculator components/browseProducts/BrowseLoader";
 export { default as ResultFigureLoader } from "../calculator components/resultFigure/ResultFigureLoader";
