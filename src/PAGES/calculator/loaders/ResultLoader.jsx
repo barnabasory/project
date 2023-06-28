@@ -1,5 +1,9 @@
 import React from "react";
-import { ResultNavbarLoader, ResultFigureLoader, Chart } from "../../index";
+import {
+  ResultNavbarLoader,
+  ResultFigureLoader,
+  Chart,
+} from "../../calculator";
 
 const ResultLoader = () => {
   return (

@@ -1,6 +1,6 @@
 import styles from "./LoginSlide.module.scss";
 import { useContext } from "react";
-import { CheckedCards } from "../../Context";
+import { CheckedCards } from "../../contexts/Context";
 import { Link } from "react-router-dom";
 
 const LoginSlide = () => {

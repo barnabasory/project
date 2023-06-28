@@ -6,7 +6,7 @@ import { RxDragHandleHorizontal } from "react-icons/rx";
 import { FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { CheckedCards } from "../../Context";
+import { CheckedCards } from "../../contexts/Context";
 import { Login } from "../../PAGES";
 
 const Navbar = () => {

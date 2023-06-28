@@ -3,7 +3,7 @@ import styles from "./CCards.module.scss";
 import { plus, minus, checkmark, vertical, horizontal } from "../../PAGES";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { CheckedCards } from "../../Context";
+import { CheckedCards } from "../../contexts/Context";
 
 // const initialState = {
 //   name: "",

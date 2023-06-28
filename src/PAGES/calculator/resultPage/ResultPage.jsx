@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { ResultNavbar, ResultFigure, Browse, Chart, SendReport } from "../..";
+import {
+  ResultNavbar,
+  ResultFigure,
+  Browse,
+  Chart,
+  SendReport,
+} from "../../calculator";
 import styles from "./ResultPage.module.scss";
 
 const ResultPage = () => {

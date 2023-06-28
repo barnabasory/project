@@ -3,7 +3,7 @@ import styles from "./CFilter.module.scss";
 import { search, add, arrowDown, vertical, horizontal } from "../../PAGES";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { CheckedCards } from "../../Context";
+import { CheckedCards } from "../../contexts/Context";
 import data from "../cards/data";
 
 const CFilter = ({ handleClick, message }) => {

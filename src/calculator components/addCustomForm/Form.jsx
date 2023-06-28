@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./Form.module.scss";
 import { times, minus, plus } from "../../PAGES";
 import { useContext } from "react";
-import { CheckedCards } from "../../Context";
+import { CheckedCards } from "../../contexts/Context";
 
 const initialState = {
   name: "",

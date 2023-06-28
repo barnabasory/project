@@ -1,5 +1,5 @@
 import React from "react";
-import { ProcessingResults } from "../../PAGES";
+import { ProcessingResults } from "../calculator";
 const Processing = () => {
   return (
     <div>

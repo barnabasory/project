@@ -1,4 +1,4 @@
-import { CNavbarLoader, EditUnitsLoader } from "../..";
+import { CNavbarLoader, EditUnitsLoader } from "../../calculator";
 
 const CalculateUnitsLoader = () => {
   return (

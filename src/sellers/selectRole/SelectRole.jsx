@@ -1,18 +1,19 @@
 import styles from "./SelectRole.module.scss";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SelectRole = () => {
-  const [clickedCard1, setClickedCard1] = useState(false);
-  const [clickedCard2, setClickedCard2] = useState(false);
+  const [vendor, setVendor] = useState(false);
+  const [oem, setOEM] = useState(false);
 
   const handleCard1 = () => {
-    setClickedCard2(false);
-    setClickedCard1(!clickedCard1);
+    setOEM(false);
+    setVendor(!vendor);
   };
 
   const handleCard2 = () => {
-    setClickedCard1(false);
-    setClickedCard2(!clickedCard2);
+    setVendor(false);
+    setOEM(!oem);
   };
   return (
     <section className={`sw ${styles.wrapper}`}>
@@ -24,19 +25,21 @@ const SelectRole = () => {
       </div>
       <div className={styles.cards}>
         <div
-          className={clickedCard1 ? styles.card_clicked : styles.card}
+          className={vendor ? styles.card_clicked : styles.card}
           onClick={handleCard1}
         >
           I am a vendor
         </div>
         <div
-          className={clickedCard2 ? styles.card_clicked : styles.card}
+          className={oem ? styles.card_clicked : styles.card}
           onClick={handleCard2}
         >
           I am an OEM
         </div>
       </div>
-      <button className={styles.button}>Continue</button>
+      <Link to={vendor ? "/vendor-store-profile" : "/oem-store-profile"}>
+        <button className={styles.button}>Continue</button>
+      </Link>
     </section>
   );
 };

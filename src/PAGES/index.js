@@ -21,23 +21,6 @@ export { default as PowerServicePage } from "./powerService/PowerServicePage";
 export { default as PowerService } from "../power/PowerService";
 export { default as Sponsor } from "../power/sponsor/Sponsor";
 
-//sellers pages
-export { default as SelectRolePage } from "./sellers/SelectRolePage";
-export { default as VendorAccount } from "./sellers/VendorAccount";
-
-//sellers components
-export { default as SellersNavbar } from "../sellers/sellersNavbar/SellersNavbar";
-export { default as SelectRole } from "../sellers/selectRole/SelectRole";
-export { default as StoreProfile } from "../sellers/storeProfile/StoreProfile";
-
-//calculator pages
-export { default as CalculateUnits } from "./calculator/CalculateUnits";
-export { default as CalculatorCards } from "./calculator/CalculatorCards";
-export { default as CalculatorStart } from "./calculator/CalculatorStart";
-export { default as Processing } from "./calculator/Processing";
-export { default as ResultPage } from "./calculator/resultPage/ResultPage";
-export { default as EmailResult } from "../calculator components/emailResult/EmailResult";
-
 //login and sign-up components
 export { default as LoginSlide } from "../auth/login/LoginSlide";
 export { default as SignUp } from "../auth/signup/SignUp";
@@ -53,29 +36,6 @@ export { default as Contact } from "../home components/contact/Contact";
 export { default as Calculate } from "../home components/calculate/Calculate";
 export { default as Footer } from "../home components/footer/Footer";
 
-//calculator components
-export { default as CNavbar } from "../calculator components/navbar/CNavbar";
-export { default as CMain } from "../calculator components/main/CMain";
-export { default as CFilter } from "../calculator components/filter/CFilter";
-export { default as CCards } from "../calculator components/cards/CCards";
-export { default as EditUnits } from "../calculator components/editUnits/EditUnits";
-export { default as ProcessingResults } from "../calculator components/processing/ProcessingResults";
-export { default as ResultNavbar } from "../calculator components/resultNavbar/ResultNavbar";
-export { default as ResultFigure } from "../calculator components/resultFigure/ResultFigure";
-export { default as Browse } from "../calculator components/browseProducts/Browse";
-export { default as Chart } from "../calculator components/chart/Chart";
-export { default as Form } from "../calculator components/addCustomForm/Form";
-export { default as PieChart } from "../calculator components/PieChart/PieChart";
-export { default as SendReport } from "../calculator components/sendReport/SendReport";
-
-//calculator component loaders
-export { default as BrowseLoader } from "../calculator components/browseProducts/BrowseLoader";
-export { default as ResultFigureLoader } from "../calculator components/resultFigure/ResultFigureLoader";
-export { default as ResultNavbarLoader } from "../calculator components/resultNavbar/ResultNavbarLoader";
-export { default as CFilterLoader } from "../calculator components/filter/CFilterLoader";
-export { default as CCardsLoader } from "../calculator components/cards/CCardsLoader";
-export { default as EditUnitsLoader } from "../calculator components/editUnits/EditUnitsLoader";
-export { default as CNavbarLoader } from "../calculator components/navbar/CNavbarLoader";
 //home component loaders
 export { default as BgImgLoader } from "../home components/bgImg/BgImgLoader";
 export { default as ContactLoader } from "../home components/contact/ContactLoader";

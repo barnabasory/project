@@ -172,6 +172,35 @@ input:focus {
   border: 1px solid var(--chateau-green);
 }
 
+input:invalid:not(:focus) {
+  border: 1px solid red;
+}
+
+
+
+
+.red{
+  background-color: red;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  background-color: white;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--cod40);
+  border-radius: 2px;
+  padding: 0;
+  cursor: pointer;
+}
+
+input[type="checkbox"]::before{
+  content: "  ";
+  width: 10px;
+  height: 10px;
+  
+}
+
 textarea{
   border: none;
   outline: none;
@@ -220,8 +249,10 @@ font-weight: 400;
 font-size: 14px;
 line-height: 20px;
 outline: none;
-
+appearance: none;
 }
+
+
 
 .fw{
   width: 100%;
@@ -230,7 +261,7 @@ outline: none;
 }
 
 .sw{
-  max-width: 1200px;
+  max-width: 1280px;
   display: flex;
   margin: auto auto;
   padding-left: 20px;
@@ -289,4 +320,10 @@ input{
   100% {
     background-color: rgba(0, 0, 0, 0.12);
   }
+}
+
+.sellers_hr {
+  background-color: var(--cod20);
+  height: 2px;
+  width: 611px;
 }

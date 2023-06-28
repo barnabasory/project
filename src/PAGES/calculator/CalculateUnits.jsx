@@ -1,10 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  CNavbar,
-  EditUnits,
-  CNavbarLoader,
-  EditUnitsLoader,
-} from "../../PAGES";
+import { CNavbar, EditUnits } from "../calculator";
 
 const CalculateUnits = () => {
   const [isLoading, setIsLoading] = useState(true);

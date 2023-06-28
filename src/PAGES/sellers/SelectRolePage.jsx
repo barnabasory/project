@@ -1,4 +1,5 @@
-import { Navbar, SelectRole, TopSnippet } from "../index";
+import { Navbar, TopSnippet } from "../index";
+import { SelectRole } from "../sellers";
 
 const SelectRolePage = () => {
   return (

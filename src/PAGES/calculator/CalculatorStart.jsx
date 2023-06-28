@@ -1,4 +1,4 @@
-import { CNavbar, CMain } from "../../PAGES";
+import { CNavbar, CMain } from "../calculator";
 
 const CalculatorStart = () => {
   return (

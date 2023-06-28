@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo } from "react";
 import { createContext, useState } from "react";
-import data from "./calculator components/cards/data";
+import data from "../calculator components/cards/data";
 
 export const CheckedCards = createContext();
 const Context = ({ children }) => {

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { CNavbar, CFilter, CCards, Form } from "../index";
+import { CNavbar, CFilter, CCards, Form } from "../calculator";
 import styles from "./calculator.module.scss";
 import cards from "../../calculator components/cards/data";
 import { useContext } from "react";
-import { CheckedCards } from "../../Context";
+import { CheckedCards } from "../../contexts/Context";
 
 const initialState = {
   name: "",

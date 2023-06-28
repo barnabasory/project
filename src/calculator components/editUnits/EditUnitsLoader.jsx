@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styles from "./EditUnits.module.scss";
-import { arrowUp, arrowDown, ProcessingResults } from "../../PAGES";
+import { arrowUp, arrowDown } from "../../PAGES";
+import { ProcessingResults } from "../../PAGES/calculator";
 import { useContext } from "react";
-import { CheckedCards } from "../../Context";
+import { CheckedCards } from "../../contexts/Context";
 import { useNavigate, Link } from "react-router-dom";
 
 const EditUnits = () => {

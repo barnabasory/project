@@ -1,5 +1,5 @@
 import React from "react";
-import { CNavbarLoader } from "../..";
+import { CNavbarLoader } from "../../calculator";
 
 const CalculatorStartLoader = () => {
   return (

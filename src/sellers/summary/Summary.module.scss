@@ -1,0 +1,190 @@
+.wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  color: var(--cod60);
+  margin: auto;
+  margin-top: 43px;
+  margin-bottom: 435px;
+
+  .previous_page {
+    grid-column: span 2;
+    display: flex;
+    align-items: flex-start;
+
+    .arrowLeft {
+      width: 24px;
+    }
+  }
+
+  .links {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .green_link {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--everglade);
+
+      .green_number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: var(--everglade);
+        width: 25px;
+        height: 25px;
+        color: white;
+      }
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--cod40);
+
+      .number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: var(--cod40);
+        width: 25px;
+        height: 25px;
+        color: white;
+      }
+    }
+  }
+
+  .seller_form {
+    grid-column: span 7;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      tr {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        border-bottom: 1px solid black;
+
+        .logo_info {
+          color: var(--cod60);
+        }
+
+        td {
+          width: 100%;
+          padding-top: 12px;
+          padding-bottom: 12px;
+        }
+
+        td:first-child {
+          width: 37%;
+        }
+        td:nth-child(2) {
+          width: 63%;
+          color: var(--cod-gray);
+        }
+      }
+    }
+
+    .sellers_hr {
+      background-color: var(--cod20);
+      height: 1px;
+      width: 611px;
+      margin-top: 10px;
+      margin-bottom: 12px;
+    }
+
+    .store_name_div,
+    .store_logo_div,
+    .num_of_employees_div,
+    .state_div,
+    .address_line_1_div,
+    .address_line_2_div,
+    .zipcode_div,
+    .cac_num_div,
+    .upload_cac_div,
+    .first_name_div,
+    .last_name_div,
+    .email_div,
+    .phone_div,
+    .password_div {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+
+      .store_name_key,
+      .num_of_employees_key,
+      .state_key,
+      .address_line_1_key,
+      .address_line_2_key,
+      .zipcode_key,
+      .cac_num_key,
+      .upload_cac_key,
+      .first_name_key,
+      .last_name_key,
+      .email_key,
+      .phone_key,
+      .password_key {
+        width: 60%;
+      }
+
+      .store_name_value,
+      .num_of_employees_value,
+      .state_value,
+      .address_line_1_value,
+      .address_line_2_value,
+      .zipcode_value,
+      .cac_num_value,
+      .upload_cac_value,
+      .first_name_value,
+      .last_name_value,
+      .phone_value,
+      .email_value,
+      .password_value {
+        width: 100%;
+        color: var(--cod-gray);
+      }
+    }
+
+    .email_info,
+    .phone_info {
+      padding-top: 4px;
+      padding-bottom: 20px;
+    }
+
+    .password_info {
+      padding-top: 12px;
+      padding-bottom: 20px;
+    }
+
+    .terms_conditions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+
+      .terms_text {
+        color: #1a1a1a;
+        font-size: 14px;
+        font-family: Roboto;
+        line-height: 20px;
+      }
+    }
+
+    .button {
+      background-color: var(--cod-gray);
+      padding: 10px 54px 10px 54px;
+    }
+  }
+}

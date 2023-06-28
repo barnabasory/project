@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./Chart.module.scss";
-import { CheckedCards } from "../../Context";
+import { CheckedCards } from "../../contexts/Context";
 import { useContext } from "react";
 
 const Chart = ({ chartData }) => {

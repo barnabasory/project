@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./ResultFigure.module.scss";
 import { useContext } from "react";
-import { CheckedCards } from "../../Context";
+import { CheckedCards } from "../../contexts/Context";
 
 const ResultFigure = () => {
   const { checkedArray } = useContext(CheckedCards);
