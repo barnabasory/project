@@ -1,0 +1,715 @@
+.wrapper {
+  display: grid;
+  padding-top: 73px;
+  padding-bottom: 62px;
+  grid-gap: 46px;
+
+  h3 {
+    color: var(--chateau-green);
+    padding-bottom: 54px;
+    font-weight: 500;
+  }
+
+  .customer_info {
+    display: grid;
+    place-items: left;
+    padding-bottom: 15px;
+  }
+
+  .video_text_and_screen {
+    position: relative;
+    display: flex;
+    .video_text_card {
+      background-color: var(--chateau-green);
+      width: 700px;
+      height: 330px;
+      border-radius: 12px;
+      color: white;
+      padding: 100px 121px 100px 77px;
+      position: relative;
+      z-index: 1;
+
+      .light_blockquote {
+        position: absolute;
+        top: -60px;
+        left: 50%;
+      }
+
+      .video_text {
+        display: grid;
+        place-items: left;
+        grid-gap: 16px;
+        p {
+          font-weight: 500;
+        }
+
+        span {
+          color: black;
+        }
+      }
+
+      .play_video {
+        display: grid;
+        place-items: center;
+        position: absolute;
+        right: 47px;
+        bottom: 39px;
+      }
+    }
+
+    .video {
+      position: absolute;
+      top: -173px;
+      right: 0;
+      width: 697px;
+      height: 400px;
+    }
+  }
+
+  .testimonials {
+    display: grid;
+    place-items: center;
+    grid-gap: 13px;
+
+    .quote {
+      display: grid;
+      place-items: center;
+      position: relative;
+      h6 {
+        position: absolute;
+        top: 40%;
+        white-space: nowrap;
+        font-weight: 500;
+      }
+    }
+
+    p {
+      max-width: 677px;
+      text-align: center;
+    }
+
+    .testimonial_button {
+      padding: 8px 24px 8px 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .wrapper {
+    display: grid;
+    padding-top: 43px;
+    padding-bottom: 62px;
+    grid-gap: 0px;
+
+    h3 {
+      color: var(--chateau-green);
+      padding-bottom: 54px;
+      font-weight: 500;
+      font-size: 22px;
+      padding-bottom: 60px;
+    }
+
+    .video_text_and_screen {
+      position: relative;
+      .customer_info {
+        display: grid;
+        place-items: left;
+        position: absolute;
+        top: -55px;
+        left: 0;
+      }
+      background-color: var(--chateau-green);
+      display: grid;
+      place-items: center;
+      width: 100%;
+      height: 100%;
+      padding-left: 12px;
+      padding-right: 12px;
+      padding-bottom: 12px;
+      border-radius: 12px;
+
+      .video_text_card {
+        width: auto;
+        height: auto;
+        color: white;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 28px;
+        position: relative;
+        z-index: 1;
+
+        .light_blockquote {
+          position: absolute;
+          top: -30px;
+          left: 70%;
+          width: 52px;
+        }
+
+        .video_text {
+          display: grid;
+          place-items: left;
+          grid-gap: 16px;
+          p {
+            font-weight: 500;
+          }
+
+          span {
+            color: black;
+          }
+        }
+
+        .play_video {
+          display: grid;
+          place-items: center;
+          position: absolute;
+          right: 14px;
+          bottom: 39px;
+
+          .play_video_icon {
+            width: 38px;
+          }
+        }
+      }
+
+      .video {
+        position: static;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+        height: 224px;
+      }
+    }
+
+    .testimonials {
+      display: grid;
+      place-items: center;
+      grid-gap: 13px;
+      padding-top: 60px;
+
+      .quote {
+        display: grid;
+        place-items: center;
+        position: relative;
+        h6 {
+          position: absolute;
+          top: 40%;
+          white-space: nowrap;
+          font-weight: 500;
+        }
+        .dark_blockquote {
+          width: 72px;
+        }
+      }
+
+      p {
+        max-width: 677px;
+        text-align: center;
+      }
+
+      .testimonial_button {
+        padding: 8px 24px 8px 24px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 701px) {
+  .wrapper {
+    display: grid;
+    padding-top: 73px;
+    padding-bottom: 62px;
+    grid-gap: 54px;
+
+    h3 {
+      color: var(--chateau-green);
+      padding-bottom: 0;
+      font-weight: 500;
+      font-size: 26px;
+    }
+
+    .video_text_and_screen {
+      .customer_info {
+        display: grid;
+        place-items: left;
+      }
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      .video_text_card {
+        background-color: var(--chateau-green);
+        width: 400px;
+        height: 360px;
+        border-radius: 12px;
+        color: white;
+        padding: 72px 56px 98px 56px;
+        position: relative;
+        z-index: 1;
+
+        .light_blockquote {
+          position: absolute;
+          top: -60px;
+          left: 50%;
+        }
+
+        .video_text {
+          display: grid;
+          place-items: left;
+          grid-gap: 16px;
+          p {
+            font-weight: 500;
+          }
+
+          span {
+            color: black;
+          }
+        }
+
+        .play_video {
+          display: grid;
+          place-items: center;
+          position: absolute;
+          right: 47px;
+          bottom: 39px;
+        }
+      }
+
+      .video {
+        position: absolute;
+        top: -103px;
+        height: 400px;
+        right: 0;
+        width: 400px;
+        height: 360px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+    }
+
+    .testimonials {
+      display: grid;
+      place-items: center;
+      grid-gap: 13px;
+
+      .quote {
+        display: grid;
+        place-items: center;
+        position: relative;
+        h6 {
+          position: absolute;
+          top: 40%;
+          white-space: nowrap;
+          font-weight: 500;
+        }
+      }
+
+      p {
+        max-width: 677px;
+        text-align: center;
+      }
+
+      .testimonial_button {
+        padding: 8px 24px 8px 24px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 801px) {
+  .wrapper {
+    display: grid;
+    padding-top: 73px;
+    padding-bottom: 62px;
+    grid-gap: 54px;
+
+    h3 {
+      color: var(--chateau-green);
+      padding-bottom: 0;
+      font-weight: 500;
+      font-size: 26px;
+    }
+
+    .video_text_and_screen {
+      .customer_info {
+        display: grid;
+        place-items: left;
+      }
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      .video_text_card {
+        background-color: var(--chateau-green);
+        width: 450px;
+        height: 360px;
+        border-radius: 12px;
+        color: white;
+        padding: 72px 56px 98px 56px;
+        position: relative;
+        z-index: 1;
+
+        .light_blockquote {
+          position: absolute;
+          top: -60px;
+          left: 50%;
+        }
+
+        .video_text {
+          display: grid;
+          place-items: left;
+          grid-gap: 16px;
+          p {
+            font-weight: 500;
+          }
+
+          span {
+            color: black;
+          }
+        }
+
+        .play_video {
+          display: grid;
+          place-items: center;
+          position: absolute;
+          right: 47px;
+          bottom: 39px;
+        }
+      }
+
+      .video {
+        position: absolute;
+        top: -103px;
+        height: 400px;
+        right: 0;
+        width: 450px;
+        height: 360px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+    }
+
+    .testimonials {
+      display: grid;
+      place-items: center;
+      grid-gap: 13px;
+
+      .quote {
+        display: grid;
+        place-items: center;
+        position: relative;
+        h6 {
+          position: absolute;
+          top: 40%;
+          white-space: nowrap;
+          font-weight: 500;
+        }
+      }
+
+      p {
+        max-width: 677px;
+        text-align: center;
+      }
+
+      .testimonial_button {
+        padding: 8px 24px 8px 24px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 901px) {
+  .wrapper {
+    display: grid;
+    padding-top: 73px;
+    padding-bottom: 62px;
+    grid-gap: 54px;
+
+    h3 {
+      color: var(--chateau-green);
+      padding-bottom: 0;
+      font-weight: 500;
+      font-size: 26px;
+    }
+
+    .video_text_and_screen {
+      .customer_info {
+        display: grid;
+        place-items: left;
+      }
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      .video_text_card {
+        background-color: var(--chateau-green);
+        width: 500px;
+        height: 360px;
+        border-radius: 12px;
+        color: white;
+        padding: 72px 56px 98px 56px;
+        position: relative;
+        z-index: 1;
+
+        .light_blockquote {
+          position: absolute;
+          top: -60px;
+          left: 50%;
+        }
+
+        .video_text {
+          display: grid;
+          place-items: left;
+          grid-gap: 16px;
+          p {
+            font-weight: 500;
+          }
+
+          span {
+            color: black;
+          }
+        }
+
+        .play_video {
+          display: grid;
+          place-items: center;
+          position: absolute;
+          right: 47px;
+          bottom: 39px;
+        }
+      }
+
+      .video {
+        position: absolute;
+        top: -103px;
+        height: 400px;
+        right: 0;
+        width: 500px;
+        height: 360px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+    }
+
+    .testimonials {
+      display: grid;
+      place-items: center;
+      grid-gap: 13px;
+
+      .quote {
+        display: grid;
+        place-items: center;
+        position: relative;
+        h6 {
+          position: absolute;
+          top: 40%;
+          white-space: nowrap;
+          font-weight: 500;
+        }
+      }
+
+      p {
+        max-width: 677px;
+        text-align: center;
+      }
+
+      .testimonial_button {
+        padding: 8px 24px 8px 24px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1001px) {
+  .wrapper {
+    display: grid;
+    padding-top: 73px;
+    padding-bottom: 62px;
+    grid-gap: 54px;
+
+    h3 {
+      color: var(--chateau-green);
+      padding-bottom: 0;
+      font-weight: 500;
+      font-size: 26px;
+    }
+
+    .video_text_and_screen {
+      .customer_info {
+        display: grid;
+        place-items: left;
+      }
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      .video_text_card {
+        background-color: var(--chateau-green);
+        width: 550px;
+        height: 360px;
+        border-radius: 12px;
+        color: white;
+        padding: 72px 56px 98px 56px;
+        position: relative;
+        z-index: 1;
+
+        .light_blockquote {
+          position: absolute;
+          top: -60px;
+          left: 50%;
+        }
+
+        .video_text {
+          display: grid;
+          place-items: left;
+          grid-gap: 16px;
+          p {
+            font-weight: 500;
+          }
+
+          span {
+            color: black;
+          }
+        }
+
+        .play_video {
+          display: grid;
+          place-items: center;
+          position: absolute;
+          right: 47px;
+          bottom: 39px;
+        }
+      }
+
+      .video {
+        position: absolute;
+        top: -103px;
+        height: 400px;
+        right: 0;
+        width: 550px;
+        height: 360px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+    }
+
+    .testimonials {
+      display: grid;
+      place-items: center;
+      grid-gap: 13px;
+
+      .quote {
+        display: grid;
+        place-items: center;
+        position: relative;
+        h6 {
+          position: absolute;
+          top: 40%;
+          white-space: nowrap;
+          font-weight: 500;
+        }
+      }
+
+      p {
+        max-width: 677px;
+        text-align: center;
+      }
+
+      .testimonial_button {
+        padding: 8px 24px 8px 24px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .wrapper {
+    display: grid;
+    padding-top: 73px;
+    padding-bottom: 62px;
+    grid-gap: 54px;
+
+    h3 {
+      color: var(--chateau-green);
+      padding-bottom: 0;
+      font-weight: 500;
+      font-size: 26px;
+    }
+
+    .video_text_and_screen {
+      .customer_info {
+        display: grid;
+        place-items: left;
+      }
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      .video_text_card {
+        background-color: var(--chateau-green);
+        width: 732px;
+        height: 360px;
+        border-radius: 12px;
+        color: white;
+        padding: 72px 56px 98px 56px;
+        position: relative;
+        z-index: 1;
+
+        .light_blockquote {
+          position: absolute;
+          top: -60px;
+          left: 50%;
+        }
+
+        .video_text {
+          display: grid;
+          place-items: left;
+          grid-gap: 16px;
+          p {
+            font-weight: 500;
+          }
+
+          span {
+            color: black;
+          }
+        }
+
+        .play_video {
+          display: grid;
+          place-items: center;
+          position: absolute;
+          right: 47px;
+          bottom: 39px;
+        }
+      }
+
+      .video {
+        position: absolute;
+        top: -103px;
+        height: 400px;
+        right: 0;
+        width: 697px;
+        height: 360px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+    }
+
+    .testimonials {
+      display: grid;
+      place-items: center;
+      grid-gap: 13px;
+
+      .quote {
+        display: grid;
+        place-items: center;
+        position: relative;
+        h6 {
+          position: absolute;
+          top: 40%;
+          white-space: nowrap;
+          font-weight: 500;
+        }
+      }
+
+      p {
+        max-width: 677px;
+        text-align: center;
+      }
+
+      .testimonial_button {
+        padding: 8px 24px 8px 24px;
+      }
+    }
+  }
+}

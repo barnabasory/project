@@ -17,7 +17,7 @@ const Solutions = () => {
         </h4>
         <div className={styles.paragraphs}>
           <div className={styles.paragraph}>
-            <img src={bullet} alt="bullet" />
+            <img src={bullet} alt="bullet" className={styles.bullet} />
             <p className={`large-paragraph ${styles.text}`}>
               Our Lease to Own model offers you the option of paying in
               instalments over a fixed period and owning the products after
@@ -25,14 +25,14 @@ const Solutions = () => {
             </p>
           </div>
           <div className={styles.paragraph}>
-            <img src={bullet} alt="bullet" />
+            <img src={bullet} alt="bullet" className={styles.bullet} />
             <p className={`large-paragraph ${styles.text}`}>
               With Outright Purchase, you can instantly buy and own renewable
               energy products.
             </p>
           </div>
           <div className={styles.paragraph}>
-            <img src={bullet} alt="bullet" />
+            <img src={bullet} alt="bullet" className={styles.bullet} />
             <p className={`large-paragraph ${styles.text}`}>
               Power as a Service is an energy subscription model that lets you
               enjoy electricity without purchasing infrastructure similar to

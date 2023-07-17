@@ -7,11 +7,10 @@ import { FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CheckedCards } from "../../contexts/Context";
-import { Login } from "../../PAGES";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(true);
-  const { showLogin, setShowLogin } = useContext(CheckedCards);
+  const { setShowLogin } = useContext(CheckedCards);
 
   const handleShowMenu = () => {
     setShowMenu(!showMenu);
@@ -28,7 +27,7 @@ const Navbar = () => {
   return (
     <>
       <div className={`fw ${styles["navbar-wrapper"]}`}>
-        <div className={`sw ${styles.navbar}`}>
+        <div className={`sw ${styles.desktop_navbar}`}>
           <div className={styles.logo}>
             <Link to="/">
               <img src={logo} alt="" />
@@ -42,23 +41,27 @@ const Navbar = () => {
               </p>
             </Link>
           </div>
-          <div>
-            <ul className={`root-small ${styles.navlinks}`}>
-              <li>
-                <a href="#Search">Search</a>
-              </li>
-              <li>
-                <a href="#" onClick={showLoginDropDown}>
-                  My Account
-                </a>
-              </li>
-              <li className={styles.count}>0</li>
-            </ul>
-          </div>
-          <div className={styles["mobile-menu"]}>
+          <ul className={`root-small ${styles.navlinks}`}>
+            <li>
+              <a href="#Search">Search</a>
+            </li>
+            <li>
+              <a href="#" onClick={showLoginDropDown}>
+                My Account
+              </a>
+            </li>
+            <li className={styles.count}>0</li>
+          </ul>
+        </div>
+        <div className={`sw ${styles.mobile_navbar}`}>
+          <Link to="/" className={styles.logo}>
+            <img src={logo} alt="" />
+          </Link>
+
+          <div className={styles.mobile_menu}>
             {showMenu && (
               <div
-                className={styles["menu-wrapper"]}
+                className={styles.mobile_wrapper}
                 onClick={handleShowMenu}
               ></div>
             )}
@@ -78,24 +81,21 @@ const Navbar = () => {
                 className={styles.close_menu}
               />
             )}
-            <div>
-              {showMenu && (
-                <>
-                  <ul className={styles.dropdown}>
-                    <li>
-                      <a href="#Search">Search</a>
-                    </li>
-                    <li>
-                      <a href="#My-account">My Account</a>
-                    </li>
-                    <li>
-                      <a href="#My-account">Calculate Your Energy Needs</a>
-                    </li>
-                    <li className={styles["mobile-count"]}>0</li>
-                  </ul>
-                </>
-              )}
-            </div>
+
+            {showMenu && (
+              <ul className={styles.dropdown}>
+                <li>
+                  <a href="#Search">Search</a>
+                </li>
+                <li>
+                  <a href="#My-account">My Account</a>
+                </li>
+                <li>
+                  <a href="#My-account">Calculate Your Energy Needs</a>
+                </li>
+                <li className={styles["mobile-count"]}>0</li>
+              </ul>
+            )}
           </div>
         </div>
       </div>

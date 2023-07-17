@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 521px;
+  height: 100%;
   width: 100%;
   background-color: white;
 
@@ -18,6 +18,7 @@
       display: flex;
       gap: 2px;
       flex-direction: column;
+      padding-bottom: 50px;
       .title {
         color: var(--chateau-green);
         font-weight: 500;
@@ -60,8 +61,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 521px;
     width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: 100%;
 
     .container {
       display: flex;
@@ -88,45 +91,142 @@
 
       .images {
         display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        place-items: center;
+        grid-template-columns: repeat(4, 1fr);
         width: 100%;
+        grid-gap: 30px;
+        place-items: center;
+        place-content: center;
 
         .image {
           width: 100%;
+          height: 64px;
+          grid-column: span 1;
+          object-fit: contain;
         }
 
-        .blue_camel {
-          width: 64px;
-          height: 64px;
-          grid-column: span 2;
+        .image:last-child {
+          grid-column: span 3;
         }
-        .solar_direct {
-          width: 273px;
-          height: 64px;
-          grid-column: span 2;
-          background-color: transparent;
-        }
-        .green_crest {
-          width: 74px;
-          height: 64px;
-          grid-column: span 2;
+      }
+
+      .button {
+        width: 184px;
+        height: 44px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: 100%;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      width: 100%;
+
+      .heading {
+        display: flex;
+        gap: 2px;
+        flex-direction: column;
+
+        .title {
+          color: var(--chateau-green);
+          font-weight: 500;
         }
 
-        .electric_hand {
-          width: 85px;
+        .text {
+          max-width: 932px;
+        }
+      }
+
+      .images {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        grid-gap: 40px;
+        place-items: center;
+        place-content: center;
+
+        .image {
+          width: 100%;
           height: 64px;
+          grid-column: span 1;
+          object-fit: contain;
+        }
+
+        .image:last-child {
           grid-column: span 2;
         }
-        .privida {
-          width: 58px;
-          height: 64px;
-          grid-column: span 2;
+      }
+
+      .button {
+        width: 184px;
+        height: 44px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      width: 100%;
+
+      .heading {
+        display: flex;
+        gap: 2px;
+        flex-direction: column;
+        padding-bottom: 50px;
+        .title {
+          color: var(--chateau-green);
+          font-weight: 500;
         }
-        .sf {
-          width: 64px;
-          height: 64px;
-          grid-column: span 2;
+
+        .text {
+          max-width: 932px;
+        }
+      }
+
+      .images {
+        display: flex;
+        width: 90%;
+        margin-bottom: 70px;
+
+        .image_div {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 4px;
+          width: 30%;
+          max-height: 64px;
+          background-color: white;
+
+          .image {
+            object-fit: cover;
+          }
         }
       }
 

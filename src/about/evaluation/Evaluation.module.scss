@@ -72,7 +72,7 @@
     height: 100%;
     background-color: white;
     padding-top: 50px;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 
     .container {
       display: flex;
@@ -101,13 +101,12 @@
           flex-direction: column;
           text-align: center;
           width: 408px;
-          height: 392px;
           background-color: var(--cararra);
           border-radius: 4px;
-          gap: 89px;
+          gap: 50px;
           width: 100%;
-          padding-left: 68px;
-          padding-right: 68px;
+          padding-left: 20px;
+          padding-right: 20px;
 
           .icon {
             width: 104px;
@@ -173,10 +172,10 @@
           height: 392px;
           background-color: var(--cararra);
           border-radius: 4px;
-          gap: 89px;
+          gap: 70px;
           width: 100%;
-          padding-left: 28px;
-          padding-right: 28px;
+          padding-left: 20px;
+          padding-right: 20px;
 
           .icon {
             width: 104px;

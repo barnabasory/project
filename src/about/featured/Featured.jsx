@@ -24,25 +24,15 @@ const Featured = () => {
           <div className={styles.image_div}>
             <img src={sf} alt="usaid-logo" className={styles.image} />
           </div>
-          <div className={styles.image_div}>
-            <img src={solar_direct} alt="usaid-logo" className={styles.image} />
-          </div>
-          <div className={styles.image_div}>
-            <img src={privida} alt="usaid-logo" className={styles.image} />
-          </div>
-          <div className={styles.image_div}>
-            <img
-              src={electric_hand}
-              alt="usaid-logo"
-              className={styles.image}
-            />
-          </div>
-          <div className={styles.image_div}>
-            <img src={green_crest} alt="usaid-logo" className={styles.image} />
-          </div>
-          <div className={styles.image_div}>
-            <img src={blue_camel} alt="usaid-logo" className={styles.image} />
-          </div>
+
+          <img src={privida} alt="usaid-logo" className={styles.image} />
+
+          <img src={electric_hand} alt="usaid-logo" className={styles.image} />
+
+          <img src={green_crest} alt="usaid-logo" className={styles.image} />
+
+          <img src={blue_camel} alt="usaid-logo" className={styles.image} />
+          <img src={solar_direct} alt="usaid-logo" className={styles.image} />
         </div>
         <button className={styles.button}>Become a Vendor</button>
       </div>

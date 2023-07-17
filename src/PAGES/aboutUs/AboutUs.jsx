@@ -15,13 +15,16 @@ import {
   TopSnippet,
 } from "../index";
 
+import { Diesel } from "../about";
+
 const AboutUs = () => {
   return (
-    <div>
+    <div style={{ overflowX: "hidden" }}>
       <TopSnippet />
       <Navbar />
       <AboutHero />
       <AboutAfterHero />
+      <Diesel />
       <AboutEvaluation />
       <AboutSolutions />
       <AboutPartnership />

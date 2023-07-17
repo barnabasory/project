@@ -43,6 +43,7 @@ $breakpoint-mobile: 480px;
     align-items: center;
     flex-direction: column;
     height: 750px;
+    width: 100%;
     color: var(--white);
 
     .email-contact-image {
@@ -59,8 +60,8 @@ $breakpoint-mobile: 480px;
       flex-direction: column;
       gap: 13px;
       height: 100%;
-      padding-left: 10px;
-      padding-right: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
       text-align: left;
     }
 
@@ -88,7 +89,6 @@ $breakpoint-tablet: 481px;
       width: 100vw;
       object-fit: cover;
       height: 300px;
-      margin-bottom: -6px;
     }
 
     .email-contact-text {
@@ -98,9 +98,10 @@ $breakpoint-tablet: 481px;
       flex-direction: column;
       gap: 13px;
       height: 100%;
-      padding-left: 10px;
-      padding-right: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
       text-align: left;
+      margin-top: -2px;
     }
 
     .email-contact-button {
@@ -115,6 +116,7 @@ $breakpoint-laptops-desktops: 768px;
     flex-direction: row;
     height: 450px;
     color: var(--white);
+    margin-bottom: -3px;
 
     .email-contact-image {
       width: 50vw;
