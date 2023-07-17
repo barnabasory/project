@@ -15,7 +15,8 @@ import {
   SellerProfilePage,
   SummaryPage,
 } from "./PAGES/sellers";
-import { SignUpPage, LoginPage, AboutUs, PowerServicePage } from "./PAGES";
+import { SignUpPage, LoginPage, AboutUs } from "./PAGES";
+import { PowerServicePage } from "./PAGES/powerService";
 import { Routes, Route } from "react-router-dom";
 import {
   HomeLoader,

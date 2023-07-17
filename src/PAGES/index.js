@@ -16,11 +16,6 @@ export { default as SignUpPage } from "./signUp/SignUpPage";
 //login page
 export { default as LoginPage } from "./login/LoginPage";
 
-//PowerService
-export { default as PowerServicePage } from "./powerService/PowerServicePage";
-export { default as PowerService } from "../power/PowerService";
-export { default as Sponsor } from "../power/sponsor/Sponsor";
-
 //login and sign-up components
 export { default as LoginSlide } from "../auth/login/LoginSlide";
 export { default as SignUp } from "../auth/signup/SignUp";

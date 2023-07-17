@@ -202,6 +202,7 @@ input[type="checkbox"]::before{
 textarea{
   border: none;
   outline: none;
+  border-radius: 2px;
 }
 
 textarea:focus {

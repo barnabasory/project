@@ -1,0 +1,392 @@
+.wrapper {
+  position: relative;
+  display: grid;
+  grid-gap: 20px;
+  .customer_info {
+    display: grid;
+    place-items: left;
+    grid-gap: 54px;
+    .title {
+      color: var(--chateau-green);
+      font-weight: 500;
+      font-size: clamp(22px, 4vw, 38px);
+      padding-bottom: 0;
+    }
+    .customer_meta_data {
+      display: grid;
+      place-items: left;
+    }
+  }
+  .video_text_and_screen {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .video_text_card {
+      background-color: var(--chateau-green);
+      width: 100%;
+      height: 360px;
+      border-radius: 12px;
+      color: white;
+      padding: 100px 141px 100px 77px;
+      position: relative;
+      z-index: 1;
+
+      .light_blockquote {
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        width: 106px;
+      }
+
+      .video_text {
+        display: grid;
+        place-items: left;
+        grid-gap: 16px;
+        p {
+          font-weight: 500;
+        }
+        span {
+          color: black;
+        }
+      }
+
+      .play_video {
+        display: grid;
+        place-items: center;
+        position: absolute;
+        right: 39px;
+        bottom: 39px;
+        cursor: pointer;
+      }
+    }
+    .video_text_card_hidden_container {
+      background-color: red;
+      height: 300px;
+      width: auto;
+      visibility: hidden;
+    }
+  }
+  .video_container {
+    display: flex;
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 100%;
+    .video_hidden_container {
+      width: 45%;
+      background-color: blue;
+      visibility: hidden;
+    }
+
+    .video_div {
+      width: auto;
+      height: 400px;
+
+      border-radius: 12px;
+      .video {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    position: relative;
+    display: grid;
+    grid-gap: 20px;
+    .customer_info {
+      display: grid;
+      place-items: left;
+      grid-gap: 10px;
+      .title {
+        color: var(--chateau-green);
+        font-weight: 500;
+        font-size: clamp(22px, 4vw, 38px);
+        padding-bottom: 0;
+      }
+      .customer_meta_data {
+        display: grid;
+        place-items: left;
+      }
+    }
+    .video_text_and_screen {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      .video_text_card {
+        background-color: var(--chateau-green);
+        width: 100%;
+        height: 500px;
+        border-radius: 12px;
+        color: white;
+        padding: 40px 41px 40px 41px;
+        position: relative;
+        z-index: 1;
+
+        .light_blockquote {
+          position: absolute;
+          top: -30px;
+          left: 60%;
+          width: 56px;
+        }
+
+        .video_text {
+          display: grid;
+          place-items: left;
+          grid-gap: 16px;
+          p {
+            font-weight: 500;
+          }
+          span {
+            color: black;
+          }
+        }
+
+        .play_video {
+          display: grid;
+          place-items: center;
+          cursor: pointer;
+          position: absolute;
+          bottom: 250px;
+          right: 20px;
+        }
+      }
+      .video_text_card_hidden_container {
+        background-color: red;
+        height: 300px;
+        width: auto;
+        display: none;
+      }
+    }
+    .video_container {
+      display: flex;
+      position: absolute;
+      top: 65%;
+      padding-left: 20px;
+      padding-right: 20px;
+      right: 0;
+      height: 50%;
+      width: 100%;
+      z-index: 1;
+      .video_hidden_container {
+        width: 45%;
+        background-color: blue;
+        display: none;
+      }
+
+      .video_div {
+        width: auto;
+        height: 200px;
+        border-radius: 12px;
+        .video {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 12px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 601px) {
+  .wrapper {
+    position: relative;
+    display: grid;
+    grid-gap: 20px;
+    .customer_info {
+      display: grid;
+      place-items: left;
+      grid-gap: 14px;
+      .title {
+        color: var(--chateau-green);
+        font-weight: 500;
+        font-size: clamp(22px, 4vw, 38px);
+        padding-bottom: 0;
+      }
+      .customer_meta_data {
+        display: grid;
+        place-items: left;
+      }
+    }
+    .video_text_and_screen {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      .video_text_card {
+        background-color: var(--chateau-green);
+        width: auto;
+        height: 300px;
+        border-radius: 12px;
+        color: white;
+        padding: 40px 41px 40px 41px;
+        position: relative;
+        z-index: 1;
+
+        .light_blockquote {
+          position: absolute;
+          top: -30px;
+          left: 50%;
+          width: 55px;
+        }
+
+        .video_text {
+          display: grid;
+          place-items: left;
+          grid-gap: 16px;
+          p {
+            font-weight: 500;
+          }
+          span {
+            color: black;
+          }
+        }
+
+        .play_video {
+          display: grid;
+          place-items: center;
+          position: absolute;
+          right: 39px;
+          bottom: 39px;
+          cursor: pointer;
+        }
+      }
+      .video_text_card_hidden_container {
+        background-color: red;
+        height: 300px;
+        width: auto;
+        visibility: hidden;
+      }
+    }
+    .video_container {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      position: absolute;
+      top: -20px;
+      right: 0;
+      width: 100%;
+      .video_hidden_container {
+        width: 45%;
+        background-color: blue;
+        visibility: hidden;
+      }
+
+      .video_div {
+        display: flex;
+        justify-content: flex-end;
+        align-self: flex-end;
+        width: auto;
+        height: 400px;
+
+        border-radius: 12px;
+        .video {
+          width: 80%;
+          height: 300px;
+          object-fit: cover;
+          border-radius: 12px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .wrapper {
+    position: relative;
+    display: grid;
+    grid-gap: 20px;
+    .customer_info {
+      display: grid;
+      place-items: left;
+      grid-gap: 54px;
+      .title {
+        color: var(--chateau-green);
+        font-weight: 500;
+        font-size: clamp(22px, 4vw, 38px);
+        padding-bottom: 0;
+      }
+      .customer_meta_data {
+        display: grid;
+        place-items: left;
+      }
+    }
+    .video_text_and_screen {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      .video_text_card {
+        background-color: var(--chateau-green);
+        width: 100%;
+        height: 360px;
+        border-radius: 12px;
+        color: white;
+        padding: 100px 141px 100px 77px;
+        position: relative;
+        z-index: 1;
+
+        .light_blockquote {
+          position: absolute;
+          top: -50px;
+          left: 50%;
+          width: 106px;
+        }
+
+        .video_text {
+          display: grid;
+          place-items: left;
+          grid-gap: 16px;
+          p {
+            font-weight: 500;
+          }
+          span {
+            color: black;
+          }
+        }
+
+        .play_video {
+          display: grid;
+          place-items: center;
+          position: absolute;
+          right: 39px;
+          bottom: 39px;
+          cursor: pointer;
+        }
+      }
+      .video_text_card_hidden_container {
+        background-color: red;
+        height: 300px;
+        width: auto;
+        visibility: hidden;
+      }
+    }
+    .video_container {
+      display: flex;
+      position: absolute;
+      top: -20px;
+      right: 0;
+      width: 100%;
+      .video_hidden_container {
+        width: 45%;
+        background-color: blue;
+        visibility: hidden;
+      }
+
+      .video_div {
+        width: auto;
+        height: 400px;
+
+        border-radius: 12px;
+        .video {
+          width: 100%;
+          height: 400px;
+          object-fit: cover;
+          border-radius: 12px;
+        }
+      }
+    }
+  }
+}
