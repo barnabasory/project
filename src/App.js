@@ -24,6 +24,7 @@ import {
   CalculatorCardsLoader,
   CalculatorStartLoader,
   CalculateUnitsLoader,
+  TestimonialsPage,
 } from "./PAGES/index";
 
 function App() {
@@ -103,6 +104,7 @@ function App() {
               element={<DepositMethodPage />}
             />
             <Route exact path="/summary" element={<SummaryPage />} />
+            <Route exact path="/testimonials" element={<TestimonialsPage />} />
           </Routes>
         </div>
       )}

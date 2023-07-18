@@ -1,16 +1,16 @@
 import styles from "./Testimonial.module.scss";
-import { play_video, light_blockquote, customer } from "../../PAGES/about";
+import { play_video, light_blockquote } from "../../PAGES/about";
 
-const Testimonial = () => {
+const Testimonial = ({ title, name, profession, testimony, image }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.customer_info}>
-        <h3 className={styles.title}>How I Ditched Diesel</h3>
+        <h3 className={styles.title}>{title}</h3>
         <div className={styles.customer_meta_data}>
           <span className={`root-text-bold ${styles.customer_name}`}>
-            Dapo Osunkoya
+            {name}
           </span>
-          <span>Finance Professional</span>
+          <span>{profession}</span>
         </div>
       </div>
       <div className={styles.video_text_and_screen}>
@@ -21,12 +21,8 @@ const Testimonial = () => {
             className={styles.light_blockquote}
           />
           <div className={styles.video_text}>
-            <p>
-              Just imagine going downstairs at 1:00 am to pull the generator. I
-              can’t even remember the last time I went downstairs to pull the
-              generator. I normally would spend 60,000 monthly on fuel.{" "}
-            </p>
-            <span>Dapo Osunkoya</span>
+            <p>{testimony}</p>
+            <span>{name}</span>
           </div>
           <div className={styles.play_video}>
             <img src={play_video} alt="" className={styles.play_video_icon} />
@@ -47,7 +43,7 @@ const Testimonial = () => {
         </div>
         <div className={styles.video_div}>
           <img
-            src={customer}
+            src={image}
             className={styles.video}
             alt="customer's_testimony"
           />

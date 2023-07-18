@@ -1,6 +1,9 @@
 //about-us page
+
 export { default as AboutUs } from "./aboutUs/AboutUs";
 
+// testimonials page
+export { default as TestimonialsPage } from "./testimonials/TestimonialsPage";
 //about-us components
 export { default as AboutHero } from "../about/hero/Hero";
 export { default as AboutAfterHero } from "../about/afterHero/AfterHero";

@@ -1,0 +1,42 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 162px;
+  .testimonials {
+    display: grid;
+    place-items: center;
+    grid-gap: 13px;
+    padding-top: 60px;
+    padding-top: 150px;
+
+    .quote {
+      display: grid;
+      place-items: center;
+      position: relative;
+      h3 {
+        position: absolute;
+        top: 10%;
+        white-space: nowrap;
+        font-weight: 500;
+      }
+      .dark_blockquote {
+        width: 72px;
+      }
+    }
+
+    p {
+      max-width: 677px;
+      text-align: center;
+    }
+
+    .testimonial_button {
+      padding: 8px 24px 8px 24px;
+    }
+  }
+
+  .testimonies {
+    display: grid;
+    grid-gap: 162px;
+    padding-bottom: 162px;
+  }
+}
