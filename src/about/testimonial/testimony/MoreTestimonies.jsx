@@ -1,21 +1,11 @@
-import styles from "./Diesel.module.scss";
-import { Testimonial } from "../../PAGES/about";
-import { dark_blockquote, customer } from "../../PAGES/about";
+import { dark_blockquote } from "../../../PAGES/about";
+import styles from "./MoreTestimonies.module.scss";
 import { Link } from "react-router-dom";
-
-const Diesel = () => {
+const MoreTestimonies = () => {
   return (
-    <section className={` ${styles.wrapper}`}>
-      {/* video text and screens */}
-      <Testimonial
-        name="Dapo Osunkoya"
-        title="How I ditched diesel"
-        profession="Finance Professional"
-        testimony="Just imagine going downstairs at 1:00 am to pull the generator. I can’t even remember the last time I went downstairs to pull the generator. I normally would spend 60,000 monthly on fuel. "
-        image={customer}
-      />
+    <div className={`fw ${styles.wrapper}`}>
       {/* testimonials */}
-      <div className={styles.testimonials}>
+      <div className={`sw ${styles.testimonials}`}>
         <div className={styles.quote}>
           <img
             src={dark_blockquote}
@@ -36,8 +26,8 @@ const Diesel = () => {
           </button>
         </Link>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default Diesel;
+export default MoreTestimonies;

@@ -15,7 +15,13 @@ import {
   SellerProfilePage,
   SummaryPage,
 } from "./PAGES/sellers";
-import { SignUpPage, LoginPage, AboutUs } from "./PAGES";
+import {
+  SignUpPage,
+  LoginPage,
+  AboutUs,
+  TermsOfServicePage,
+  TermsAndConditions,
+} from "./PAGES";
 import { PowerServicePage } from "./PAGES/powerService";
 import { Routes, Route } from "react-router-dom";
 import {
@@ -26,6 +32,8 @@ import {
   CalculateUnitsLoader,
   TestimonialsPage,
 } from "./PAGES/index";
+import { BlogsPage, BlogDetailsPage } from "./PAGES/blog";
+import ProductPage from "./PAGES/productPage/ProductPage";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -105,6 +113,19 @@ function App() {
             />
             <Route exact path="/summary" element={<SummaryPage />} />
             <Route exact path="/testimonials" element={<TestimonialsPage />} />
+            <Route
+              exact
+              path="/terms-of-service"
+              element={<TermsOfServicePage />}
+            />
+            <Route
+              exact
+              path="/terms-and-conditions"
+              element={<TermsAndConditions />}
+            />
+            <Route exact path="/blogs" element={<BlogsPage />} />
+            <Route exact path="/blog/:id" element={<BlogDetailsPage />} />
+            <Route exact path="/product/:id" element={<ProductPage />} />
           </Routes>
         </div>
       )}

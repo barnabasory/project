@@ -1,0 +1,31 @@
+.wrapper {
+  background-color: var(--carrara);
+  margin-top: 40px;
+  margin-top: 70px;
+  .testimonials {
+    display: grid;
+    place-items: center;
+    grid-gap: 13px;
+
+    .quote {
+      display: grid;
+      place-items: center;
+      position: relative;
+      h6 {
+        position: absolute;
+        top: 40%;
+        white-space: nowrap;
+        font-weight: 500;
+      }
+    }
+
+    p {
+      max-width: 677px;
+      text-align: center;
+    }
+
+    .testimonial_button {
+      padding: 8px 24px 8px 24px;
+    }
+  }
+}

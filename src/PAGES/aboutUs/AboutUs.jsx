@@ -1,5 +1,3 @@
-import styles from "./AboutUs.module.scss";
-
 import {
   AboutAfterHero,
   AboutEvaluation,

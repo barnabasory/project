@@ -1,0 +1,214 @@
+.terms_of_service {
+  background-color: var(--everglade);
+  margin-top: 98px;
+  padding-left: 20px;
+  padding-right: 20px;
+  .terms_of_service_header {
+    display: flex;
+    align-items: center;
+    height: 174px;
+    color: white;
+    max-width: 1050px;
+    h3 {
+      font-weight: 500;
+      margin-left: -19px;
+      font-size: clamp(22px, 4vw, 38px);
+    }
+  }
+}
+
+.wrapper {
+  .terms_of_service_text {
+    max-width: 1050px;
+    padding-top: 37px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 68px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 92px;
+
+    .how_to_buy,
+    .how_to_sell {
+      display: grid;
+      grid-gap: 17px;
+      h4 {
+        margin-left: -19px;
+        color: var(--everglade);
+        font-weight: 500;
+        font-size: clamp(22px, 4vw, 30px);
+      }
+
+      ul {
+        display: grid;
+        grid-gap: 10px;
+        max-width: 750px;
+        li {
+          list-style-type: square;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 765px) {
+  .terms_of_service {
+    background-color: var(--everglade);
+    margin-top: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+    .terms_of_service_header {
+      display: flex;
+      align-items: center;
+      height: 104px;
+      color: white;
+      max-width: 1050px;
+      h3 {
+        font-weight: 500;
+        margin-left: -19px;
+        font-size: clamp(22px, 4vw, 38px);
+        line-height: 35px;
+      }
+    }
+  }
+
+  .wrapper {
+    max-width: 1050px;
+
+    .terms_of_service_text {
+      padding-top: 37px;
+      display: flex;
+      flex-direction: column;
+      grid-gap: 68px;
+      padding-left: 40px;
+      padding-right: 20px;
+      padding-bottom: 50px;
+
+      .how_to_buy,
+      .how_to_sell {
+        display: grid;
+        grid-gap: 17px;
+        h4 {
+          margin-left: -19px;
+          color: var(--everglade);
+          font-weight: 500;
+          font-size: clamp(22px, 4vw, 30px);
+        }
+
+        ul {
+          display: grid;
+          grid-gap: 10px;
+          max-width: 750px;
+          li {
+            list-style-type: square;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 766px) {
+  .terms_of_service {
+    background-color: var(--everglade);
+    margin-top: 128px;
+    padding-left: 20px;
+    padding-right: 20px;
+    .terms_of_service_header {
+      display: flex;
+      align-items: center;
+      height: 144px;
+      color: white;
+      max-width: 1050px;
+      h3 {
+        font-weight: 500;
+        margin-left: -19px;
+      }
+    }
+  }
+
+  .wrapper {
+    .terms_of_service_text {
+      max-width: 1050px;
+      padding-top: 37px;
+      display: flex;
+      flex-direction: column;
+      grid-gap: 68px;
+      padding-left: 40px;
+      padding-right: 20px;
+
+      .how_to_buy,
+      .how_to_sell {
+        display: grid;
+        grid-gap: 17px;
+        h4 {
+          margin-left: -19px;
+          color: var(--everglade);
+          font-weight: 500;
+          font-size: clamp(22px, 4vw, 30px);
+        }
+
+        ul {
+          display: grid;
+          grid-gap: 10px;
+          max-width: 750px;
+          li {
+            list-style-type: square;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1017px) {
+  .terms_of_service {
+    background-color: var(--everglade);
+    margin-top: 98px;
+    padding-left: 20px;
+    padding-right: 20px;
+    .terms_of_service_header {
+      display: flex;
+      align-items: center;
+      height: 144px;
+      color: white;
+      max-width: 1050px;
+      h3 {
+        font-weight: 500;
+        margin-left: -19px;
+        font-size: clamp(22px, 4vw, 38px);
+      }
+    }
+  }
+  .wrapper {
+    .terms_of_service_text {
+      max-width: 1050px;
+      padding-top: 37px;
+      display: flex;
+      flex-direction: column;
+      grid-gap: 68px;
+      padding-left: 20px;
+
+      .how_to_buy,
+      .how_to_sell {
+        display: grid;
+        grid-gap: 17px;
+        h4 {
+          margin-left: -19px;
+          color: var(--everglade);
+          font-weight: 500;
+          font-size: clamp(22px, 4vw, 30px);
+        }
+
+        ul {
+          display: grid;
+          grid-gap: 10px;
+          max-width: 750px;
+          li {
+            list-style-type: square;
+          }
+        }
+      }
+    }
+  }
+}

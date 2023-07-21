@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.scss";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -8,12 +9,17 @@ const Footer = () => {
         <footer className={` sw ${styles["footer"]}`}>
           <div className={` ${styles["footer-links"]}`}>
             <h6 className={styles["footer-link-title"]}>Company</h6>
-            <span>Blogs</span>
+            <Link to="/blogs">
+              {" "}
+              <span>Blogs</span>
+            </Link>
             <span>About Us</span>
             <span>Contact Us</span>
             <span>How to Buy and Sell on Imperium</span>
             <span>Become a Vendor</span>
-            <span>Terms & Conditions</span>
+            <Link to="/terms-and-conditions">
+              <span>Terms & Conditions</span>
+            </Link>
             <span>Privacy Policy</span>
           </div>
           <div className={` ${styles["footer-links"]}`}>

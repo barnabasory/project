@@ -12,7 +12,7 @@
 
     .logo {
       grid-column: span 1;
-      justify-self: start;
+      justify-self: flex-start;
     }
     .navbar-title {
       font-weight: 600;
@@ -66,7 +66,7 @@ $breakpoint-tablet: 481px;
       justify-content: space-between;
 
       .logo {
-        justify-self: start;
+        justify-self: flex-start;
       }
       .navbar-title {
         display: none;
@@ -96,7 +96,7 @@ $breakpoint-laptops-desktops: 768px;
 
       .logo {
         grid-column: span 1;
-        justify-self: start;
+        justify-self: flex-start;
       }
       .navbar-title {
         display: block;

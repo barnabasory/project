@@ -1,9 +1,10 @@
-//about-us page
-
 export { default as AboutUs } from "./aboutUs/AboutUs";
-
+//terms of service page
+export { default as TermsOfServicePage } from "./termsOfService/TermsOfServicePage";
 // testimonials page
 export { default as TestimonialsPage } from "./testimonials/TestimonialsPage";
+//terms and conditions
+export { default as TermsAndConditions } from "./termsAndConditions/TermsAndConditions";
 //about-us components
 export { default as AboutHero } from "../about/hero/Hero";
 export { default as AboutAfterHero } from "../about/afterHero/AfterHero";

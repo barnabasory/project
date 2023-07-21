@@ -3,7 +3,7 @@ import { play_video, light_blockquote } from "../../PAGES/about";
 
 const Testimonial = ({ title, name, profession, testimony, image }) => {
   return (
-    <div className={styles.wrapper}>
+    <div className={`sw ${styles.wrapper}`}>
       <div className={styles.customer_info}>
         <h3 className={styles.title}>{title}</h3>
         <div className={styles.customer_meta_data}>

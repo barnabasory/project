@@ -22,7 +22,9 @@ const VendorNavbar = () => {
           <ul className={styles.links}>
             <li className={styles.link}>Shop</li>
             <li className={styles.link}>Help & Support</li>
-            <li className={styles.link}>Terms of Service</li>
+            <Link to="/terms-of-service">
+              <li className={styles.link}>Terms of Service</li>
+            </Link>
           </ul>
         </div>
         <div className={styles.mobile_navbar}>
@@ -42,7 +44,9 @@ const VendorNavbar = () => {
           <ul className={styles.links}>
             <li className={styles.link}>Shop</li>
             <li className={styles.link}>Help & Support</li>
-            <li className={styles.link}>Terms of Service</li>
+            <Link to="/terms-of-service">
+              <li className={styles.link}>Terms of Service</li>
+            </Link>
           </ul>
         </div>
       )}

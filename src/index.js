@@ -5,7 +5,7 @@ import App from "./App";
 import Context from "./contexts/Context";
 import CheckboxContext from "./contexts/CheckboxContext";
 import VendorContext from "./contexts/VendorContext";
-import { HashRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
