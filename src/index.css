@@ -238,7 +238,7 @@ button:hover{
 select{
 display: flex;
 height: 44px;
-padding: 12px 20px 9px 20px;
+width: 100%;
 justify-content: center;
 align-items: center;
 border-radius: 4px;

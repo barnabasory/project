@@ -1,0 +1,43 @@
+.wrapper {
+  background-color: white;
+  padding-top: 12px;
+  padding-bottom: 23px;
+  box-shadow: var(--blog-card-shadow);
+  border-radius: 4px;
+  height: max-content;
+  .heading {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .expectations {
+    padding-left: 24px;
+    padding-right: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    img {
+      width: 38px;
+      height: 33px;
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      max-width: 180px;
+
+      .info {
+        color: var(--cod60);
+      }
+    }
+  }
+
+  .line_break {
+    width: 100%;
+    height: 1px;
+    background-color: var(--cod20);
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+}

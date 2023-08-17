@@ -1,0 +1,50 @@
+.wrapper {
+  background-color: white;
+  box-shadow: var(--blod-card-shadow);
+  border-radius: 4px;
+  padding-top: 12px;
+
+  .heading {
+    padding-left: 24px;
+    padding-right: 35px;
+  }
+  .line_break {
+    height: 1px;
+    width: 100%;
+    background-color: var(--cod20);
+  }
+
+  .faqs {
+    padding-left: 24px;
+    padding-right: 35px;
+
+    .faq {
+      position: relative;
+      border-bottom: 1px solid var(--cod20);
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        cursor: pointer;
+
+        .icons {
+          position: relative;
+
+          img {
+            position: absolute;
+            right: 0;
+            bottom: -12px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .text {
+        padding-top: 5px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}

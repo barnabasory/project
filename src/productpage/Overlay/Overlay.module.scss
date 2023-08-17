@@ -1,0 +1,105 @@
+.wrapper {
+  background-color: rgba($color: #000000, $alpha: 0.4);
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1000;
+  transform: translateX(50%);
+  transition: all 0.5s ease;
+
+  .full_width {
+    transform: translateX(-50%);
+    transition: all 0.5s ease;
+  }
+
+  .cart {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    position: absolute;
+    height: 100%;
+    right: 0;
+    padding: 25px;
+    background-color: var(--white);
+
+    .subtotal {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 24px;
+
+      .checkout {
+        padding: 8px 46.5px 8px 46.5px;
+      }
+    }
+    .products {
+      display: flex;
+      flex-direction: column;
+      overflow-y: scroll;
+      gap: 24px;
+      width: 315px;
+      .product {
+        display: flex;
+        align-items: center;
+        gap: 19px;
+        border-top: 1px solid var(--kangaroo);
+        padding-top: 24px;
+
+        .img_div {
+          width: 120px;
+          height: 83px;
+          border: 1px solid var(--cod20);
+          border-radius: 4px;
+          padding: 10px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+          }
+        }
+        .price_and_update_qty_div {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          width: 100%;
+          .price_and_update_qty {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 16px;
+
+            .update_qty {
+              display: flex;
+              align-items: center;
+              border: 1px solid var(--kangaroo);
+              width: 100%;
+              border-radius: 4px;
+
+              .qty {
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-top: 2px;
+                padding-bottom: 2px;
+                border-right: 1px solid var(--kangaroo);
+                border-left: 1px solid var(--kangaroo);
+              }
+              img {
+                padding-inline: 5px;
+                cursor: pointer;
+              }
+            }
+          }
+
+          .remove {
+            color: var(--gold-drop);
+            display: flex;
+            margin-right: 0;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

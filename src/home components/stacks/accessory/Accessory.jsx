@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Accessory.scss";
 import accessoryCards from "./data";
+import { Link } from "react-router-dom";
 
 const Accessory = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,7 +17,7 @@ const Accessory = () => {
         {accessoryCards.map((accessoryCard) => {
           const { id, image, desc, price, placeholder } = accessoryCard;
           return (
-            <div className="accessory-card cc" key={id}>
+            <Link to={`./product/${id}`} className="accessory-card cc" key={id}>
               {" "}
               {isLoading ? (
                 <img
@@ -36,7 +37,7 @@ const Accessory = () => {
                 <p className="root-small accessory-card-desc">{desc}</p>
                 <p className="root-text-bold accessory-card-price">{price}</p>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

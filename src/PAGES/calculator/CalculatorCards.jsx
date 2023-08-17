@@ -19,34 +19,10 @@ const CalculatorCards = () => {
     useContext(CheckedCards);
   const [isLoading, setIsLoading] = useState(true);
 
-  // const showModal = () => {
-  //   setShow(!show);
-  // };
-
-  // const handleChange = (e) => {
-  //   e.preventDefault();
-  //   setValue({ ...value, [e.target.name]: e.target.value });
-  // };
-
   const increaseCount = (index) => {
     // increase Count
     setCounts(counts.map((count, i) => (i === index ? count + 1 : count)));
   };
-
-  // const decreaseCount = (index) => {
-  //   // decrease count
-  //   setCounts(
-  //     counts.map((count, i) => (i === index && count > 1 ? count - 1 : count))
-  //   );
-  // };
-
-  // const addCustomItem = (id) => {
-  //   const customItem = { ...value, id };
-  //   setData([...data, customItem]);
-  //   localStorage.setItem("cards", JSON.stringify([...data, customItem]));
-  //   setValue(initialState);
-  //   setCounts([...counts, 1]);
-  // };
 
   useEffect(() => {
     const savedCards = JSON.parse(sessionStorage.getItem("cards"));

@@ -1,0 +1,93 @@
+.product_page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 120px;
+  gap: 24px;
+  position: relative;
+
+  .top_links {
+    display: flex;
+    gap: 14px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--cod60);
+  }
+  .grids {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 24px;
+
+    .product_view {
+      display: grid;
+      grid-gap: 24px;
+      height: max-content;
+      grid-column: span 7;
+    }
+
+    .checkout {
+      display: grid;
+      grid-gap: 24px;
+      height: max-content;
+      grid-column: span 3;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .product_page {
+    display: flex;
+    flex-direction: column;
+    padding-top: 120px;
+    gap: 24px;
+
+    .top_links {
+      display: flex;
+      gap: 14px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: var(--cod60);
+    }
+    .grids {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-gap: 24px;
+
+      .product_view {
+        display: grid;
+        grid-gap: 24px;
+        height: max-content;
+        grid-column: span 12;
+      }
+
+      .checkout {
+        display: grid;
+        grid-gap: 24px;
+        height: max-content;
+        grid-column: span 12;
+      }
+    }
+
+    // .mobile_grid {
+    //   display: grid;
+    //   grid-template-columns: repeat(12, 1fr);
+
+    //   .product_view,
+    //   .product_desc,
+    //   .product_location,
+    //   .product_content,
+    //   .faqs,
+    //   .product_checkout,
+    //   .product_about_seller,
+    //   .product_what_to_expect,
+    //   .become_vendor {
+    //     grid-column: span 12;
+    //   }
+    // }
+  }
+}
