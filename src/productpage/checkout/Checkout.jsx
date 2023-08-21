@@ -1,5 +1,6 @@
 import styles from "./Checkout.module.scss";
 import { arrowDown } from "../../PAGES/index";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
   return (
@@ -17,7 +18,11 @@ const Checkout = () => {
         <span className={`tiny-text ${styles.your_choice}`}>
           Sure about about your choice?
         </span>
-        <button className={styles.checkout_button}>Proceed to Checkout</button>
+        <Link to="/your-cart">
+          <button className={styles.checkout_button}>
+            Proceed to Checkout
+          </button>
+        </Link>
       </div>
       <div className={styles.line_break}></div>
       <div className={styles.location_div}>

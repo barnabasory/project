@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className={`sw ${styles.desktop_navbar}`}>
           <div className={styles.logo}>
             <Link to="/">
-              <img src={logo} alt="" />
+              <img src={logo} alt="imperium_logo" />
             </Link>
           </div>
           <div className={styles["energy-needs"]}>

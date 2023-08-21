@@ -20,10 +20,11 @@ const Overlay = () => {
   return (
     <>
       {slideIn && (
-        <div
-          className={slideIn ? styles.wrapper : styles.full_width}
-          onClick={() => setSlideIn(!slideIn)}
-        >
+        <div className={styles.wrapper}>
+          <div
+            className={styles.overlay_wrapper}
+            onClick={() => setSlideIn(false)}
+          ></div>
           <div className={styles.cart}>
             <div className={styles.subtotal}>
               <span className={`tiny-text ${styles.subtotal_header}`}>

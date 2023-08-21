@@ -11,10 +11,10 @@ const LoginSlide = () => {
         <>
           <section className={`fw ${styles.wrapper}`}>
             <div
-              className={` ${styles.login_overlay}`}
+              className={`${styles.login_overlay}`}
               onClick={() => setShowLogin(false)}
             ></div>
-            <div className={` ${styles.login_div}`}>
+            <div className={`${styles.login_div}`}>
               <h5 className={styles.title}>Login to Imperium</h5>
               <form className={styles.form}>
                 <div className={styles.inputs}>

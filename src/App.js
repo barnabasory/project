@@ -34,6 +34,7 @@ import {
 } from "./PAGES/index";
 import { BlogsPage, BlogDetailsPage } from "./PAGES/blog";
 import ProductPage from "./PAGES/productPage/ProductPage";
+import { CartItem } from "./PAGES/cart";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -126,6 +127,7 @@ function App() {
             <Route exact path="/blogs" element={<BlogsPage />} />
             <Route exact path="/blog/:id" element={<BlogDetailsPage />} />
             <Route exact path="/product/:id" element={<ProductPage />} />
+            <Route exact path="/your-cart" element={<CartItem />} />
           </Routes>
         </div>
       )}
