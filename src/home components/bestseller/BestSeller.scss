@@ -127,10 +127,11 @@ $breakpoint-mobile: 480px;
     align-items: start;
     justify-content: center;
     flex-direction: column;
-    gap: 32px;
+    gap: 22px;
     padding-bottom: 119px;
     width: 100%;
     position: relative;
+    overflow-y: scroll;
 
     .best-seller-title {
       display: flex;

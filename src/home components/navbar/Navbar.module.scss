@@ -135,7 +135,6 @@
 @media (max-width: 480px) {
   .navbar-wrapper {
     top: 0;
-    border-bottom: 1px solid black;
 
     .desktop_navbar {
       display: none;
@@ -220,7 +219,6 @@
   .navbar-wrapper {
     height: 70px;
     top: 0;
-    border-bottom: 1px solid black;
 
     .desktop_navbar {
       display: none;
@@ -362,5 +360,6 @@
 @media (min-width: 1025px) {
   .navbar-wrapper {
     top: 28px;
+    border-bottom: none;
   }
 }
