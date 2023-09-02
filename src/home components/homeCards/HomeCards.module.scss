@@ -37,58 +37,51 @@
  *********************
  ******************** */
 
-$breakpoint-mobile: 480px;
-@media (max-width: $breakpoint-mobile) {
+@media only screen and (max-width: 400px) {
   .home-cards {
+    grid-gap: 20px;
+    top: -30px;
+    .home-card {
+      grid-column: span 12;
+
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: 401px) {
+  .home-cards {
+    grid-gap: 20px;
     .home-card {
       grid-column: span 6;
       width: 100%;
-      .home-card img {
-      }
-      .home-card-text {
-      }
     }
   }
 }
 
-$breakpoint-tablet: 481px;
-@media (min-width: $breakpoint-tablet) {
+@media only screen and (min-width: 650px) {
   .home-cards {
     .home-card {
       grid-column: span 4;
       width: 100%;
-      .home-card img {
-      }
-      .home-card-text {
-      }
     }
   }
 }
 
-$breakpoint-laptops-desktops: 768px;
-@media (min-width: $breakpoint-laptops-desktops) {
+@media only screen and (min-width: 850px) {
   .home-cards {
     .home-card {
-      grid-column: span 4;
+      grid-column: span 3;
       width: 100%;
-      .home-card img {
-      }
-      .home-card-text {
-      }
     }
   }
 }
 
-$breakpoint-large-screens: 1205px;
-@media (min-width: $breakpoint-large-screens) {
+@media only screen and (min-width: 1100px) {
   .home-cards {
     .home-card {
       grid-column: span 2;
       width: 100%;
-      .home-card img {
-      }
-      .home-card-text {
-      }
     }
   }
 }

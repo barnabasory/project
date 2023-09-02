@@ -42,89 +42,40 @@
   }
 }
 
-/*********************
-**********************
-**********************
-**********************
- MEDIA QUERIES********
- *********************
- ******************** */
 $breakpoint-mobile: 480px;
-@media (max-width: $breakpoint-mobile) {
+@media only screen and (max-width: $breakpoint-mobile) {
   .bg-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-
     .bg-img {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100vw;
-      object-fit: cover;
-      height: 75vh;
+      height: 85vh;
     }
     .bg-image-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      flex-direction: column;
-      gap: 34px;
-      position: absolute;
-      color: var(--white);
+      padding-top: 10%;
+      gap: 54px;
       background-color: rgba(26, 26, 26, 0.7);
-      width: 100vw;
-      height: 75vh;
-      padding-left: 20px;
-      padding-right: 20px;
-
+      padding-inline: 10px;
       .bg-image-content-text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
+        gap: 10px;
+
+        h3 {
+          line-height: 35px;
+        }
       }
       .bg-image-content-button {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 53.5px;
-        padding-right: 53.5px;
+        padding: 10px;
+        padding-inline: 20px;
       }
     }
   }
 }
 
 $breakpoint-tablet: 481px;
-@media (min-width: $breakpoint-tablet) {
+@media only screen and (min-width: $breakpoint-tablet) {
   .bg-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-
     .bg-img {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100vw;
-      object-fit: cover;
-      height: 75vh;
+      height: 85vh;
     }
     .bg-image-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      flex-direction: column;
-      gap: 34px;
-      position: absolute;
-      color: var(--white);
-      background-color: rgba(26, 26, 26, 0.7);
-      width: 100vw;
-      height: 65vh;
-      margin-top: 10%;
+      padding-top: 0%;
       .bg-image-content-text {
         display: flex;
         flex-direction: column;
@@ -142,93 +93,26 @@ $breakpoint-tablet: 481px;
 }
 
 $breakpoint-laptops-desktops: 768px;
-@media (min-width: $breakpoint-laptops-desktops) {
+@media only screen and (min-width: $breakpoint-laptops-desktops) {
   .bg-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-
     .bg-img {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100vw;
-      object-fit: cover;
-      height: 75vh;
+      height: 85vh;
     }
     .bg-image-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      flex-direction: column;
-      gap: 34px;
-      position: absolute;
-      color: var(--white);
-      background-color: rgba(26, 26, 26, 0.7);
-      width: 100vw;
       height: 65vh;
-      margin-top: 6%;
-      .bg-image-content-text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
-      }
-      .bg-image-content-button {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 53.5px;
-        padding-right: 53.5px;
-      }
+      margin-top: 3%;
     }
   }
 }
 
-$breakpoint-large-screens: 1205px;
-@media (min-width: $breakpoint-large-screens) {
+@media only screen and (min-width: 1200px) {
   .bg-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    height: 100%;
-    margin-top: 98px;
-
     .bg-img {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100vw;
-      object-fit: cover;
-      height: 384px;
+      height: 85vh;
     }
     .bg-image-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      flex-direction: column;
-      gap: 34px;
-      position: absolute;
-      color: var(--white);
-      background-color: rgba(26, 26, 26, 0.7);
-      width: 100vw;
-      height: 384px;
-      margin-top: -5%;
-      .bg-image-content-text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
-      }
-      .bg-image-content-button {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 53.5px;
-        padding-right: 53.5px;
-      }
+      height: 65vh;
+      margin-top: 0%;
     }
   }
 }
