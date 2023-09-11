@@ -30,12 +30,12 @@ $breakpoint-tablet: 481px;
   }
 }
 
-$breakpoint-laptops-desktops: 768px;
+$breakpoint-laptops-desktops: 601px;
 @media (min-width: $breakpoint-laptops-desktops) {
   .chart_form_wrapper {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: 59px;
+    grid-gap: 24px;
     margin-top: 50px;
     margin-bottom: 100px;
     width: 100%;

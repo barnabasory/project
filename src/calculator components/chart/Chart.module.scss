@@ -9,8 +9,7 @@
   background-color: white;
   padding-top: 36px;
   padding-bottom: 42px;
-  padding-left: 147px;
-  padding-right: 147px;
+  overflow: hidden;
   border-radius: 4px;
   text-align: center;
 
@@ -24,6 +23,8 @@
     letter-spacing: 0em;
     flex-wrap: wrap;
     text-align: center;
+    padding-left: 147px;
+    padding-right: 147px;
   }
 
   h3 {
@@ -35,6 +36,8 @@
     display: flex;
     align-items: center;
     gap: 16px;
+    padding-left: 147px;
+    padding-right: 147px;
 
     .toggle_button {
       display: flex;
@@ -81,125 +84,36 @@
   }
 }
 
-$breakpoint-mobile: 480px;
-@media (max-width: $breakpoint-mobile) {
+@media screen and (max-width: 600px) {
   .chart {
-    width: 100%;
+    padding-top: 70px;
     grid-column: span 12;
-    padding-left: 47px;
-    padding-right: 47px;
 
     .title {
+      padding-left: 20px;
+      padding-right: 20px;
     }
-
-    h3 {
-    }
-
     .toggle {
-      .toggle-button {
-        .toggle-ball {
-        }
-      }
-    }
-
-    .ball {
-      width: 250px;
-      height: 250px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
   }
 }
 
-$breakpoint-tablet: 481px;
-@media (min-width: $breakpoint-tablet) {
-  .chart {
-    width: 100%;
-    padding-left: 47px;
-    padding-right: 47px;
-
-    .title {
-    }
-
-    h3 {
-    }
-
-    .toggle {
-      .toggle-button {
-        .toggle-ball {
-        }
-      }
-    }
-
-    .ball {
-      width: 328px;
-      height: 328px;
-    }
-  }
-}
-
-$breakpoint-laptops-desktops: 768px;
-@media (min-width: $breakpoint-laptops-desktops) {
+@media screen and (min-width: 601px) {
   .chart {
     grid-column: span 6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    background-color: white;
-    padding-top: 36px;
-    padding-bottom: 42px;
-    padding-left: 147px;
-    padding-right: 147px;
-    border-radius: 4px;
-    text-align: center;
-    white-space: nowrap;
+    padding-top: 0px;
+    padding-bottom: 0;
 
     .title {
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 18px;
-      letter-spacing: 0em;
+      padding-top: 70px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
-
-    h3 {
-      font-weight: 600;
-      padding-top: 6px;
-    }
-
     .toggle {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-
-      .toggle-button {
-        display: flex;
-        align-items: center;
-        width: 65px;
-        height: 32px;
-        border: 1.5px solid var(--cod60);
-        border-radius: 21px;
-        background-color: var(--desert-storm);
-        position: relative;
-        margin-top: 22px;
-        margin-bottom: 29px;
-
-        .toggle-ball {
-          position: absolute;
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
-          background-color: var(--cod60);
-          left: 4px;
-        }
-      }
-    }
-
-    .ball {
-      width: 328px;
-      height: 328px;
-      background-color: red;
-      border-radius: 50%;
+      padding-left: 20px;
+      padding-right: 20px;
     }
   }
 }

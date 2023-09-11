@@ -87,168 +87,49 @@
   }
 }
 
-$breakpoint-mobile: 480px;
-@media (max-width: $breakpoint-mobile) {
+@media screen and (max-width: 480px) {
   .wrapper {
-    width: 100%;
-    .content {
-      width: 100%;
-      .title {
-      }
-
-      .texta,
-      .textb {
-      }
-    }
-
     .images {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      width: 100%;
+      align-self: center;
+      grid-gap: 20px;
 
       .card {
-        width: 100%;
         grid-column: span 12;
-
-        &:hover .image {
-        }
-
-        .image {
-        }
-
-        .text-div {
-          .desc {
-          }
-        }
+        width: 100%;
       }
-    }
-
-    .button {
     }
   }
 }
-
-$breakpoint-tablet: 481px;
-@media (min-width: $breakpoint-tablet) {
+@media screen and (min-width: 481px) {
   .wrapper {
-    width: 100%;
-    .content {
-      width: 100%;
-      .title {
-      }
-
-      .texta,
-      .textb {
-      }
-    }
-
     .images {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      width: 100%;
+      align-self: center;
+      grid-gap: 20px;
 
       .card {
-        width: 100%;
         grid-column: span 6;
-
-        &:hover .image {
-        }
-
-        .image {
-        }
-
-        .text-div {
-          padding-left: 10px;
-          padding-right: 10px;
-          .desc {
-          }
-        }
+        width: 100%;
       }
-    }
-
-    .button {
     }
   }
 }
-
-$breakpoint-laptops-desktops: 768px;
-@media (min-width: $breakpoint-laptops-desktops) {
+@media screen and (min-width: 900px) {
   .wrapper {
-    width: 100%;
-    .content {
-      width: 100%;
-      .title {
-      }
-
-      .texta,
-      .textb {
-      }
-    }
-
     .images {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      width: 100%;
-
       .card {
-        width: 100%;
         grid-column: span 4;
-
-        &:hover .image {
-        }
-
-        .image {
-        }
-
-        .text-div {
-          .desc {
-          }
-        }
+        width: 100%;
       }
-    }
-
-    .button {
     }
   }
 }
-
-$breakpoint-large-screens: 1205px;
-@media (min-width: $breakpoint-large-screens) {
+@media screen and (min-width: 1100px) {
   .wrapper {
-    width: 100%;
-    .content {
-      width: 100%;
-      .title {
-      }
-
-      .texta,
-      .textb {
-      }
-    }
-
     .images {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      width: 100%;
-
       .card {
-        width: 100%;
         grid-column: span 3;
-
-        &:hover .image {
-        }
-
-        .image {
-        }
-
-        .text-div {
-          .desc {
-          }
-        }
+        width: 100%;
       }
-    }
-
-    .button {
     }
   }
 }

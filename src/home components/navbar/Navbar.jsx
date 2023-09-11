@@ -91,7 +91,9 @@ const Navbar = () => {
                   <a href="#My-account">My Account</a>
                 </li>
                 <li>
-                  <a href="#My-account">Calculate Your Energy Needs</a>
+                  <Link to="/start-calculating">
+                    Calculate Your Energy Needs
+                  </Link>
                 </li>
                 <li className={styles["mobile-count"]}>0</li>
               </ul>

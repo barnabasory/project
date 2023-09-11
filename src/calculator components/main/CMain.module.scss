@@ -58,3 +58,30 @@
     height: 100vh;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .start-page {
+    height: 100vh;
+    position: relative;
+
+    .content {
+      width: 100%;
+
+      .title-details {
+        .details1 {
+          text-align: left;
+        }
+      }
+      .button-details {
+        .details2 {
+          text-align: left;
+        }
+      }
+    }
+
+    .image {
+      top: 0;
+      height: 700px;
+    }
+  }
+}

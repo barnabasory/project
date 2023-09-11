@@ -44,58 +44,40 @@
 $breakpoint-mobile: 480px;
 @media (max-width: $breakpoint-mobile) {
   .wrapper {
-    width: 100%;
-    background-color: var(--carrara);
-    padding-top: 30px;
-    padding-bottom: 51px;
-
     .content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 13px;
-      margin-top: 70px;
-
       .title {
-        color: var(--cod);
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 18px;
-        letter-spacing: 0em;
         text-align: center;
       }
-
-      h4 {
-        font-weight: 600;
-      }
-
       .buttons {
-        display: flex;
-        align-items: center;
-        gap: 14px;
+        flex-direction: column;
         .restart {
           padding: 8px 46px 8px 46px;
-          background-color: var(--cod-gray);
         }
 
         .report {
           padding: 8px 32px 8px 32px;
-          background-color: var(--chateau-green);
         }
       }
     }
   }
 }
+$breakpoint-mobile: 481px;
+@media (min-width: $breakpoint-mobile) {
+  .wrapper {
+    .content {
+      .title {
+        text-align: center;
+      }
+      .buttons {
+        flex-direction: row;
+        .restart {
+          padding: 8px 46px 8px 46px;
+        }
 
-$breakpoint-tablet: 481px;
-@media (min-width: $breakpoint-tablet) {
-}
-
-$breakpoint-laptops-desktops: 768px;
-@media (min-width: $breakpoint-laptops-desktops) {
-}
-
-$breakpoint-large-screens: 1205px;
-@media (min-width: $breakpoint-large-screens) {
+        .report {
+          padding: 8px 32px 8px 32px;
+        }
+      }
+    }
+  }
 }
