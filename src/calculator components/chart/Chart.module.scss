@@ -107,6 +107,24 @@
     padding-bottom: 0;
 
     .title {
+      padding-top: 0px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .toggle {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 901px) {
+  .chart {
+    grid-column: span 6;
+    padding-top: 0px;
+    padding-bottom: 0;
+
+    .title {
       padding-top: 70px;
       padding-left: 20px;
       padding-right: 20px;
