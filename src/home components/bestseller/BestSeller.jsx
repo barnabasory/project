@@ -31,8 +31,8 @@ const BestSeller = () => {
   };
 
   useEffect(() => {
-    containerRef.current.style.transition = `all 0.5s ease-in-out`;
-    containerRef.current.style.transform = `translateX(calc(-${current} *224px))`;
+    containerRef.current.style.transition = `all s ease-in-out`;
+    containerRef.current.style.transform = `translateX(calc(-${current} * 17.8%))`;
   });
   useEffect(() => {
     setIsLoading(false);
