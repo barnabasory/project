@@ -4,6 +4,7 @@ import data from "./data";
 import { arrowLeft, arrowRight } from "../../PAGES";
 
 const BestSeller = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const ref = useRef(null);
@@ -41,7 +42,11 @@ const BestSeller = () => {
     const slideInterval = setInterval(next, 5000);
 
     return () => clearInterval(slideInterval);
-  }, [activeIndex]);
+  }, [activeIndex, next]);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, []);
 
   return (
     <>
@@ -51,7 +56,19 @@ const BestSeller = () => {
           <div className="best-cards-wrapper">
             {data.map((card, index) => (
               <div className="best-seller-card" key={index}>
-                <img src={card.image} alt="bestselling" className="best-img" />
+                {isLoading ? (
+                  <img
+                    src={card.placeholder}
+                    alt="bestselling"
+                    className="best-img"
+                  />
+                ) : (
+                  <img
+                    src={card.image}
+                    alt="bestselling"
+                    className="best-img"
+                  />
+                )}
                 <div className="best-seller-text">
                   <p className="root-small best-desc">{card.desc}</p>
                   <p className="best-price root-text-bold">{card.price}</p>

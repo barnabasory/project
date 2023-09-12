@@ -153,9 +153,8 @@ $breakpoint-mobile: 480px;
         grid-auto-flow: column;
         align-self: start;
         grid-gap: 24px;
-        transition: transform 1s ease;
+        transition: all 1s ease;
         width: 100%;
-        scroll-snap-type: x mandatory;
 
         .best-seller-card {
           grid-column: span 3;
@@ -170,7 +169,7 @@ $breakpoint-mobile: 480px;
           height: 330px;
           cursor: pointer;
           box-shadow: var(--box-shadow);
-          transition: transform 1s ease;
+          transition: all 1s ease;
 
           .best-img {
             object-fit: contain;
@@ -229,6 +228,7 @@ $breakpoint-mobile: 480px;
       border-radius: 100px;
       padding: 8px;
       box-sizing: content-box;
+      cursor: pointer;
     }
 
     .arrow-left {
