@@ -53,7 +53,7 @@ const BestSeller = () => {
     <>
       <div className="sw best-seller-all-container">
         <h6 className="best-seller-title">Best Sellers</h6>
-        <p>{current}</p>
+
         <div className="best-seller-container">
           <div className="best-cards-wrapper" ref={containerRef}>
             {data.map((card) => (
