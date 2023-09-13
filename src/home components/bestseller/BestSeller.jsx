@@ -5,34 +5,45 @@ import { arrowLeft, arrowRight } from "../../PAGES";
 
 const BestSeller = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [current, setCurent] = useState(0);
+  const [current, setCurrent] = useState(0);
 
   let containerRef = useRef(null);
 
   const TOTAL_SLIDES = data.length - 1;
-  const prev = () => {
+  const prev = (id) => {
     if (current === 0) {
-      setCurent(data.length - 1);
+      setCurrent(TOTAL_SLIDES);
     } else {
-      setCurent(current - 1);
+      setCurrent(current - 1);
     }
   };
 
-  const next = () => {
+  const next = (id) => {
     if (current >= TOTAL_SLIDES) {
-      setCurent(0);
+      setCurrent(0);
     } else {
-      setCurent((current) => current + 1);
+      setCurrent(current + 1);
     }
   };
 
   const desired = (e) => {
-    setCurent(Number(e.target.id));
+    setCurrent(Number(e.target.id));
   };
 
   useEffect(() => {
-    containerRef.current.style.transition = `all s ease-in-out`;
-    containerRef.current.style.transform = `translateX(calc(-${current} * 17.8%))`;
+    containerRef.current.style.transition = `all 0.9s ease-in-out`;
+    const width = containerRef.current.clientWidth;
+    if (width <= 400) {
+      containerRef.current.style.transform = `translateX(calc(-${current} * 326px))`;
+    } else if (width > 400 && width < 480) {
+      containerRef.current.style.transform = `translateX(calc(-${current} * 315px))`;
+    } else if (width > 380 && width < 480) {
+      containerRef.current.style.transform = `translateX(calc(-${current} * 314px))`;
+    } else {
+      containerRef.current.style.transform = `translateX(calc(-${current} * 290px))`;
+    }
+
+    // console.log(width);
   });
   useEffect(() => {
     setIsLoading(false);
@@ -86,12 +97,12 @@ const BestSeller = () => {
               <button className="indicator-buttons">
                 <span
                   className={`material-symbols-outlined ${
-                    index === current
+                    item.id - 1 === current
                       ? "indicator-symbol-active"
                       : "indicator-symbol"
                   }`}
                   onClick={desired}
-                  id={index}
+                  id={item.id - 1}
                   key={index}
                 ></span>
               </button>

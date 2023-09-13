@@ -5,57 +5,48 @@ import { arrowLeft, arrowRight } from "../../PAGES";
 
 const BestSeller = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [current, setCurrent] = useState(0);
 
-  const ref = useRef(null);
+  let containerRef = useRef(null);
 
-  const handleNavigation = (index) => {
-    if (index >= 0 && index < data.length) {
-      setActiveIndex(index);
-      if (ref.current) {
-        ref.current.scrollTo({
-          top: 0,
-          left: index * 324,
-          behavior: "smooth",
-        });
-      }
+  const TOTAL_SLIDES = data.length - 1;
+  const prev = (id) => {
+    if (current === 0) {
+      setCurrent(data.length - 1);
+    } else {
+      setCurrent(current - 1);
     }
   };
 
-  const prev = () => {
-    let nextIndex = activeIndex - 1;
-    if (nextIndex < 0) {
-      nextIndex = data.length - 1;
+  const next = (id) => {
+    if (current >= TOTAL_SLIDES) {
+      setCurrent(0);
+    } else {
+      setCurrent(current + 1);
     }
-    handleNavigation(nextIndex);
   };
 
-  const next = () => {
-    let nextIndex = activeIndex + 1;
-    if (nextIndex === data.length) {
-      nextIndex = 0;
-    }
-    handleNavigation(nextIndex);
+  const desired = (e) => {
+    setCurrent(Number(e.target.id));
   };
 
   useEffect(() => {
-    const slideInterval = setInterval(next, 5000);
-
-    return () => clearInterval(slideInterval);
-  }, [activeIndex, next]);
-
+    containerRef.current.style.transition = `all s ease-in-out`;
+    containerRef.current.style.transform = `translateX(calc(-${current}00%))`;
+  });
   useEffect(() => {
     setIsLoading(false);
-  }, []);
+  }, [current]);
 
   return (
     <>
       <div className="sw best-seller-all-container">
         <h6 className="best-seller-title">Best Sellers</h6>
-        <div className="best-seller-container" ref={ref}>
-          <div className="best-cards-wrapper">
-            {data.map((card, index) => (
-              <div className="best-seller-card" key={index}>
+        <p>{current}</p>
+        <div className="best-seller-container">
+          <div className="best-cards-wrapper" ref={containerRef}>
+            {data.map((card) => (
+              <div className="best-seller-card" key={card.id}>
                 {isLoading ? (
                   <img
                     src={card.placeholder}
@@ -92,16 +83,16 @@ const BestSeller = () => {
         <div className="sw indicators">
           {data.map((item, index) => {
             return (
-              <button
-                className="indicator-buttons"
-                onClick={() => handleNavigation(index)}
-              >
+              <button className="indicator-buttons">
                 <span
                   className={`material-symbols-outlined ${
-                    index === activeIndex
+                    item.id - 1 === current
                       ? "indicator-symbol-active"
                       : "indicator-symbol"
                   }`}
+                  onClick={desired}
+                  id={item.id - 1}
+                  key={index}
                 ></span>
               </button>
             );
